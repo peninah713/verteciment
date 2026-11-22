@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-KE">
 <head>
@@ -29,15 +28,12 @@
   <meta property="og:url" content="https://vertecimentsconsulting.com/about.html">
   <meta
     property="og:image"
-    content="https://vertecimentsconsulting.com/wp-content/uploads/2025/04/munyao.jpg"
+    content="https://vertecimentsconsulting.com/verticement-slide-1.jpg"
   >
-  <meta property="og:image:alt" content="Dr. Munyao of Verteciments Consulting">
+  <meta property="og:image:alt" content="Cement industry expertise from Verteciments Consulting">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link
-    rel="icon"
-    href="https://vertecimentsconsulting.com/wp-content/uploads/2025/04/logo-3.jpg"
-  >
+  <link rel="icon" href="logo-3.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,13 +51,17 @@
     "url": "https://vertecimentsconsulting.com/about.html",
     "description": "The expertise, approach and principles behind Verteciments Consulting.",
     "inLanguage": "en-KE",
+    "isPartOf": {
+      "@id": "https://vertecimentsconsulting.com/#website"
+    },
     "mainEntity": {
       "@type": "ProfessionalService",
       "@id": "https://vertecimentsconsulting.com/#business",
       "name": "Verteciments Consulting",
       "url": "https://vertecimentsconsulting.com/",
-      "logo": "https://vertecimentsconsulting.com/wp-content/uploads/2025/04/logo-3.jpg",
+      "logo": "https://vertecimentsconsulting.com/logo-3.jpg",
       "telephone": "+254721788079",
+      "email": "info@vertecimentsconsulting.com",
       "areaServed": {
         "@type": "Country",
         "name": "Kenya"
@@ -246,6 +246,7 @@
       transform: translateY(-160%);
       background: var(--gold);
       color: var(--dark);
+      font-weight: 600;
     }
 
     .skip-link:focus {
@@ -445,7 +446,7 @@
       line-height: 1.55;
     }
 
-    /* ================= LEADERSHIP ================= */
+    /* ================= EXPERTISE ================= */
 
     .leadership-grid {
       display: grid;
@@ -454,35 +455,35 @@
       gap: 76px;
     }
 
-    .portrait {
+    .lab-visual {
       margin: 0;
       overflow: hidden;
       border-radius: 8px;
       background: #e6e9e1;
     }
 
-    .portrait img,
-    .portrait-fallback {
+    .lab-visual img,
+    .lab-fallback {
       width: 100%;
       height: 450px;
       object-fit: cover;
-      object-position: center top;
+      object-position: center;
     }
 
-    .portrait figcaption {
+    .lab-visual figcaption {
       padding: 20px 24px;
       border-bottom: 3px solid var(--gold);
       background: var(--dark);
       color: #fff;
     }
 
-    .portrait figcaption strong {
+    .lab-visual figcaption strong {
       display: block;
       font-size: 18px;
       font-weight: 500;
     }
 
-    .portrait figcaption span {
+    .lab-visual figcaption span {
       color: #d0d4cc;
       font-size: 14px;
     }
@@ -868,12 +869,12 @@
         gap: 35px;
       }
 
-      .portrait {
+      .lab-visual {
         max-width: 540px;
       }
 
-      .portrait img,
-      .portrait-fallback {
+      .lab-visual img,
+      .lab-fallback {
         height: 390px;
       }
 
@@ -970,6 +971,11 @@
         <path d="M21 11.5a9 9 0 0 1-13.5 7.8L3 21l1.7-4.5A9 9 0 1 1 21 11.5Z"/>
         <path d="M8 7c-2 3 3 8 6 8l2-2-3-1-1 1-2-2 1-1-1-3Z"/>
       </symbol>
+
+      <symbol id="icon-mail" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="2"/>
+        <path d="m3 7 9 6 9-6"/>
+      </symbol>
     </defs>
   </svg>
 
@@ -983,7 +989,7 @@
       >
         <img
           id="siteLogo"
-          src="https://vertecimentsconsulting.com/wp-content/uploads/2025/04/logo-3.jpg"
+          src="logo-3.jpg"
           width="90"
           height="64"
           alt="Verteciments Consulting"
@@ -1090,40 +1096,43 @@
       </div>
     </section>
 
-    <!-- ================= PEOPLE AND EXPERTISE ================= -->
+    <!-- ================= EXPERTISE ================= -->
     <section class="section alt" aria-labelledby="leadership-title">
       <div class="wrap leadership-grid">
-        <figure class="portrait">
+        <figure class="lab-visual">
           <img
-            id="portraitImage"
-            src="https://vertecimentsconsulting.com/wp-content/uploads/2025/04/munyao.jpg"
+            id="labImage"
+            src="cement-lab.jpg"
             width="600"
             height="650"
-            alt="Dr. Munyao of Verteciments Consulting"
+            alt="Cement laboratory testing equipment and samples"
             loading="lazy"
             decoding="async"
           >
 
           <svg
-            class="portrait-fallback"
-            id="portraitFallback"
+            class="lab-fallback"
+            id="labFallback"
             viewBox="0 0 600 650"
             role="img"
-            aria-label="Verteciments Consulting leadership portrait unavailable"
+            aria-label="Cement laboratory testing"
             hidden
           >
-            <rect width="600" height="650" fill="#e6e9e1"/>
-            <circle cx="300" cy="235" r="85" fill="#7e8a77"/>
+            <rect width="600" height="650" fill="#e9ece4"/>
             <path
-              d="M130 650V460a170 170 0 0 1 340 0v190"
-              fill="#354338"
+              d="M250 150h100M265 150v140L170 470a22 22 0 0 0 19 32h222a22 22 0 0 0 19-32L335 290V150M215 400h170"
+              fill="none"
+              stroke="#354338"
+              stroke-width="14"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             />
-            <path d="m240 370 60 100 60-100" fill="#fcc236"/>
+            <path d="M215 400h170l37 70a22 22 0 0 1-19 32H197a22 22 0 0 1-19-32Z" fill="#fcc236"/>
           </svg>
 
           <figcaption>
-            <strong>Dr. Munyao</strong>
-            <span>Verteciments Consulting</span>
+            <strong>Science meets real-world experience.</strong>
+            <span>Practical thinking for the cement industry.</span>
           </figcaption>
         </figure>
 
@@ -1341,6 +1350,18 @@
           <p>
             <a
               class="contact-link"
+              href="mailto:info@vertecimentsconsulting.com"
+            >
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-mail"/>
+              </svg>
+              info@vertecimentsconsulting.com
+            </a>
+          </p>
+
+          <p>
+            <a
+              class="contact-link"
               href="https://wa.me/254721788079"
               target="_blank"
               rel="noopener noreferrer"
@@ -1357,7 +1378,7 @@
               <svg class="icon" aria-hidden="true">
                 <use href="#icon-pin"/>
               </svg>
-              Based in Kenya
+              Kenya
             </span>
           </p>
         </div>
@@ -1369,7 +1390,7 @@
           All rights reserved.
         </p>
 
-        <a href="https://vertecimentsconsulting.com/privacy-policy/">
+        <a href="privacy-policy.html">
           Privacy Policy
         </a>
       </div>
@@ -1469,7 +1490,7 @@
       document.getElementById("year").textContent =
         String(new Date().getFullYear());
 
-      // Visible fallbacks for unavailable remote images.
+      // Visible fallbacks for unavailable images.
       function addImageFallback(imageId, fallbackId) {
         const image = document.getElementById(imageId);
         const fallback = document.getElementById(fallbackId);
@@ -1491,7 +1512,7 @@
       }
 
       addImageFallback("siteLogo", "logoFallback");
-      addImageFallback("portraitImage", "portraitFallback");
+      addImageFallback("labImage", "labFallback");
     })();
   </script>
 </body>
