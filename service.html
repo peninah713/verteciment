@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-KE">
 <head>
@@ -14,7 +13,10 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://vertecimentsconsulting.com/service.html">
 
+  <!-- Social sharing -->
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_KE">
+  <meta property="og:site_name" content="Verteciments Consulting">
   <meta property="og:title" content="Cement Consultancy Services in Kenya | Verteciments Consulting">
   <meta
     property="og:description"
@@ -23,15 +25,14 @@
   <meta property="og:url" content="https://vertecimentsconsulting.com/service.html">
   <meta
     property="og:image"
-    content="https://vertecimentsconsulting.com/wp-content/uploads/2025/04/logo-3.jpg"
+    content="https://vertecimentsconsulting.com/images/verticement-slide-1.jpg"
   >
-  <meta property="og:image:alt" content="Verteciments Consulting">
+  <meta property="og:image:alt" content="Cement industry expertise from Verteciments Consulting">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <link
-    rel="icon"
-    href="https://vertecimentsconsulting.com/wp-content/uploads/2025/04/logo-3.jpg"
-  >
+  <link rel="icon" href="images/logo-3.jpg">
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -45,6 +46,9 @@
     "@type": "OfferCatalog",
     "name": "Verteciments Consulting services",
     "url": "https://vertecimentsconsulting.com/service.html",
+    "provider": {
+      "@id": "https://vertecimentsconsulting.com/#business"
+    },
     "itemListElement": [
       {
         "@type": "Offer",
@@ -82,7 +86,7 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Cement Additive & Grinding Aid Selection",
+          "name": "Cement Additives & Grinding Aids",
           "areaServed": "Kenya"
         }
       },
@@ -110,6 +114,7 @@
     :root {
       --dark: #131313;
       --gold: #fcc236;
+      --gold-soft: #fff5d8;
       --text: #303030;
       --muted: #5b5f66;
       --line: #e6e7ea;
@@ -149,13 +154,9 @@
       color: inherit;
     }
 
-    button,
-    input {
+    button {
       min-height: 44px;
       font: inherit;
-    }
-
-    button {
       cursor: pointer;
     }
 
@@ -188,18 +189,55 @@
       transform: translateY(-160%);
       background: var(--gold);
       color: var(--dark);
+      font-weight: 600;
     }
 
     .skip-link:focus {
       transform: none;
     }
 
+    .icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ================= BUTTONS ================= */
+
+    .btn {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 14px 26px;
+      border: 1px solid var(--gold);
+      border-radius: 5px;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 15px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #ffda7d;
+    }
+
     /* ================= HEADER ================= */
 
     .site-header {
       position: relative;
-      z-index: 20;
-      padding: 19px 0;
+      z-index: 30;
+      padding-block: 18px;
       border-bottom: 1px solid #ffffff20;
       background: var(--dark);
     }
@@ -212,7 +250,7 @@
     }
 
     .logo {
-      display: flex;
+      display: inline-flex;
       flex-shrink: 0;
       align-items: center;
       text-decoration: none;
@@ -230,13 +268,9 @@
       align-items: center;
       gap: 10px;
       color: var(--gold);
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
       line-height: 1.2;
-    }
-
-    .logo-fallback svg {
-      flex-shrink: 0;
     }
 
     .logo-fallback small {
@@ -250,90 +284,47 @@
     .nav-list {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
-    .nav-list a,
-    .sub-toggle {
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    .nav-list > li > a {
+      display: inline-flex;
       min-height: 44px;
+      align-items: center;
       padding: 10px 16px;
-      border: 0;
-      background: none;
       color: #fff;
+      font-size: 15px;
       text-decoration: none;
     }
 
-    .nav-list a:hover,
-    .sub-toggle:hover,
-    .nav-list a[aria-current="page"] {
+    .nav-list > li > a:hover,
+    .nav-list > li > a[aria-current="page"] {
       color: var(--gold);
     }
 
-    .has-sub {
-      position: relative;
-    }
-
-    .sub-menu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 200px;
-      margin: 0;
-      padding: 8px;
-      border-radius: 6px;
-      background: #fff;
-      box-shadow: 0 12px 32px #0003;
-      list-style: none;
-    }
-
-    .sub-menu a {
-      border-radius: 4px;
-      color: var(--text);
-    }
-
-    .sub-menu a:hover {
-      background: var(--soft);
-      color: #674900;
-    }
-
-    .btn,
-    .nav-list .header-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      min-height: 44px;
-      padding: 14px 26px;
-      border: 1px solid var(--gold);
-      border-radius: 5px;
+    .nav-list > li > .header-cta {
+      margin-left: 14px;
+      padding: 13px 22px;
       background: var(--gold);
       color: var(--dark);
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.2s;
     }
 
-    .btn:hover,
-    .nav-list .header-cta:hover {
-      transform: translateY(-2px);
-      background: #ffda7d;
+    .nav-list > li > .header-cta:hover {
       color: var(--dark);
     }
 
     .nav-toggle {
       display: none;
       width: 48px;
+      min-height: 46px;
+      place-items: center;
       border: 1px solid #ffffff60;
-      border-radius: 4px;
+      border-radius: 5px;
       background: transparent;
       color: #fff;
-      font-size: 24px;
     }
 
     /* ================= PAGE BANNER ================= */
@@ -660,8 +651,14 @@
       margin: 0;
     }
 
-    .cta .btn {
+    .cta-actions {
+      display: flex;
       flex-shrink: 0;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .cta .btn {
       border-color: var(--dark);
       background: var(--dark);
       color: #fff;
@@ -671,117 +668,104 @@
       background: #303030;
     }
 
+    .cta .btn-outline {
+      background: transparent;
+      color: var(--dark);
+    }
+
+    .cta .btn-outline:hover {
+      background: var(--dark);
+      color: #fff;
+    }
+
     /* ================= FOOTER ================= */
 
     .site-footer {
-      padding-top: 70px;
+      padding-top: 66px;
       background: var(--dark);
-      color: #d2d2d0;
+      color: #d1d3ce;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr 0.7fr 1.4fr;
-      gap: 36px;
+      grid-template-columns: 1.5fr 0.8fr 1fr;
+      gap: 70px;
     }
 
     .footer-grid > div {
       min-width: 0;
     }
 
-    .site-footer h2 {
-      margin-bottom: 22px;
+    .footer-brand {
+      display: inline-block;
+      margin-bottom: 20px;
       color: #fff;
-      font-size: 18px;
+      font-size: 24px;
+      font-weight: 600;
+      text-decoration: none;
     }
 
-    .site-footer p {
-      font-size: 14px;
+    .footer-brand span {
+      display: block;
+      margin-top: 5px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
     }
 
-    .site-footer ul {
+    .footer-about {
+      max-width: 350px;
+      margin-bottom: 0;
+      font-size: 15px;
+    }
+
+    .site-footer h2 {
+      margin-bottom: 18px;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .footer-links {
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
-    .site-footer li a {
-      display: inline-block;
+    .footer-links a,
+    .contact-link {
+      display: inline-flex;
       min-height: 44px;
-      font-size: 14px;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
       text-decoration: none;
     }
 
-    .site-footer a:hover {
+    .footer-links a:hover,
+    .contact-link:hover {
       color: var(--gold);
     }
 
-    .footer-brand {
-      margin-bottom: 18px;
-      color: #fff;
-      font-size: 21px;
-      font-weight: 600;
+    .footer-contact p {
+      margin-bottom: 9px;
+      font-size: 15px;
     }
 
-    .footer-brand span {
-      display: block;
-      color: var(--gold);
-      font-size: 12px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .news-form {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .news-form input {
-      width: 100%;
-      min-width: 0;
-      flex: 1 1 140px;
-      padding: 12px;
-      border: 1px solid #666;
-      border-radius: 4px;
-      background: #252525;
-      color: #fff;
-      font-size: 14px;
-    }
-
-    .news-form input::placeholder {
-      color: #c5c5c5;
-    }
-
-    .news-form button {
-      padding: 10px 16px;
-      border: 0;
-      border-radius: 4px;
-      background: var(--gold);
-      color: var(--dark);
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    #newsMsg:not(:empty) {
-      margin-top: 12px;
-    }
-
-    .consent {
-      margin-top: 12px;
-      color: #c8c8c8;
-    }
-
-    .consent a {
+    .footer-contact .icon {
+      width: 18px;
+      height: 18px;
       color: var(--gold);
     }
 
     .footer-bottom {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      margin-top: 54px;
+      gap: 16px;
+      margin-top: 48px;
       padding-block: 22px;
       border-top: 1px solid #ffffff26;
       font-size: 14px;
@@ -791,35 +775,36 @@
       margin: 0;
     }
 
+    .footer-bottom a {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      text-underline-offset: 4px;
+    }
+
     /* ================= WHATSAPP ================= */
 
     .wa-btn {
       position: fixed;
       right: 22px;
       bottom: 22px;
-      z-index: 25;
+      z-index: 40;
       display: flex;
       min-height: 48px;
       align-items: center;
       gap: 10px;
-      padding: 12px 20px;
+      padding: 12px 18px;
       border: 1px solid #ffffff40;
       border-radius: 40px;
       background: #156c36;
       color: #fff;
-      box-shadow: 0 4px 20px #0003;
+      box-shadow: 0 5px 22px #0003;
       font-size: 14px;
       text-decoration: none;
     }
 
     .wa-btn:hover {
       background: #10552a;
-    }
-
-    .wa-btn svg {
-      width: 22px;
-      height: 22px;
-      flex-shrink: 0;
     }
 
     /* ================= RESPONSIVE ================= */
@@ -831,7 +816,6 @@
     }
 
     @media (max-width: 1023px) {
-      /* Menu stays available if JavaScript is disabled. */
       .header-inner {
         flex-wrap: wrap;
       }
@@ -841,18 +825,7 @@
       }
 
       .nav-list {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .nav-list a,
-      .sub-toggle {
-        width: 100%;
-      }
-
-      .sub-menu {
-        position: static;
-        margin: 0 16px 10px;
+        flex-wrap: wrap;
       }
 
       .js .header-inner {
@@ -860,7 +833,7 @@
       }
 
       .js .nav-toggle {
-        display: block;
+        display: grid;
       }
 
       .js .main-nav {
@@ -868,10 +841,10 @@
         top: 100%;
         right: 0;
         left: 0;
-        max-height: calc(100svh - 103px);
+        max-height: calc(100svh - 101px);
         overflow-y: auto;
-        padding: 18px 24px;
-        border-top: 1px solid #ffffff30;
+        padding: 20px 24px;
+        border-top: 1px solid #ffffff25;
         background: var(--dark);
       }
 
@@ -879,8 +852,21 @@
         display: none;
       }
 
+      .js .nav-list {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .js .nav-list > li > a {
+        width: 100%;
+      }
+
+      .nav-list > li > .header-cta {
+        margin-left: 0;
+      }
+
       .footer-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 36px;
       }
 
       .steps {
@@ -890,6 +876,7 @@
       .cta-inner {
         flex-direction: column;
         align-items: flex-start;
+        gap: 28px;
       }
     }
 
@@ -932,6 +919,14 @@
         font-size: 22px;
       }
 
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid > :first-child {
+        grid-column: 1 / -1;
+      }
+
       .wa-btn {
         right: 16px;
         bottom: 16px;
@@ -941,16 +936,21 @@
       .wa-btn span {
         display: none;
       }
-
-      .footer-grid {
-        gap: 30px;
-      }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 520px) {
       .footer-grid,
       .steps {
         grid-template-columns: 1fr;
+      }
+
+      .footer-grid > :first-child {
+        grid-column: auto;
+      }
+
+      .cta-actions,
+      .cta .btn {
+        width: 100%;
       }
     }
 
@@ -972,6 +972,36 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- Shared SVG icons -->
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="0"
+    height="0"
+    aria-hidden="true"
+    style="position:absolute;overflow:hidden"
+  >
+    <defs>
+      <symbol id="icon-phone" viewBox="0 0 24 24">
+        <path d="m5 3 4 1 1 5-2 2a14 14 0 0 0 5 5l2-2 5 1 1 4c-1 5-8 2-12-2S1 4 5 3Z"/>
+      </symbol>
+
+      <symbol id="icon-chat" viewBox="0 0 24 24">
+        <path d="M21 11.5a9 9 0 0 1-13.5 7.8L3 21l1.7-4.5A9 9 0 1 1 21 11.5Z"/>
+        <path d="M8 7c-2 3 3 8 6 8l2-2-3-1-1 1-2-2 1-1-1-3Z"/>
+      </symbol>
+
+      <symbol id="icon-mail" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="2"/>
+        <path d="m3 7 9 6 9-6"/>
+      </symbol>
+
+      <symbol id="icon-pin" viewBox="0 0 24 24">
+        <path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/>
+        <circle cx="12" cy="10" r="2.5"/>
+      </symbol>
+    </defs>
+  </svg>
+
   <!-- ================= HEADER ================= -->
   <header class="site-header">
     <div class="wrap header-inner">
@@ -981,29 +1011,19 @@
         aria-label="Verteciments Consulting home"
       >
         <img
-          src="https://vertecimentsconsulting.com/wp-content/uploads/2025/04/logo-3.jpg"
+          id="siteLogo"
+          src="images/logo-3.jpg"
           width="90"
           height="64"
           alt="Verteciments Consulting"
           decoding="async"
         >
 
-        <span class="logo-fallback" hidden>
-          <svg
-            width="28"
-            height="28"
-            viewBox="0 0 28 28"
-            aria-hidden="true"
-          >
-            <path
-              d="m2 4 12 22L26 4h-6l-6 12L8 4Z"
-              fill="#fcc236"
-            />
+        <span class="logo-fallback" id="logoFallback" hidden>
+          <svg width="26" height="28" viewBox="0 0 28 28" aria-hidden="true">
+            <path d="m2 4 12 22L26 4h-6l-6 12L8 4Z" fill="#fcc236"/>
           </svg>
-          <span>
-            VERTECIMENTS
-            <small>CONSULTING</small>
-          </span>
+          <span>VERTECIMENTS<small>CONSULTING</small></span>
         </span>
       </a>
 
@@ -1014,48 +1034,21 @@
         aria-label="Open menu"
         aria-expanded="false"
         aria-controls="mainNav"
-      >☰</button>
-
-      <nav
-        class="main-nav"
-        id="mainNav"
-        aria-label="Main navigation"
       >
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path id="menuIcon" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
-
+          <li><a href="service.html" aria-current="page">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
           <li>
-            <a href="service.html" aria-current="page">Services</a>
-          </li>
-
-          <li class="has-sub">
-            <button
-              class="sub-toggle"
-              type="button"
-              aria-expanded="false"
-              aria-controls="aboutMenu"
-            >
-              About <span aria-hidden="true">⌄</span>
-            </button>
-
-            <ul class="sub-menu" id="aboutMenu" hidden>
-              <li><a href="index.html#welcome">About Us</a></li>
-              <li><a href="index.html#expertise">Our Expertise</a></li>
-              <li><a href="index.html#benefits">Why Work With Us</a></li>
-            </ul>
-          </li>
-
-          <li><a href="#contact">Contact</a></li>
-
-          <li>
-            <a
-              class="btn header-cta"
-              href="https://wa.me/254721788079?text=I%20would%20like%20to%20request%20a%20consultation."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a class="btn header-cta" href="contact.html">
               Request a Consultation
-              <span aria-hidden="true">↗</span>
             </a>
           </li>
         </ul>
@@ -1235,7 +1228,7 @@
               <span class="category">Materials &amp; mix design</span>
             </div>
 
-            <h3>Cement Additive &amp; Grinding Aid Selection</h3>
+            <h3>Cement Additives &amp; Grinding Aids</h3>
 
             <ul>
               <li>
@@ -1391,11 +1384,7 @@
     </section>
 
     <!-- ================= CONTACT BAND ================= -->
-    <section
-      class="cta"
-      id="contact"
-      aria-labelledby="cta-title"
-    >
+    <section class="cta" aria-labelledby="cta-title">
       <div class="wrap cta-inner">
         <div>
           <h2 id="cta-title">Talk to a cement specialist</h2>
@@ -1405,10 +1394,21 @@
           </p>
         </div>
 
-        <a class="btn" href="tel:+254721788079">
-          Call +254 721 788 079
-          <span aria-hidden="true">↗</span>
-        </a>
+        <div class="cta-actions">
+          <a class="btn" href="tel:+254721788079">
+            <svg class="icon" aria-hidden="true">
+              <use href="#icon-phone"/>
+            </svg>
+            Call +254 721 788 079
+          </a>
+
+          <a class="btn btn-outline" href="contact.html">
+            <svg class="icon" aria-hidden="true">
+              <use href="#icon-mail"/>
+            </svg>
+            Email or Contact Form
+          </a>
+        </div>
       </div>
     </section>
   </main>
@@ -1418,78 +1418,73 @@
     <div class="wrap">
       <div class="footer-grid">
         <div>
-          <div class="footer-brand">
+          <a class="footer-brand" href="index.html">
             Verteciments
             <span>Consulting</span>
-          </div>
+          </a>
+
+          <p class="footer-about">
+            Kenya-based cement consultancy for efficient production,
+            consistent quality and a lower-carbon future.
+          </p>
+        </div>
+
+        <div>
+          <h2>Explore</h2>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="service.html" aria-current="page">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h2>Let's Talk</h2>
 
           <p>
-            Kenya-based cement expertise for efficient production,
-            enhanced quality, and a more sustainable future.
+            <a class="contact-link" href="tel:+254721788079">
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-phone"/>
+              </svg>
+              +254 721 788 079
+            </a>
           </p>
-        </div>
 
-        <div>
-          <h2>Quick Links</h2>
-          <ul>
-            <li><a href="index.html#welcome">About Us</a></li>
-            <li>
-              <a href="service.html" aria-current="page">Services</a>
-            </li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h2>Useful Links</h2>
-          <ul>
-            <li>
-              <a
-                href="https://vertecimentsconsulting.com/privacy-policy/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Privacy Policy ↗</a>
-            </li>
-            <li><a href="index.html#expertise">Our Expertise</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h2>Newsletter</h2>
-          <p>Receive updates on cement science and sustainability.</p>
-
-          <form class="news-form" id="newsForm">
-            <input
-              type="email"
-              name="email"
-              placeholder="Your email address"
-              autocomplete="email"
-              aria-label="Email address"
-              aria-describedby="newsletterNote"
-              maxlength="254"
-              required
-            >
-            <button type="submit">Subscribe</button>
-          </form>
-
-          <p id="newsMsg" role="status" aria-live="polite"></p>
-
-          <p class="consent" id="newsletterNote">
-            Signup is not connected yet. No email addresses are stored or sent.
+          <p>
             <a
-              href="https://vertecimentsconsulting.com/privacy-policy/"
+              class="contact-link"
+              href="mailto:info@vertecimentsconsulting.com"
+            >
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-mail"/>
+              </svg>
+              info@vertecimentsconsulting.com
+            </a>
+          </p>
+
+          <p>
+            <a
+              class="contact-link"
+              href="https://wa.me/254721788079"
               target="_blank"
               rel="noopener noreferrer"
-            >Privacy Policy</a>.
+            >
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-chat"/>
+              </svg>
+              Chat on WhatsApp ↗
+            </a>
           </p>
 
-          <noscript>
-            <p>
-              Newsletter signup is unavailable. Please call
-              <a href="tel:+254721788079">+254 721 788 079</a>
-              for updates.
-            </p>
-          </noscript>
+          <p>
+            <span class="contact-link">
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-pin"/>
+              </svg>
+              Kenya
+            </span>
+          </p>
         </div>
       </div>
 
@@ -1498,9 +1493,10 @@
           © <span id="year">2026</span> Verteciments Consulting.
           All rights reserved.
         </p>
-        <p>
-          Kenya · <a href="tel:+254721788079">+254 721 788 079</a>
-        </p>
+
+        <a href="privacy-policy.html">
+          Privacy Policy
+        </a>
       </div>
     </div>
   </footer>
@@ -1513,15 +1509,8 @@
     rel="noopener noreferrer"
     aria-label="Chat with us on WhatsApp (opens a new tab)"
   >
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="1.7"
-      aria-hidden="true"
-    >
-      <path d="M21 11.5a9 9 0 0 1-13.5 7.8L3 21l1.7-4.5A9 9 0 1 1 21 11.5Z"/>
-      <path d="M8 7c-2 3 3 8 6 8l2-2-3-1-1 1-2-2 1-1-1-3Z"/>
+    <svg class="icon" aria-hidden="true">
+      <use href="#icon-chat"/>
     </svg>
     <span>Chat with us</span>
   </a>
@@ -1531,80 +1520,57 @@
     (() => {
       "use strict";
 
-      document.documentElement.classList.add("js");
-
       const toggle = document.getElementById("navToggle");
       const nav = document.getElementById("mainNav");
       const header = document.querySelector(".site-header");
-      const subToggle = document.querySelector(".sub-toggle");
-      const submenu = document.getElementById("aboutMenu");
+      const menuIcon = document.getElementById("menuIcon");
       const desktop = window.matchMedia("(min-width: 1024px)");
-
-      /* ---------- Mobile navigation ---------- */
 
       function setMenu(open, restoreFocus = false) {
         nav.classList.toggle("open", open);
+
         toggle.setAttribute("aria-expanded", String(open));
         toggle.setAttribute(
           "aria-label",
           open ? "Close menu" : "Open menu"
         );
-        toggle.textContent = open ? "×" : "☰";
+
+        menuIcon.setAttribute(
+          "d",
+          open
+            ? "M6 6l12 12M18 6 6 18"
+            : "M4 6h16M4 12h16M4 18h16"
+        );
 
         if (restoreFocus) {
           toggle.focus();
         }
       }
 
-      function setSubmenu(open) {
-        submenu.hidden = !open;
-        subToggle.setAttribute("aria-expanded", String(open));
-      }
-
       toggle.addEventListener("click", () => {
-        const open = toggle.getAttribute("aria-expanded") !== "true";
+        const open =
+          toggle.getAttribute("aria-expanded") !== "true";
 
         setMenu(open);
-
-        if (!open) {
-          setSubmenu(false);
-        }
-      });
-
-      subToggle.addEventListener("click", () => {
-        setSubmenu(submenu.hidden);
       });
 
       nav.addEventListener("click", (event) => {
         if (event.target.closest("a")) {
           setMenu(false);
-          setSubmenu(false);
         }
       });
 
-      /* ---------- Close menus when clicking outside ---------- */
-
       document.addEventListener("click", (event) => {
-        if (!event.target.closest(".has-sub")) {
-          setSubmenu(false);
-        }
-
-        if (!event.target.closest(".site-header")) {
+        if (!header.contains(event.target)) {
           setMenu(false);
         }
       });
 
-      /* ---------- Escape key and focus handling ---------- */
-
       document.addEventListener("keydown", (event) => {
-        if (event.key !== "Escape") {
-          return;
-        }
-
-        if (!submenu.hidden) {
-          setSubmenu(false);
-          subToggle.focus();
-        } else if (nav.classList.contains("open")) {
+        if (
+          event.key === "Escape" &&
+          nav.classList.contains("open")
+        ) {
           setMenu(false, true);
         }
       });
@@ -1613,20 +1579,24 @@
         requestAnimationFrame(() => {
           if (!header.contains(document.activeElement)) {
             setMenu(false);
-            setSubmenu(false);
           }
         });
       });
 
       desktop.addEventListener("change", () => {
         setMenu(false);
-        setSubmenu(false);
       });
 
-      /* ---------- Visible fallback if the logo fails ---------- */
+      // Enable the collapsible mobile menu only after it is wired.
+      document.documentElement.classList.add("js");
 
-      const logo = document.querySelector(".logo img");
-      const logoFallback = document.querySelector(".logo-fallback");
+      // Current year.
+      document.getElementById("year").textContent =
+        String(new Date().getFullYear());
+
+      // Show a visible fallback if the logo fails to load.
+      const logo = document.getElementById("siteLogo");
+      const logoFallback = document.getElementById("logoFallback");
 
       function showLogoFallback() {
         logo.hidden = true;
@@ -1635,35 +1605,9 @@
 
       logo.addEventListener("error", showLogoFallback);
 
-      if (logo.complete && !logo.naturalWidth) {
+      if (logo.complete && logo.naturalWidth === 0) {
         showLogoFallback();
       }
-
-      /* ---------- Current copyright year ---------- */
-
-      document.getElementById("year").textContent =
-        String(new Date().getFullYear());
-
-      /* ---------- Newsletter ----------
-         This is intentionally not connected to a backend.
-         No email is stored or sent, and no false success is shown.
-      */
-
-      const newsletterForm = document.getElementById("newsForm");
-      const newsletterMessage = document.getElementById("newsMsg");
-
-      newsletterForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        if (!newsletterForm.reportValidity()) {
-          return;
-        }
-
-        newsletterMessage.textContent =
-          "Newsletter signup is not connected yet. " +
-          "Please call +254 721 788 079 for updates. " +
-          "Your email has not been stored or sent.";
-      });
     })();
   </script>
 </body>
