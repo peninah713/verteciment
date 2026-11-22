@@ -198,6 +198,90 @@
       stroke-linecap: round;
       stroke-linejoin: round;
     }
+    /* ----- About dropdown ----- */
+.sub-toggle {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 0;
+  background: none;
+  color: #fff;
+  font-size: 15px;
+}
+
+.sub-toggle:hover,
+.has-sub.current > .sub-toggle {
+  color: var(--gold);
+}
+
+.chev {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s;
+}
+
+.sub-toggle[aria-expanded="true"] .chev {
+  transform: rotate(180deg);
+}
+
+.has-sub {
+  position: relative;
+}
+
+.sub-menu {
+  margin: 0;
+  padding: 0 0 0 16px;
+  list-style: none;
+}
+
+.nav-list .sub-menu a {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 10px 16px;
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.nav-list .sub-menu a:hover,
+.nav-list .sub-menu a[aria-current="page"] {
+  color: var(--gold);
+}
+
+@media (min-width: 1024px) {
+  .js .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 40;
+    min-width: 210px;
+    padding: 8px;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 12px 32px #0003;
+  }
+
+  .js .nav-list .sub-menu a {
+    border-radius: 4px;
+    color: var(--text);
+  }
+
+  .js .nav-list .sub-menu a:hover,
+  .js .nav-list .sub-menu a[aria-current="page"] {
+    background: var(--soft);
+    color: #674900;
+  }
+}
+
+@media (max-width: 1023px) {
+  .js .sub-toggle {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
 
     .btn {
       display: inline-flex;
@@ -1025,7 +1109,26 @@
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="service.html">Services</a></li>
-          <li><a href="about.html" aria-current="page">About</a></li>
+         <li class="has-sub">
+  <button
+    class="sub-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="aboutMenu"
+  >
+    About
+    <svg class="icon chev" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="m6 9 6 6 6-6"/>
+    </svg>
+  </button>
+
+  <ul class="sub-menu" id="aboutMenu">
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="ourstory.html">Our Story</a></li>
+    <li><a href="ourteam.html">Our Team</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+  </ul>
+</li>
           <li><a href="contact.html">Contact</a></li>
           <li>
             <a class="btn header-cta" href="contact.html">
@@ -1514,6 +1617,62 @@
       addImageFallback("siteLogo", "logoFallback");
       addImageFallback("labImage", "labFallback");
     })();
+    
+  (() => {
+    "use strict";
+
+    const item = document.querySelector(".has-sub");
+
+    if (!item) {
+      return;
+    }
+
+    const toggle = item.querySelector(".sub-toggle");
+    const menu = item.querySelector(".sub-menu");
+    const desktop = window.matchMedia("(min-width: 1024px)");
+
+    function setSub(open, restoreFocus = false) {
+      menu.hidden = !open;
+      toggle.setAttribute("aria-expanded", String(open));
+
+      if (restoreFocus) {
+        toggle.focus();
+      }
+    }
+
+    setSub(false);
+
+    toggle.addEventListener("click", () => setSub(menu.hidden));
+
+    menu.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        setSub(false);
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!item.contains(event.target)) {
+        setSub(false);
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !menu.hidden) {
+        setSub(false, true);
+      }
+    });
+
+    item.addEventListener("focusout", () => {
+      requestAnimationFrame(() => {
+        if (!item.contains(document.activeElement)) {
+          setSub(false);
+        }
+      });
+    });
+
+    desktop.addEventListener("change", () => setSub(false));
+  })();
+
   </script>
 </body>
 </html>
