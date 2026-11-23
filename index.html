@@ -1,114 +1,39 @@
+Here’s a **single HTML file** with the CSS and JavaScript included. It keeps the homepage focused, with sliding photography, animated headline words, service previews, and clear contact options—without emojis or decorative clutter.
 
+Copy everything into `index.html`. It uses your original image filenames when available and online fallback photos otherwise. **Replace the fallback photos with your client’s own images before publishing.**
+
+```html
 <!DOCTYPE html>
 <html lang="en-KE">
 <head>
   <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  >
-  <meta name="theme-color" content="#3d7a2a">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183d2c">
 
   <title>Cement Consultancy in Kenya | Verteciments Consulting</title>
-
   <meta
     name="description"
-    content="Practical cement consultancy in Kenya. Improve production efficiency, product quality and low-carbon cement development with Verteciments Consulting."
+    content="Independent cement consultancy in Kenya. Improve production efficiency, strengthen quality and develop lower-carbon cement."
   >
-  <meta name="robots" content="index, follow, max-image-preview:large">
 
-  <link rel="canonical" href="https://vertecimentsconsulting.com/">
-
-  <!-- Social sharing -->
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_KE">
-  <meta property="og:site_name" content="Verteciments Consulting">
-  <meta
-    property="og:title"
-    content="Better Cement Performance. Lower Carbon Impact."
-  >
-  <meta
-    property="og:description"
-    content="Science-backed cement consultancy for production efficiency, consistent quality and sustainable product development."
-  >
-  <meta property="og:url" content="https://vertecimentsconsulting.com/">
-  <meta
-    property="og:image"
-    content="https://vertecimentsconsulting.com/verticement-slide-1.jpg"
-  >
-  <meta property="og:image:alt" content="Cement industry expertise from Verteciments Consulting">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="icon" href="logo-3.jpg">
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
-  <!-- Enables scroll animations only when JavaScript is available -->
-  <script>document.documentElement.classList.add("anim");</script>
-
-  <!-- Factual business information only -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "ProfessionalService",
-        "@id": "https://vertecimentsconsulting.com/#business",
-        "name": "Verteciments Consulting",
-        "url": "https://vertecimentsconsulting.com/",
-        "logo": "https://vertecimentsconsulting.com/logo-3.jpg",
-        "image": "https://vertecimentsconsulting.com/verticement-slide-1.jpg",
-        "description": "Kenya-based cement consultancy specializing in production optimization, quality assurance and sustainable product development.",
-        "telephone": "+254721788079",
-        "email": "info@vertecimentsconsulting.com",
-        "areaServed": {
-          "@type": "Country",
-          "name": "Kenya"
-        },
-        "knowsAbout": [
-          "Cement production optimization",
-          "Low-carbon cement",
-          "Cement quality assurance",
-          "Supplementary cementitious materials",
-          "Grinding aids and cement additives",
-          "Laboratory standardization"
-        ]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://vertecimentsconsulting.com/#website",
-        "url": "https://vertecimentsconsulting.com/",
-        "name": "Verteciments Consulting",
-        "publisher": {
-          "@id": "https://vertecimentsconsulting.com/#business"
-        },
-        "inLanguage": "en-KE"
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://vertecimentsconsulting.com/#webpage",
-        "url": "https://vertecimentsconsulting.com/",
-        "name": "Cement Consultancy in Kenya | Verteciments Consulting",
-        "isPartOf": {
-          "@id": "https://vertecimentsconsulting.com/#website"
-        },
-        "about": {
-          "@id": "https://vertecimentsconsulting.com/#business"
-        },
-        "inLanguage": "en-KE"
-      }
-    ]
-  }
-  </script>
-
   <style>
-    /* ================= DESIGN SYSTEM (GREEN, LIGHT) ================= */
+    :root {
+      --green: #183d2c;
+      --green-hover: #28583e;
+      --accent: #d3edb5;
+      --paper: #f7f8f3;
+      --text: #203b2c;
+      --muted: #566354;
+      --ease: cubic-bezier(.22, .8, .25, 1);
+      --width: 1240px;
+    }
 
     *,
     *::before,
@@ -116,1267 +41,663 @@
       box-sizing: border-box;
     }
 
-    :root {
-      --green-50: #f3f8ef;
-      --green-100: #e3efdb;
-      --green-200: #cfe5c2;
-      --green-500: #508738;
-      --green-600: #3d7a2a;
-      --green-700: #2f6121;
-      --green-900: #143319;
-      --lime: #d9f2b8;
-      --text: #2b3a2e;
-      --muted: #566559;
-      --line: #dde8d5;
-      --white: #fff;
-      --max: 1180px;
-      --radius: 8px;
-      --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 32px;
-      -webkit-text-size-adjust: 100%;
+      scroll-padding-top: 30px;
     }
 
     body {
       margin: 0;
       overflow-x: hidden;
-      background: var(--white);
+      background: var(--paper);
       color: var(--text);
-      font-family: "Roboto", system-ui, sans-serif;
+      font-family: "DM Sans", sans-serif;
       line-height: 1.65;
     }
 
-    h1,
-    h2,
-    h3,
-    p {
-      margin-top: 0;
+    h1, h2, h3, p {
+      margin: 0;
     }
 
-    h1,
-    h2,
-    h3 {
-      color: var(--green-900);
-      line-height: 1.15;
+    h1, h2, h3 {
+      font-family: "Manrope", sans-serif;
     }
 
     a {
       color: inherit;
+      text-decoration: none;
     }
 
     button {
+      color: inherit;
       font: inherit;
       cursor: pointer;
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
+    button, a {
+      -webkit-tap-highlight-color: transparent;
     }
 
-    [hidden] {
-      display: none !important;
+    img, svg {
+      display: block;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     :focus-visible {
-      outline: 3px solid var(--green-500);
+      outline: 3px solid #729a50;
       outline-offset: 5px;
     }
 
-    .marquee :focus-visible,
-    .statement :focus-visible {
-      outline-color: #fff;
+    ::selection {
+      background: var(--accent);
+      color: var(--green);
+    }
+
+    .wrap {
+      width: min(var(--width), calc(100% - 64px));
+      margin-inline: auto;
     }
 
     .sr-only {
       position: absolute;
       width: 1px;
       height: 1px;
-      margin: -1px;
-      padding: 0;
       overflow: hidden;
       clip: rect(0, 0, 0, 0);
       white-space: nowrap;
-      border: 0;
     }
 
-    .wrap {
-      width: min(var(--max), calc(100% - 48px));
-      margin-inline: auto;
-    }
-
-    .skip-link {
+    .skip {
       position: fixed;
-      top: 8px;
-      left: 8px;
+      top: 12px;
+      left: 12px;
       z-index: 100;
       padding: 12px 20px;
-      transform: translateY(-160%);
-      background: var(--green-600);
-      color: #fff;
-      font-weight: 600;
+      background: white;
+      color: var(--green);
+      transform: translateY(-150%);
     }
 
-    .skip-link:focus {
+    .skip:focus {
       transform: none;
     }
 
-    .section {
-      padding-block: 110px;
-    }
-
-    .alt {
-      background: var(--green-50);
-    }
-
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-      color: var(--green-700);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2.2px;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 30px;
-      height: 2px;
-      flex-shrink: 0;
-      background: var(--green-500);
-    }
-
-    .title {
-      margin-bottom: 22px;
-      font-size: clamp(34px, 4.2vw, 58px);
-      font-weight: 700;
-      letter-spacing: -0.035em;
-    }
-
-    .description {
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .btn {
-      display: inline-flex;
-      min-height: 52px;
-      align-items: center;
-      justify-content: center;
-      gap: 22px;
-      padding: 14px 26px;
-      border: 1px solid var(--green-600);
-      border-radius: 5px;
-      background: var(--green-600);
-      color: #fff;
-      font-size: 15px;
-      font-weight: 600;
-      text-align: center;
-      text-decoration: none;
-      transition:
-        background 0.2s,
-        color 0.2s,
-        transform 0.2s,
-        box-shadow 0.2s;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      background: var(--green-700);
-      box-shadow: 0 10px 26px #3d7a2a33;
-    }
-
-    .btn .icon {
-      transition: transform 0.25s var(--ease);
-    }
-
-    .btn:hover .icon {
-      transform: translateX(5px);
-    }
-
-    .btn-outline {
-      border-color: var(--green-600);
-      background: transparent;
-      color: var(--green-700);
-    }
-
-    .btn-outline:hover {
-      background: var(--green-600);
-      color: #fff;
-    }
-
-    .text-link {
-      display: inline-flex;
-      min-height: 44px;
-      align-items: center;
-      gap: 18px;
-      color: var(--green-700);
-      font-size: 15px;
-      font-weight: 600;
-      text-decoration-color: var(--green-500);
-      text-underline-offset: 7px;
-    }
-
-    .text-link:hover {
-      color: var(--green-900);
-    }
-
     .icon {
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       flex-shrink: 0;
       fill: none;
       stroke: currentColor;
-      stroke-width: 1.7;
+      stroke-width: 1.6;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
-    /* ================= HEADER ================= */
+    .button {
+      display: inline-flex;
+      min-height: 54px;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      padding: 15px 25px;
+      border: 0;
+      border-radius: 6px;
+      background: var(--green);
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background .25s, transform .25s;
+    }
 
-    .site-header {
+    .button:hover {
+      background: var(--green-hover);
+      transform: translateY(-2px);
+    }
+
+    .button .icon {
+      transition: transform .3s var(--ease);
+    }
+
+    .button:hover .icon {
+      transform: translateX(4px);
+    }
+
+    .button.light {
+      background: var(--accent);
+      color: var(--green);
+    }
+
+    .button.light:hover {
+      background: white;
+    }
+
+    .label {
+      margin-bottom: 20px;
+      color: #496c39;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 500;
+      line-height: 1.18;
+      letter-spacing: -.055em;
+    }
+
+    /* Navigation */
+
+    .header {
       position: relative;
-      z-index: 30;
-      padding-block: 14px;
-      border-bottom: 1px solid var(--line);
-      background: #fff;
-      box-shadow: 0 8px 24px #14331910;
+      z-index: 20;
+      background: var(--paper);
     }
 
     .header-inner {
       display: flex;
+      height: 96px;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
     }
 
-    .logo {
+    .brand {
       display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      gap: 11px;
       flex-shrink: 0;
-      align-items: center;
-      text-decoration: none;
     }
 
-    .logo img {
-      width: 90px;
-      height: 64px;
-      border-radius: 5px;
-      object-fit: contain;
+    .brand-mark {
+      width: 37px;
+      height: 43px;
     }
 
-    .logo-fallback {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--green-600);
-      font-size: 17px;
-      font-weight: 700;
-      line-height: 1.2;
+    .brand-name {
+      font-family: "Manrope", sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -.055em;
+      line-height: 1.1;
     }
 
-    .logo-fallback small {
+    .brand-name small {
       display: block;
-      margin-top: 6px;
-      color: var(--green-900);
+      margin-top: 7px;
+      font-family: "DM Sans", sans-serif;
       font-size: 12px;
-      letter-spacing: 3px;
+      font-weight: 500;
+      letter-spacing: .29em;
     }
 
-    .nav-list {
+    .nav {
       display: flex;
       align-items: center;
-      gap: 6px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
+      gap: 32px;
     }
 
-    .nav-list > li > a {
+    .nav > a {
       display: inline-flex;
       min-height: 44px;
       align-items: center;
-      padding: 10px 16px;
-      color: var(--green-900);
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 500;
-      text-decoration: none;
+      transition: color .2s;
     }
 
-    .nav-list > li > a:hover,
-    .nav-list > li > a[aria-current="page"] {
-      color: var(--green-600);
+    .nav > a:hover {
+      color: #537b3d;
     }
 
-    .nav-list > li > a[aria-current="page"] {
-      box-shadow: inset 0 -3px 0 var(--green-500);
+    .nav > .button {
+      margin-left: 12px;
+      color: white;
     }
 
-    .nav-list > li > .header-cta,
-    .nav-list > li > .header-cta:hover {
-      margin-left: 14px;
-      padding: 13px 22px;
-      box-shadow: none;
-      color: #fff;
-    }
-
-    .nav-list > li > .header-cta {
-      background: var(--green-600);
-    }
-
-    .nav-list > li > .header-cta:hover {
-      background: var(--green-700);
-    }
-
-    .nav-toggle {
+    .menu-toggle {
       display: none;
-      width: 48px;
-      min-height: 46px;
-      place-items: center;
-      border: 1px solid var(--green-600);
-      border-radius: 5px;
-      background: transparent;
-      color: var(--green-700);
-    }
-
-    /* ----- About dropdown ----- */
-
-    .sub-toggle {
-      display: inline-flex;
-      min-height: 44px;
+      min-width: 48px;
+      min-height: 48px;
       align-items: center;
-      gap: 8px;
-      padding: 10px 16px;
+      justify-content: center;
       border: 0;
-      background: none;
-      color: var(--green-900);
-      font-size: 15px;
-      font-weight: 500;
+      border-radius: 6px;
+      background: #e9eddf;
     }
 
-    .sub-toggle:hover,
-    .has-sub.current > .sub-toggle {
-      color: var(--green-600);
-    }
-
-    .chev {
-      width: 16px;
-      height: 16px;
-      transition: transform 0.2s;
-    }
-
-    .sub-toggle[aria-expanded="true"] .chev {
-      transform: rotate(180deg);
-    }
-
-    .has-sub {
-      position: relative;
-    }
-
-    .sub-menu {
-      margin: 0;
-      padding: 0 0 0 16px;
-      list-style: none;
-    }
-
-    .nav-list .sub-menu a {
-      display: flex;
-      min-height: 44px;
-      align-items: center;
-      padding: 10px 16px;
-      color: var(--green-900);
-      font-size: 15px;
-      text-decoration: none;
-    }
-
-    .nav-list .sub-menu a:hover,
-    .nav-list .sub-menu a[aria-current="page"] {
-      color: var(--green-600);
-    }
-
-    @media (min-width: 1024px) {
-      .js .sub-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 40;
-        min-width: 210px;
-        padding: 8px;
-        border: 1px solid var(--line);
-        border-radius: 6px;
-        background: #fff;
-        box-shadow: 0 14px 34px #14331926;
-      }
-
-      .js .nav-list .sub-menu a {
-        border-radius: 4px;
-      }
-
-      .js .nav-list .sub-menu a:hover,
-      .js .nav-list .sub-menu a[aria-current="page"] {
-        background: var(--green-50);
-        color: var(--green-700);
-      }
-    }
-
-    /* ================= ENTRANCE ANIMATIONS ================= */
-
-    @keyframes rise {
-      from {
-        opacity: 0;
-        transform: translateY(46px);
-      }
-    }
-
-    @keyframes hero-intro {
-      from {
-        transform: scale(1.25);
-        clip-path: inset(100% 0 0 0);
-      }
-
-      to {
-        transform: scale(1);
-        clip-path: inset(0 0 0 0);
-      }
-    }
-
-    @keyframes hero-drift {
-      from {
-        transform: scale(1) rotate(0deg);
-      }
-
-      to {
-        transform: scale(1.07) rotate(0.6deg);
-      }
-    }
-
-    @keyframes sweep {
-      0% {
-        transform: skewX(-18deg) translateX(0);
-      }
-
-      40%,
-      100% {
-        transform: skewX(-18deg) translateX(520%);
-      }
-    }
-
-    @keyframes drift {
-      from {
-        transform: translate(0, 0) rotate(0deg);
-      }
-
-      to {
-        transform: translate(-34px, 28px) rotate(14deg);
-      }
-    }
-
-    @keyframes scroll-x {
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    .fade {
-      animation: rise 0.9s var(--ease) backwards;
-      animation-delay: var(--d, 0ms);
-    }
-
-    /* Scroll reveal (only when JavaScript is available) */
-
-    .anim .reveal {
-      opacity: 0;
-      transform: translateY(32px);
-      transition:
-        opacity 0.8s var(--ease),
-        transform 0.8s var(--ease);
-      transition-delay: var(--d, 0ms);
-    }
-
-    .anim .reveal.in {
-      opacity: 1;
-      transform: none;
-    }
-
-    .anim .reveal-clip .about-frame {
-      clip-path: inset(0 0 100% 0);
-      transition: clip-path 1.2s var(--ease);
-    }
-
-    .anim .reveal-clip.in .about-frame {
-      clip-path: inset(0);
-    }
-
-    /* ================= HERO ================= */
+    /* Hero */
 
     .hero {
       position: relative;
       isolation: isolate;
-      display: flex;
-      min-height: min(88svh, 860px);
-      align-items: center;
       overflow: hidden;
-      background: var(--green-200);
+      background: #294735;
+      color: white;
     }
 
-    .hero-image,
-    .hero-fallback {
+    .hero-images {
       position: absolute;
-      z-index: -1;
-    }
-
-    .hero-image {
-      inset: -8%;
-      width: 116%;
-      max-width: none;
-      height: 116%;
-      object-fit: cover;
-      object-position: center;
-      will-change: transform, translate;
-      translate: var(--px, 0px) var(--py, 0px);
-      transition: translate 0.6s ease-out;
-      animation:
-        hero-intro 1.8s var(--ease) both,
-        hero-drift 28s ease-in-out 1.8s infinite alternate;
-    }
-
-    .hero-fallback {
       inset: 0;
+      z-index: -3;
+      overflow: hidden;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      transform: translateX(100%);
+      transition: transform 1.2s var(--ease);
+    }
+
+    .hero-slide:first-child {
+      transform: translateX(0);
+    }
+
+    .hero-slide img,
+    .hero-slide .image-fallback {
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      object-position: center 55%;
     }
 
     .hero::before {
       position: absolute;
-      top: -20%;
-      bottom: -20%;
-      left: -40%;
-      z-index: 0;
-      width: 30%;
+      inset: 0;
+      z-index: -2;
       background: linear-gradient(
-        100deg,
-        transparent,
-        #ffffff22 45%,
-        #ffffff59 50%,
-        #ffffff22 55%,
-        transparent
+        90deg,
+        rgba(10, 30, 21, .94) 0%,
+        rgba(10, 30, 21, .83) 34%,
+        rgba(10, 30, 21, .35) 65%,
+        rgba(10, 30, 21, .08) 100%
       );
       content: "";
-      pointer-events: none;
-      transform: skewX(-18deg);
-      animation: sweep 9s ease-in-out 3s infinite;
     }
 
     .hero::after {
       position: absolute;
-      top: 6%;
-      right: -150px;
-      z-index: 0;
-      width: 560px;
-      height: 560px;
-      border: 1px solid #ffffff99;
-      border-radius: 50%;
-      box-shadow:
-        0 0 0 70px #ffffff1f,
-        0 0 0 140px #ffffff12;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        0deg,
+        rgba(10, 30, 21, .65),
+        transparent 32%
+      );
       content: "";
-      pointer-events: none;
-      animation: drift 16s ease-in-out infinite alternate;
     }
 
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      padding-block: 80px;
+    .hero-content {
+      display: flex;
+      min-height: 680px;
+      flex-direction: column;
+      justify-content: center;
+      padding-block: 78px 110px;
     }
 
-    .hero-card {
-      max-width: 780px;
-      padding: clamp(28px, 4.2vw, 56px);
-      border-top: 5px solid var(--green-600);
-      border-radius: 14px;
-      background: #ffffffeb;
-      box-shadow: 0 28px 70px #14331933;
-    }
-
-    @supports (backdrop-filter: blur(1px)) {
-      .hero-card {
-        background: #ffffffd1;
-        -webkit-backdrop-filter: blur(14px) saturate(1.15);
-        backdrop-filter: blur(14px) saturate(1.15);
-      }
+    .hero .label {
+      color: #deebd5;
     }
 
     .hero h1 {
-      margin-bottom: 24px;
-      color: var(--green-900);
-      font-size: clamp(40px, 5.8vw, 88px);
-      font-weight: 700;
-      letter-spacing: -0.045em;
-      line-height: 1.03;
+      max-width: 770px;
+      font-size: clamp(50px, 6.6vw, 88px);
+      font-weight: 500;
+      line-height: 1.08;
+      letter-spacing: -.065em;
     }
 
-    .h1-line {
+    .word-window {
       display: block;
-    }
-
-    .word {
-      display: inline-block;
-      animation: rise 0.9s var(--ease) backwards;
-      animation-delay: calc(var(--i) * 130ms + 150ms);
-    }
-
-    .rot-line {
-      animation: rise 0.9s var(--ease) 560ms backwards;
-    }
-
-    .rot-window {
-      display: inline-grid;
-      margin-bottom: -0.14em;
-      padding-bottom: 0.14em;
       overflow: hidden;
-      vertical-align: top;
-      color: var(--green-600);
+      padding-bottom: .14em;
+      margin-bottom: -.14em;
+      color: var(--accent);
     }
 
-    .rot-word {
-      grid-area: 1 / 1;
-      opacity: 0;
-      transform: translateY(80%);
-      transition:
-        transform 0.7s var(--ease),
-        opacity 0.5s ease;
-    }
-
-    .rot-word.is-active {
-      opacity: 1;
-      transform: none;
-    }
-
-    .rot-word.is-leaving {
-      opacity: 0;
-      transform: translateY(-80%);
+    .moving-word {
+      display: inline-block;
     }
 
     .hero-description {
-      max-width: 540px;
-      margin-bottom: 32px;
-      color: var(--text);
-      font-size: 19px;
-      line-height: 1.7;
+      max-width: 440px;
+      margin-top: 28px;
+      color: #eff3e9;
+      font-size: 17px;
+      line-height: 1.8;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
+      gap: 26px;
+      margin-top: 34px;
+    }
+
+    .hero-link {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
       gap: 14px;
+      font-size: 14px;
+      font-weight: 500;
     }
 
-    /* ================= WORD MARQUEE ================= */
-
-    .marquee {
-      overflow: hidden;
-      background: var(--green-600);
-      color: #fff;
+    .hero-link:hover {
+      color: var(--accent);
     }
 
-    .marquee-track {
-      display: flex;
-      width: max-content;
-      animation: scroll-x 40s linear infinite;
-    }
-
-    .marquee:hover .marquee-track {
-      animation-play-state: paused;
-    }
-
-    .marquee-list {
-      display: flex;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .marquee-list li {
-      display: flex;
-      align-items: center;
-      padding-block: 22px;
-      font-size: clamp(20px, 2.4vw, 30px);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      white-space: nowrap;
-    }
-
-    .marquee-list li::after {
-      width: 10px;
-      height: 10px;
-      margin-inline: 40px;
-      background: var(--lime);
-      content: "";
-      transform: rotate(45deg);
-    }
-
-    /* ================= ABOUT ================= */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      align-items: center;
-      gap: 88px;
-    }
-
-    .about-visual {
-      position: relative;
-      isolation: isolate;
-      min-width: 0;
-      padding: 0 28px 28px 0;
-    }
-
-    .about-visual::after {
+    .hero-controls {
       position: absolute;
       right: 0;
-      bottom: 0;
-      z-index: -1;
-      width: 72%;
-      height: 72%;
-      border-radius: var(--radius);
-      background: var(--green-200);
-      content: "";
-    }
-
-    .about-frame {
-      overflow: hidden;
-      border-radius: var(--radius);
-    }
-
-    .about-photo,
-    .about-fallback {
-      width: 100%;
-      height: 520px;
-      border-radius: var(--radius);
-      object-fit: cover;
-      object-position: center;
-      background: var(--green-50);
-    }
-
-    .about-copy .description {
-      max-width: 520px;
-      margin-bottom: 30px;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
-      margin: 0 0 36px;
-      padding-top: 32px;
-      border-top: 1px solid var(--line);
-    }
-
-    .stat {
+      bottom: 25px;
+      left: 0;
       display: flex;
-      min-width: 0;
-      flex-direction: column-reverse;
-    }
-
-    .stat dt {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 1.6px;
-      line-height: 1.4;
-      text-transform: uppercase;
-    }
-
-    .stat dd {
-      margin: 0 0 8px;
-      color: var(--green-900);
-      font-size: clamp(42px, 4.6vw, 64px);
-      font-weight: 700;
-      letter-spacing: -0.045em;
-      line-height: 1;
-    }
-
-    .stat .suffix {
-      color: var(--green-500);
-    }
-
-    /* ================= SERVICES ================= */
-
-    .section-head {
-      display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: space-between;
-      gap: 40px;
-      margin-bottom: 52px;
+      gap: 20px;
     }
 
-    .section-head .title {
-      margin-bottom: 0;
+    .hero-caption {
+      font-size: 13px;
+      color: #edf2e6;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .control {
+      display: inline-flex;
+      min-width: 46px;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border: 0;
+      border-radius: 50%;
+      background: #f7f8f3;
+      color: var(--green);
+      transition: background .2s;
+    }
+
+    .control:hover {
+      background: var(--accent);
+    }
+
+    .control.pause {
+      padding-inline: 17px;
+      border-radius: 30px;
+      font-size: 12px;
+    }
+
+    .previous .icon {
+      transform: rotate(180deg);
+    }
+
+    /* Short introduction */
+
+    .intro {
+      display: grid;
+      grid-template-columns: .65fr 1.35fr;
+      gap: 80px;
+      align-items: start;
+      padding-block: 90px;
+    }
+
+    .experience {
+      font-family: "Manrope", sans-serif;
+      font-size: 76px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -.08em;
+    }
+
+    .experience span {
+      color: #68864d;
+    }
+
+    .experience-caption {
+      max-width: 200px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .intro-copy p {
+      max-width: 630px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    /* Services */
+
+    .services {
+      padding-bottom: 90px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 32px;
+      margin-bottom: 36px;
+    }
+
+    .section-heading > p {
+      max-width: 270px;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .service-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
+      gap: 26px;
     }
 
-    .svc {
-      position: relative;
-      display: flex;
-      min-height: 290px;
+    .service {
       min-width: 0;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 32px;
+    }
+
+    .service-photo {
+      position: relative;
+      height: 255px;
       overflow: hidden;
-      border: 1px solid var(--line);
+      margin-bottom: 22px;
       border-radius: 8px;
-      background: #fff;
-      color: var(--text);
-      text-decoration: none;
-      transition:
-        transform 0.35s var(--ease),
-        background 0.35s,
-        color 0.35s,
-        border-color 0.35s,
-        box-shadow 0.35s;
+      background: #dbe3cf;
     }
 
-    .svc::before {
-      position: absolute;
-      top: 0;
-      left: 0;
+    .service-photo img,
+    .service-photo .image-fallback {
       width: 100%;
-      height: 4px;
-      background: var(--lime);
-      content: "";
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.45s var(--ease);
+      height: 100%;
+      transition: transform .8s var(--ease);
     }
 
-    .svc:hover,
-    .svc:focus-visible {
-      transform: translateY(-8px);
-      border-color: var(--green-600);
-      background: var(--green-600);
-      box-shadow: 0 22px 44px #3d7a2a40;
-      color: #fff;
+    .service:hover .service-photo img {
+      transform: scale(1.045);
     }
 
-    .svc:hover::before,
-    .svc:focus-visible::before {
-      transform: scaleX(1);
-    }
-
-    .svc-num {
+    .service-photo span {
       position: absolute;
-      top: 22px;
-      right: 28px;
-      color: var(--green-100);
-      font-size: 56px;
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      transition: color 0.35s;
+      top: 16px;
+      left: 16px;
+      padding: 7px 13px;
+      border-radius: 30px;
+      background: var(--paper);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 500;
     }
 
-    .svc:hover .svc-num,
-    .svc:focus-visible .svc-num {
-      color: #ffffff40;
-    }
-
-    .svc-icon {
-      display: grid;
-      width: 54px;
-      height: 54px;
-      margin-bottom: 28px;
-      place-items: center;
-      border-radius: 8px;
-      background: var(--green-100);
-      color: var(--green-700);
-      transition:
-        background 0.35s,
-        color 0.35s;
-    }
-
-    .svc:hover .svc-icon,
-    .svc:focus-visible .svc-icon {
-      background: #fff;
-      color: var(--green-600);
-    }
-
-    .svc h3 {
-      margin-bottom: 10px;
+    .service h3 {
       font-size: 23px;
       font-weight: 600;
-      letter-spacing: -0.02em;
-      transition: color 0.35s;
+      letter-spacing: -.04em;
+      line-height: 1.3;
     }
 
-    .svc:hover h3,
-    .svc:focus-visible h3 {
-      color: #fff;
-    }
-
-    .svc p {
-      margin-bottom: 24px;
+    .service > p {
+      margin-top: 10px;
+      margin-bottom: 14px;
       color: var(--muted);
-      font-size: 16px;
-      transition: color 0.35s;
-    }
-
-    .svc:hover p,
-    .svc:focus-visible p {
-      color: #eaf5e2;
-    }
-
-    .svc-go {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: auto;
-      color: var(--green-700);
       font-size: 14px;
-      font-weight: 600;
-      transition: color 0.35s;
+      line-height: 1.8;
     }
 
-    .svc:hover .svc-go,
-    .svc:focus-visible .svc-go {
-      color: #fff;
+    .service summary {
+      display: flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      list-style: none;
+      font-size: 14px;
+      font-weight: 500;
     }
 
-    .svc-go .icon {
-      width: 20px;
-      height: 20px;
-      transition: transform 0.35s var(--ease);
+    summary::-webkit-details-marker {
+      display: none;
     }
 
-    .svc:hover .svc-go .icon,
-    .svc:focus-visible .svc-go .icon {
-      transform: translateX(8px);
+    .service summary .icon {
+      width: 18px;
+      height: 18px;
+      transform: rotate(-45deg);
+      transition: transform .25s;
     }
 
-    .section-bottom {
-      margin-top: 44px;
-      text-align: center;
+    .service details[open] summary .icon {
+      transform: rotate(90deg);
     }
 
-    /* ================= MISSION STATEMENT ================= */
-
-    .statement {
-      position: relative;
-      overflow: hidden;
-      padding-block: 140px;
-      background: linear-gradient(135deg, var(--green-600), var(--green-500));
-      color: #fff;
+    .service details p {
+      padding: 16px;
+      border-radius: 6px;
+      background: #e9eedf;
+      color: #43533c;
+      font-size: 14px;
+      line-height: 1.8;
     }
 
-    .statement::before {
-      position: absolute;
-      bottom: -200px;
-      left: -170px;
-      width: 520px;
-      height: 520px;
-      border: 1px solid #ffffff40;
-      border-radius: 50%;
-      box-shadow:
-        0 0 0 70px #ffffff12,
-        0 0 0 140px #ffffff0a;
-      content: "";
-      pointer-events: none;
+    /* Contact */
+
+    .contact {
+      padding-block: 72px;
+      background: #e4ecd9;
     }
 
-    .statement .wrap {
-      position: relative;
-    }
-
-    .statement .eyebrow {
-      color: var(--lime);
-    }
-
-    .statement .eyebrow::before {
-      background: var(--lime);
-    }
-
-    .statement-text {
-      max-width: 1020px;
-      margin: 0;
-      color: #fff;
-      font-size: clamp(34px, 5.6vw, 76px);
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      line-height: 1.1;
-    }
-
-    .sw {
-      transition:
-        opacity 0.4s ease,
-        color 0.4s ease;
-    }
-
-    .anim .sw {
-      opacity: 0.28;
-    }
-
-    .anim .sw.on {
-      opacity: 1;
-    }
-
-    .sw.hl {
-      color: var(--lime);
-    }
-
-    /* ================= CTA ================= */
-
-    .cta {
-      padding-block: 84px;
-      background: var(--green-100);
-    }
-
-    .cta-inner {
+    .contact-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 48px;
-    }
-
-    .cta h2 {
-      max-width: 720px;
-      margin-bottom: 14px;
-      font-size: clamp(32px, 4vw, 54px);
-      font-weight: 700;
-      letter-spacing: -0.035em;
-    }
-
-    .cta p {
-      max-width: 600px;
-      margin: 0;
-      color: var(--text);
-      font-size: 18px;
-    }
-
-    .cta-actions {
-      display: flex;
-      flex-shrink: 0;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    /* ================= FOOTER ================= */
-
-    .site-footer {
-      padding-top: 66px;
-      border-top: 4px solid var(--green-600);
-      background: var(--green-50);
-      color: var(--text);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 0.8fr 1fr;
       gap: 70px;
     }
 
-    .footer-grid > div {
+    .contact .section-title {
+      max-width: 600px;
+    }
+
+    .contact-copy {
+      max-width: 360px;
+    }
+
+    .contact-copy p {
+      margin-bottom: 24px;
+      color: #495a41;
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    /* Footer */
+
+    .footer {
+      padding-block: 48px 25px;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .footer-contact {
       min-width: 0;
     }
 
-    .footer-brand {
-      display: inline-block;
-      margin-bottom: 20px;
-      color: var(--green-900);
-      font-size: 24px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .footer-brand span {
-      display: block;
-      margin-top: 5px;
-      color: var(--green-600);
-      font-size: 12px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-    }
-
-    .footer-about {
-      max-width: 350px;
-      margin-bottom: 0;
-      font-size: 15px;
-    }
-
-    .site-footer h2 {
-      margin-bottom: 18px;
-      color: var(--green-900);
-      font-size: 17px;
-      font-weight: 600;
-    }
-
-    .footer-links {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .footer-links a,
-    .contact-link {
-      display: inline-flex;
+    .footer-contact a,
+    .whatsapp {
+      display: flex;
       min-height: 44px;
       align-items: center;
-      gap: 10px;
-      font-size: 15px;
-      text-decoration: none;
+      gap: 12px;
+      overflow-wrap: anywhere;
+      font-size: 14px;
     }
 
-    .footer-links a:hover,
-    .contact-link:hover {
-      color: var(--green-600);
-    }
-
-    .footer-contact p {
-      margin-bottom: 9px;
-      font-size: 15px;
-    }
-
-    .footer-contact .icon {
-      width: 18px;
-      height: 18px;
-      color: var(--green-600);
+    .footer-contact a:hover,
+    .whatsapp:hover {
+      color: #537b3d;
     }
 
     .footer-bottom {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
       justify-content: space-between;
       gap: 16px;
-      margin-top: 48px;
-      padding-block: 22px;
-      border-top: 1px solid var(--line);
-      font-size: 14px;
+      margin-top: 38px;
+      color: var(--muted);
+      font-size: 12px;
     }
 
-    .footer-bottom p {
-      margin: 0;
+    /* Responsive */
+
+    @media (min-width: 1500px) {
+      .hero-content {
+        min-height: 760px;
+      }
     }
-
-    .footer-bottom a {
-      display: inline-flex;
-      min-height: 44px;
-      align-items: center;
-      text-underline-offset: 4px;
-    }
-
-    /* ================= WHATSAPP ================= */
-
-    .wa-btn {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 40;
-      display: flex;
-      min-height: 48px;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 18px;
-      border: 1px solid #ffffff59;
-      border-radius: 40px;
-      background: #156c36;
-      color: #fff;
-      box-shadow: 0 5px 22px #0003;
-      font-size: 14px;
-      text-decoration: none;
-    }
-
-    .wa-btn:hover {
-      background: #10552a;
-    }
-
-    /* ================= RESPONSIVE ================= */
 
     @media (max-width: 1023px) {
-      .header-inner {
-        flex-wrap: wrap;
+      .nav {
+        gap: 20px;
       }
 
-      .main-nav {
-        width: 100%;
-      }
-
-      .nav-list {
-        flex-wrap: wrap;
-      }
-
-      .js .header-inner {
-        flex-wrap: nowrap;
-      }
-
-      .js .nav-toggle {
-        display: grid;
-      }
-
-      .js .main-nav {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        left: 0;
-        max-height: calc(100svh - 93px);
-        overflow-y: auto;
-        padding: 20px 24px;
-        border-top: 1px solid var(--line);
-        background: #fff;
-        box-shadow: 0 18px 30px #14331920;
-      }
-
-      .js .main-nav:not(.open) {
+      .nav > .button {
         display: none;
       }
 
-      .js .nav-list {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .js .nav-list > li > a {
-        width: 100%;
-      }
-
-      .js .sub-toggle {
-        width: 100%;
-        justify-content: space-between;
-      }
-
-      .nav-list > li > .header-cta,
-      .nav-list > li > .header-cta:hover {
-        margin-left: 0;
-        justify-content: center;
-      }
-
-      .about-grid {
-        gap: 48px;
+      .intro {
+        gap: 50px;
       }
 
       .service-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
       }
 
-      .footer-grid {
-        gap: 36px;
+      .service-photo {
+        height: 220px;
       }
 
-      .cta-inner {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 30px;
+      .contact-inner {
+        gap: 40px;
       }
     }
 
@@ -1385,114 +706,156 @@
         width: calc(100% - 40px);
       }
 
-      .section {
-        padding-block: 72px;
+      .header-inner {
+        height: 82px;
       }
 
-      .statement {
-        padding-block: 90px;
+      .brand-name {
+        font-size: 16px;
       }
 
-      .hero {
-        min-height: 0;
+      .brand-mark {
+        width: 32px;
+        height: 38px;
       }
 
-      .hero-inner {
-        padding-block: 40px 56px;
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px 20px 24px;
+        background: var(--paper);
+        box-shadow: 0 18px 24px #183d2c18;
+      }
+
+      .nav.open {
+        display: flex;
+      }
+
+      .nav > a {
+        min-height: 48px;
+      }
+
+      .hero-content {
+        min-height: 650px;
+        padding-block: 65px 130px;
       }
 
       .hero h1 {
-        letter-spacing: -0.04em;
+        font-size: clamp(44px, 9vw, 68px);
+      }
+
+      .hero::before {
+        background: linear-gradient(
+          90deg,
+          rgba(10, 30, 21, .92),
+          rgba(10, 30, 21, .5)
+        );
       }
 
       .hero-description {
-        font-size: 17px;
+        max-width: 390px;
+        font-size: 16px;
       }
 
-      .about-grid {
+      .hero-caption {
+        max-width: 140px;
+        font-size: 12px;
+      }
+
+      .intro {
         grid-template-columns: 1fr;
+        gap: 30px;
+        padding-block: 60px;
       }
 
-      .about-photo,
-      .about-fallback {
-        height: 380px;
-      }
-
-      .section-head {
-        align-items: flex-start;
-        flex-direction: column;
+      .intro-stat {
+        display: flex;
+        align-items: center;
         gap: 20px;
-        margin-bottom: 36px;
       }
 
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .footer-grid > :first-child {
-        grid-column: 1 / -1;
-      }
-
-      .wa-btn {
-        right: 16px;
-        bottom: 16px;
-        padding: 13px;
-      }
-
-      .wa-btn span {
+      .intro-stat .label {
         display: none;
       }
-    }
 
-    @media (max-width: 599px) {
+      .experience {
+        font-size: 64px;
+      }
+
+      .experience-caption {
+        max-width: 170px;
+        margin: 0;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 18px;
+      }
+
       .service-grid {
         grid-template-columns: 1fr;
+        gap: 38px;
       }
 
-      .svc {
-        min-height: 0;
+      .service-photo {
+        height: clamp(240px, 55vw, 380px);
+      }
+
+      .services {
+        padding-bottom: 60px;
+      }
+
+      .contact {
+        padding-block: 56px;
+      }
+
+      .contact-inner {
+        align-items: start;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .contact-copy {
+        max-width: 480px;
+      }
+
+      .footer-top {
+        flex-wrap: wrap;
+      }
+
+      .footer-top > .brand {
+        width: 100%;
       }
     }
 
-    @media (max-width: 520px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid > :first-child {
-        grid-column: auto;
+    @media (max-width: 380px) {
+      .hero h1 {
+        font-size: 41px;
       }
 
       .hero-actions {
-        align-items: stretch;
-        flex-direction: column;
+        gap: 12px;
       }
 
-      .hero-actions .btn {
-        width: 100%;
+      .hero-caption {
+        display: none;
       }
 
-      .stats {
-        gap: 14px;
-      }
-
-      .stat dt {
-        font-size: 11px;
-        letter-spacing: 1px;
-      }
-
-      .cta-actions,
-      .cta .btn {
-        width: 100%;
-      }
-
-      .eyebrow {
-        font-size: 12px;
-        letter-spacing: 1.5px;
+      .hero-controls {
+        justify-content: flex-end;
       }
     }
-
-    /* ================= REDUCED MOTION ================= */
 
     @media (prefers-reduced-motion: reduce) {
       html {
@@ -1505,668 +868,614 @@
         animation: none !important;
         transition: none !important;
       }
-
-      .anim .reveal,
-      .anim .sw {
-        opacity: 1;
-        transform: none;
-      }
-
-      .anim .reveal-clip .about-frame {
-        clip-path: none;
-      }
-
-      .hero-image {
-        inset: 0;
-        width: 100%;
-        height: 100%;
-      }
-
-      .marquee-track {
-        width: auto;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .marquee-list[aria-hidden="true"] {
-        display: none;
-      }
-
-      .marquee-list {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
     }
   </style>
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <!-- Shared SVG icons -->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="0"
-    height="0"
-    aria-hidden="true"
-    style="position:absolute;overflow:hidden"
-  >
+  <!-- Shared arrow icon -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
-      <symbol id="icon-arrow" viewBox="0 0 24 24">
-        <path d="M5 12h14M13 6l6 6-6 6"/>
-      </symbol>
-
-      <symbol id="icon-lab" viewBox="0 0 24 24">
-        <path d="M9 3h6M10 3v6l-6 10a1.4 1.4 0 0 0 1.2 2h13.6a1.4 1.4 0 0 0 1.2-2L14 9V3M8 14h8"/>
-      </symbol>
-
-      <symbol id="icon-chart" viewBox="0 0 24 24">
-        <path d="M4 3v17h17M8 15l4-5 4 2 5-7M17 5h4v4"/>
-      </symbol>
-
-      <symbol id="icon-leaf" viewBox="0 0 24 24">
-        <path d="M20 3C9 2 3 7 5 14c2 7 14 6 15-11ZM4 21 16 9"/>
-      </symbol>
-
-      <symbol id="icon-shield" viewBox="0 0 24 24">
-        <path d="m12 3 8 3v6c0 4-5 8-8 9-3-1-8-5-8-9V6Z"/>
-        <path d="m8 12 3 3 5-6"/>
-      </symbol>
-
-      <symbol id="icon-mix" viewBox="0 0 24 24">
-        <path d="m12 3 9 5-9 5-9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"/>
-      </symbol>
-
-      <symbol id="icon-book" viewBox="0 0 24 24">
-        <path d="M12 5v16M12 5C9 3 5 3 2 4v15c3-1 7-1 10 2 3-3 7-3 10-2V4c-3-1-7-1-10 1Z"/>
-      </symbol>
-
-      <symbol id="icon-pin" viewBox="0 0 24 24">
-        <path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/>
-        <circle cx="12" cy="10" r="2.5"/>
-      </symbol>
-
-      <symbol id="icon-phone" viewBox="0 0 24 24">
-        <path d="m5 3 4 1 1 5-2 2a14 14 0 0 0 5 5l2-2 5 1 1 4c-1 5-8 2-12-2S1 4 5 3Z"/>
-      </symbol>
-
-      <symbol id="icon-chat" viewBox="0 0 24 24">
-        <path d="M21 11.5a9 9 0 0 1-13.5 7.8L3 21l1.7-4.5A9 9 0 1 1 21 11.5Z"/>
-        <path d="M8 7c-2 3 3 8 6 8l2-2-3-1-1 1-2-2 1-1-1-3Z"/>
-      </symbol>
-
-      <symbol id="icon-mail" viewBox="0 0 24 24">
-        <rect x="3" y="5" width="18" height="14" rx="2"/>
-        <path d="m3 7 9 6 9-6"/>
+      <symbol id="arrow" viewBox="0 0 24 24">
+        <path d="M4 12h16m-6-6 6 6-6 6"></path>
       </symbol>
     </defs>
   </svg>
 
-  <!-- ================= HEADER ================= -->
-  <header class="site-header">
+  <header class="header">
     <div class="wrap header-inner">
-      <a
-        class="logo"
-        href="index.html"
-        aria-label="Verteciments Consulting home"
-      >
-        <img
-          id="siteLogo"
-          src="logo-3.jpg"
-          width="90"
-          height="64"
-          alt="Verteciments Consulting"
-        >
+      <a class="brand" href="#home" aria-label="Verteciments Consulting home">
+        <svg class="brand-mark" viewBox="0 0 40 44" aria-hidden="true">
+          <path
+            d="M2 5h10l10 23L31 5h7L22 40h-5Z"
+            fill="#295138"
+          ></path>
+          <path
+            d="M20 5h7l-6 14-4-8Z"
+            fill="#8caa66"
+          ></path>
+        </svg>
 
-        <span class="logo-fallback" id="logoFallback" hidden>
-          <svg width="26" height="28" viewBox="0 0 28 28" aria-hidden="true">
-            <path d="m2 4 12 22L26 4h-6l-6 12L8 4Z" fill="#3d7a2a"/>
-          </svg>
-          <span>VERTECIMENTS<small>CONSULTING</small></span>
+        <span class="brand-name">
+          VERTECIMENTS
+          <small>CONSULTING</small>
         </span>
       </a>
 
       <button
-        class="nav-toggle"
-        id="navToggle"
+        class="menu-toggle"
+        id="menuToggle"
         type="button"
-        aria-label="Open menu"
+        aria-label="Open navigation"
         aria-expanded="false"
-        aria-controls="mainNav"
+        aria-controls="navigation"
       >
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path id="menuIcon" d="M4 6h16M4 12h16M4 18h16"/>
+          <path d="M4 8h16M4 16h16"></path>
         </svg>
       </button>
 
-      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
-        <ul class="nav-list">
-          <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="service.html">Services</a></li>
+      <nav class="nav" id="navigation" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About us</a>
+        <a href="#services">Our expertise</a>
+        <a href="#contact">Contact</a>
 
-          <li class="has-sub">
-            <button
-              class="sub-toggle"
-              type="button"
-              aria-expanded="false"
-              aria-controls="aboutMenu"
-            >
-              About
-              <svg class="icon chev" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="m6 9 6 6 6-6"/>
-              </svg>
-            </button>
-
-            <ul class="sub-menu" id="aboutMenu">
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="ourstory.html">Our Story</a></li>
-              <li><a href="ourteam.html">Our Team</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-            </ul>
-          </li>
-
-          <li><a href="contact.html">Contact</a></li>
-
-          <li>
-            <a class="btn header-cta" href="contact.html">
-              Request a Consultation
-            </a>
-          </li>
-        </ul>
+        <a class="button" href="#contact">
+          Let’s talk
+          <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
+        </a>
       </nav>
     </div>
   </header>
 
-  <main id="main" tabindex="-1">
-    <!-- ================= HERO ================= -->
-    <section class="hero" aria-labelledby="hero-title">
-      <img
-        class="hero-image"
-        id="heroImage"
-        src="verticement-slide-1.jpg"
-        width="1920"
-        height="1080"
-        alt=""
-        fetchpriority="high"
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="home" aria-labelledby="heroTitle">
+      <div
+        class="hero-images"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="Cement industry and laboratory photography"
       >
+        <div class="hero-slide" aria-hidden="false">
+          <img
+            src="verticement-slide-1.jpg"
+            data-fallback="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2200&q=85"
+            alt="Cement industry infrastructure"
+            fetchpriority="high"
+          >
+        </div>
 
-      <svg
-        class="hero-fallback"
-        id="heroFallback"
-        viewBox="0 0 1440 900"
-        preserveAspectRatio="xMidYMid slice"
-        aria-hidden="true"
-        hidden
-      >
-        <rect width="1440" height="900" fill="#cfe5c2"/>
-        <path
-          d="M650 900V350h160V180h90v170h130v550M1040 900V450h120V270h90v180h150v450"
-          fill="#8fb97c"
-        />
-        <path d="M0 900 1440 660v240" fill="#6fa05a"/>
-      </svg>
+        <div class="hero-slide" aria-hidden="true">
+          <img
+            src="cement-lab.jpg"
+            data-fallback="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=2200&q=85"
+            alt="Laboratory research and testing"
+          >
+        </div>
+      </div>
 
-      <div class="wrap hero-inner">
-        <div class="hero-card">
-          <div class="eyebrow fade">Science-led. Performance-driven.</div>
+      <div class="wrap hero-content">
+        <p class="label">Independent cement expertise. Kenya.</p>
 
-          <h1 id="hero-title">
-            <span class="h1-line">
-              <span class="word" style="--i:0">Better</span>
-              <span class="word" style="--i:1">cement</span>
-            </span>
+        <h1 id="heroTitle">
+          Better cement.<br>
+          Better
+          <span class="sr-only">performance, quality and efficiency.</span>
+          <span class="word-window" aria-hidden="true">
+            <span class="moving-word" id="movingWord">performance.</span>
+          </span>
+        </h1>
 
-            <span class="h1-line rot-line">
-              <span class="sr-only">performance, quality, efficiency and sustainability.</span>
+        <p class="hero-description">
+          Practical, science-backed consultancy for smarter production,
+          consistent quality and lower-carbon cement.
+        </p>
 
-              <span class="rot-window" aria-hidden="true">
-                <span class="rot-word is-active">performance.</span>
-                <span class="rot-word">quality.</span>
-                <span class="rot-word">efficiency.</span>
-                <span class="rot-word">sustainability.</span>
-              </span>
-            </span>
-          </h1>
+        <div class="hero-actions">
+          <a class="button light" href="#services">
+            Explore our expertise
+            <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
+          </a>
 
-          <p class="hero-description fade" style="--d:900ms">
-            Practical, science-backed consultancy for cement manufacturers:
-            better quality, smarter production, lower carbon.
-          </p>
+          <a class="hero-link" href="#contact">
+            Talk to a specialist
+            <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
+          </a>
+        </div>
+      </div>
 
-          <div class="hero-actions fade" style="--d:1050ms">
-            <a class="btn" href="service.html">
-              Explore Our Services
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-arrow"/>
-              </svg>
-            </a>
+      <div class="wrap hero-controls">
+        <p class="hero-caption" id="heroCaption">
+          From the production line.
+        </p>
 
-            <a class="btn btn-outline" href="contact.html">
-              Talk to Us
-            </a>
-          </div>
+        <div class="controls">
+          <button
+            class="control pause"
+            id="pauseMotion"
+            type="button"
+            aria-pressed="false"
+          >
+            Pause motion
+          </button>
+
+          <button
+            class="control previous"
+            id="previousSlide"
+            type="button"
+            aria-label="Previous image"
+          >
+            <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
+          </button>
+
+          <button
+            class="control"
+            id="nextSlide"
+            type="button"
+            aria-label="Next image"
+          >
+            <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- ================= WORD MARQUEE ================= -->
-    <section class="marquee" aria-label="Our focus areas">
-      <div class="marquee-track">
-        <ul class="marquee-list">
-          <li>Production efficiency</li>
-          <li>Consistent quality</li>
-          <li>Low-carbon cement</li>
-          <li>Process optimization</li>
-          <li>Laboratory standardization</li>
-          <li>Product innovation</li>
-        </ul>
+    <!-- SHORT INTRODUCTION -->
+    <section class="wrap intro" id="about" aria-labelledby="aboutTitle">
+      <div class="intro-stat">
+        <div>
+          <p class="label">Experience that matters</p>
+          <p class="experience">15<span>+</span></p>
+        </div>
 
-        <ul class="marquee-list" aria-hidden="true">
-          <li>Production efficiency</li>
-          <li>Consistent quality</li>
-          <li>Low-carbon cement</li>
-          <li>Process optimization</li>
-          <li>Laboratory standardization</li>
-          <li>Product innovation</li>
-        </ul>
+        <p class="experience-caption">
+          Years of industry experience behind our advice.
+        </p>
       </div>
-    </section>
 
-    <!-- ================= ABOUT ================= -->
-    <section class="section" id="intro" aria-labelledby="about-title">
-      <div class="wrap about-grid">
-        <div class="about-visual reveal-clip reveal">
-          <div class="about-frame">
-            <img
-              class="about-photo"
-              id="aboutImage"
-              src="cement-lab.jpg"
-              width="600"
-              height="600"
-              alt="Cement laboratory testing equipment and samples"
-              loading="lazy"
-              decoding="async"
-            >
-
-            <svg
-              class="about-fallback"
-              id="aboutFallback"
-              viewBox="0 0 600 600"
-              role="img"
-              aria-label="Cement laboratory testing"
-              hidden
-            >
-              <rect width="600" height="600" fill="#e3efdb"/>
-              <path
-                d="M250 130h100M265 130v130L170 440a22 22 0 0 0 19 32h222a22 22 0 0 0 19-32L335 260V130M215 370h170"
-                fill="none"
-                stroke="#2f6121"
-                stroke-width="14"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path d="M215 370h170l37 70a22 22 0 0 1-19 32H197a22 22 0 0 1-19-32Z" fill="#508738"/>
-            </svg>
-          </div>
-        </div>
-
-        <div class="about-copy">
-          <div class="eyebrow reveal">About Verteciments</div>
-
-          <h2 class="title reveal" id="about-title" style="--d:80ms">
-            Science meets real<br>
-            plant experience.
-          </h2>
-
-          <p class="description reveal" style="--d:160ms">
-            A Kenya-based cement consultancy helping manufacturers
-            improve quality, optimize production and develop
-            lower-carbon products.
-          </p>
-
-          <dl class="stats reveal" style="--d:240ms">
-            <div class="stat">
-              <dt>Years of industry experience</dt>
-              <dd>
-                <span data-count="15">15</span><span class="suffix">+</span>
-              </dd>
-            </div>
-
-            <div class="stat">
-              <dt>Specialist services</dt>
-              <dd><span data-count="6">6</span></dd>
-            </div>
-
-            <div class="stat">
-              <dt>Founded in</dt>
-              <dd><span data-count="2017">2017</span></dd>
-            </div>
-          </dl>
-
-          <a class="text-link reveal" style="--d:320ms" href="about.html">
-            About Verteciments
-            <svg class="icon" aria-hidden="true">
-              <use href="#icon-arrow"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= SERVICES ================= -->
-    <section class="section alt" aria-labelledby="services-title">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow reveal">What we do</div>
-            <h2 class="title reveal" id="services-title" style="--d:80ms">
-              Six ways<br>
-              we help.
-            </h2>
-          </div>
-        </div>
-
-        <div class="service-grid">
-          <a class="svc reveal" href="service.html#training">
-            <span class="svc-num" aria-hidden="true">01</span>
-            <span class="svc-icon">
-              <svg class="icon" aria-hidden="true"><use href="#icon-book"/></svg>
-            </span>
-            <h3>Training &amp; Quality Assurance</h3>
-            <p>Build your team's testing capability.</p>
-            <span class="svc-go">
-              Explore
-              <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
-            </span>
-          </a>
-
-          <a class="svc reveal" style="--d:100ms" href="service.html#process-optimization">
-            <span class="svc-num" aria-hidden="true">02</span>
-            <span class="svc-icon">
-              <svg class="icon" aria-hidden="true"><use href="#icon-chart"/></svg>
-            </span>
-            <h3>Process Optimization</h3>
-            <p>Cut clinker use without losing performance.</p>
-            <span class="svc-go">
-              Explore
-              <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
-            </span>
-          </a>
-
-          <a class="svc reveal" style="--d:200ms" href="service.html#product-development">
-            <span class="svc-num" aria-hidden="true">03</span>
-            <span class="svc-icon">
-              <svg class="icon" aria-hidden="true"><use href="#icon-leaf"/></svg>
-            </span>
-            <h3>Product Development &amp; Innovation</h3>
-            <p>Develop lower-carbon cement products.</p>
-            <span class="svc-go">
-              Explore
-              <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
-            </span>
-          </a>
-
-          <a class="svc reveal" href="service.html#regulatory">
-            <span class="svc-num" aria-hidden="true">04</span>
-            <span class="svc-icon">
-              <svg class="icon" aria-hidden="true"><use href="#icon-shield"/></svg>
-            </span>
-            <h3>Regulatory Compliance &amp; Approvals</h3>
-            <p>Navigate standards and approvals.</p>
-            <span class="svc-go">
-              Explore
-              <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
-            </span>
-          </a>
-
-          <a class="svc reveal" style="--d:100ms" href="service.html#additives">
-            <span class="svc-num" aria-hidden="true">05</span>
-            <span class="svc-icon">
-              <svg class="icon" aria-hidden="true"><use href="#icon-mix"/></svg>
-            </span>
-            <h3>Cement Additives &amp; Grinding Aids</h3>
-            <p>Select the right additives and admixtures.</p>
-            <span class="svc-go">
-              Explore
-              <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
-            </span>
-          </a>
-
-          <a class="svc reveal" style="--d:200ms" href="service.html#laboratory">
-            <span class="svc-num" aria-hidden="true">06</span>
-            <span class="svc-icon">
-              <svg class="icon" aria-hidden="true"><use href="#icon-lab"/></svg>
-            </span>
-            <h3>Laboratory Standardization</h3>
-            <p>Reliable, consistent testing procedures.</p>
-            <span class="svc-go">
-              Explore
-              <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
-            </span>
-          </a>
-        </div>
-
-        <div class="section-bottom reveal">
-          <a class="btn" href="service.html">
-            View All Services
-            <svg class="icon" aria-hidden="true">
-              <use href="#icon-arrow"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= MISSION STATEMENT ================= -->
-    <section class="statement" id="statement" aria-labelledby="statement-title">
-      <div class="wrap">
-        <div class="eyebrow">Our mission</div>
-
-        <h2 class="statement-text" id="statement-title">
-          <span class="sw">We</span>
-          <span class="sw">turn</span>
-          <span class="sw">cement</span>
-          <span class="sw">from</span>
-          <span class="sw">a</span>
-          <span class="sw">carbon</span>
-          <span class="sw">challenge</span>
-          <span class="sw">into</span>
-          <span class="sw">a</span>
-          <span class="sw hl">climate</span>
-          <span class="sw hl">solution.</span>
+      <div class="intro-copy">
+        <h2 class="section-title" id="aboutTitle">
+          Good science.<br>
+          Real plant understanding.
         </h2>
+
+        <p>
+          Verteciments Consulting helps cement manufacturers turn technical
+          challenges into practical improvements. Based in Kenya and
+          established in 2017, we connect laboratory insight with the
+          realities of everyday production.
+        </p>
       </div>
     </section>
 
-    <!-- ================= CALL TO ACTION ================= -->
-    <section class="cta" aria-labelledby="cta-title">
-      <div class="wrap cta-inner">
-        <div class="reveal">
-          <h2 id="cta-title">
-            Ready to improve your cement performance?
+    <!-- EXPERTISE -->
+    <section
+      class="wrap services"
+      id="services"
+      aria-labelledby="servicesTitle"
+    >
+      <div class="section-heading">
+        <div>
+          <p class="label">Our expertise</p>
+          <h2 class="section-title" id="servicesTitle">
+            Built around your challenges.
           </h2>
-          <p>
-            Tell us about your production challenges and we will advise
-            on the next step.
-          </p>
         </div>
 
-        <div class="cta-actions reveal" style="--d:120ms">
-          <a class="btn" href="contact.html">
-            Request a Consultation
-            <svg class="icon" aria-hidden="true">
-              <use href="#icon-arrow"/>
-            </svg>
-          </a>
+        <p>
+          Six specialist services.<br>
+          Three outcomes worth working towards.
+        </p>
+      </div>
 
-          <a class="btn btn-outline" href="tel:+254721788079">
-            <svg class="icon" aria-hidden="true">
-              <use href="#icon-phone"/>
-            </svg>
-            +254 721 788 079
+      <div class="service-grid">
+        <article class="service">
+          <div class="service-photo">
+            <img
+              src="verticement-slide-1.jpg"
+              data-fallback="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85"
+              alt="Industrial infrastructure"
+              loading="lazy"
+            >
+            <span>Efficiency</span>
+          </div>
+
+          <h3>Smarter production.</h3>
+          <p>Make your materials, processes and equipment work better together.</p>
+
+          <details>
+            <summary>
+              Process optimization
+              <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
+            </summary>
+            <p>
+              Review production and quality data to identify opportunities
+              in grinding efficiency, clinker use and process consistency.
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              Additives & grinding aids
+              <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
+            </summary>
+            <p>
+              Evaluate additive compatibility and comparative trial results
+              to support technically sound selection for your plant.
+            </p>
+          </details>
+        </article>
+
+        <article class="service">
+          <div class="service-photo">
+            <img
+              src="cement-lab.jpg"
+              data-fallback="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=900&q=85"
+              alt="Laboratory equipment for technical testing"
+              loading="lazy"
+            >
+            <span>Confidence</span>
+          </div>
+
+          <h3>Quality you can trust.</h3>
+          <p>Build confidence in your people, your testing and your products.</p>
+
+          <details>
+            <summary>
+              Training & quality assurance
+              <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
+            </summary>
+            <p>
+              Practical technical training and quality assurance guidance
+              tailored to your team, testing methods and production goals.
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              Laboratory standardization
+              <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
+            </summary>
+            <p>
+              Review sample handling, test methods and reporting practices
+              to improve repeatability and confidence in laboratory data.
+            </p>
+          </details>
+        </article>
+
+        <article class="service">
+          <div class="service-photo">
+            <img
+              src="cement-materials.jpg"
+              data-fallback="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=85"
+              alt="Materials and the natural environment"
+              loading="lazy"
+            >
+            <span>Innovation</span>
+          </div>
+
+          <h3>A lower-carbon future.</h3>
+          <p>Explore new possibilities without losing sight of performance.</p>
+
+          <details>
+            <summary>
+              Product development
+              <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
+            </summary>
+            <p>
+              Assess supplementary cementitious materials and trial
+              formulations to support lower-clinker cement development.
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              Regulatory compliance
+              <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
+            </summary>
+            <p>
+              Review relevant testing requirements and technical
+              documentation. Product approvals remain with the
+              responsible regulatory authority.
+            </p>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact" aria-labelledby="contactTitle">
+      <div class="wrap contact-inner">
+        <div>
+          <p class="label">Your next step</p>
+          <h2 class="section-title" id="contactTitle">
+            Let’s make<br>
+            better cement.
+          </h2>
+        </div>
+
+        <div class="contact-copy">
+          <p>
+            A production challenge. A new formulation. A better way of
+            working. Tell us what you have in mind.
+          </p>
+
+          <a
+            class="button"
+            href="mailto:info@vertecimentsconsulting.com?subject=Cement%20consultancy%20enquiry"
+          >
+            Start a conversation
+            <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
           </a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="wrap">
-      <div class="footer-grid">
-        <div>
-          <a class="footer-brand" href="index.html">
-            Verteciments
-            <span>Consulting</span>
-          </a>
+      <div class="footer-top">
+        <a class="brand" href="#home" aria-label="Verteciments Consulting home">
+          <svg class="brand-mark" viewBox="0 0 40 44" aria-hidden="true">
+            <path d="M2 5h10l10 23L31 5h7L22 40h-5Z" fill="#295138"></path>
+            <path d="M20 5h7l-6 14-4-8Z" fill="#8caa66"></path>
+          </svg>
 
-          <p class="footer-about">
-            Kenya-based cement consultancy for efficient production,
-            consistent quality and a lower-carbon future.
-          </p>
-        </div>
-
-        <div>
-          <h2>Explore</h2>
-          <ul class="footer-links">
-            <li><a href="index.html" aria-current="page">Home</a></li>
-            <li><a href="service.html">Services</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
+          <span class="brand-name">
+            VERTECIMENTS
+            <small>CONSULTING</small>
+          </span>
+        </a>
 
         <div class="footer-contact">
-          <h2>Let's Talk</h2>
-
-          <p>
-            <a class="contact-link" href="tel:+254721788079">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-phone"/>
-              </svg>
-              +254 721 788 079
-            </a>
-          </p>
-
-          <p>
-            <a
-              class="contact-link"
-              href="mailto:info@vertecimentsconsulting.com"
-            >
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-mail"/>
-              </svg>
-              info@vertecimentsconsulting.com
-            </a>
-          </p>
-
-          <p>
-            <a
-              class="contact-link"
-              href="https://wa.me/254721788079"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-chat"/>
-              </svg>
-              Chat on WhatsApp ↗
-            </a>
-          </p>
-
-          <p>
-            <span class="contact-link">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-pin"/>
-              </svg>
-              Kenya
-            </span>
-          </p>
+          <a href="mailto:info@vertecimentsconsulting.com">
+            info@vertecimentsconsulting.com
+          </a>
+          <a href="tel:+254721788079">
+            +254 721 788 079
+          </a>
         </div>
+
+        <a
+          class="whatsapp"
+          href="https://wa.me/254721788079"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat on WhatsApp, opens in a new tab"
+        >
+          WhatsApp us
+          <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
+        </a>
       </div>
 
       <div class="footer-bottom">
-        <p>
-          © <span id="year">2026</span> Verteciments Consulting.
-          All rights reserved.
-        </p>
-
-        <a href="privacy-policy.html">
-          Privacy Policy
-        </a>
+        <p>© <span id="year">2026</span> Verteciments Consulting.</p>
+        <p>Independent expertise. Based in Kenya.</p>
       </div>
     </div>
   </footer>
 
-  <!-- ================= WHATSAPP ================= -->
-  <a
-    class="wa-btn"
-    href="https://wa.me/254721788079"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Chat with us on WhatsApp (opens a new tab)"
-  >
-    <svg class="icon" aria-hidden="true">
-      <use href="#icon-chat"/>
+  <!-- Visible illustration if local and online images both fail -->
+  <template id="imageFallback">
+    <svg
+      class="image-fallback"
+      viewBox="0 0 1200 800"
+      preserveAspectRatio="xMidYMid slice"
+      role="img"
+      aria-label="Illustration of industrial cement infrastructure"
+    >
+      <rect width="1200" height="800" fill="#aab89a"></rect>
+      <path
+        d="M0 540 230 340 460 480 790 250 1200 460V800H0Z"
+        fill="#788f68"
+      ></path>
+      <g fill="#d7d8cb">
+        <path d="M530 700V270h140v430Z"></path>
+        <path d="M690 700V220h140v480Z"></path>
+        <path d="M850 700V370h220v330Z"></path>
+      </g>
+      <path
+        d="M470 700h640M830 220l240 150"
+        fill="none"
+        stroke="#40583e"
+        stroke-width="16"
+      ></path>
     </svg>
-    <span>Chat with us</span>
-  </a>
+  </template>
 
-  <!-- ================= JAVASCRIPT ================= -->
   <script>
     (() => {
       "use strict";
 
-      const toggle = document.getElementById("navToggle");
-      const nav = document.getElementById("mainNav");
-      const header = document.querySelector(".site-header");
-      const menuIcon = document.getElementById("menuIcon");
-      const desktop = window.matchMedia("(min-width: 1024px)");
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      );
 
-      function setMenu(open, restoreFocus = false) {
-        nav.classList.toggle("open", open);
+      const slides = Array.from(
+        document.querySelectorAll(".hero-slide")
+      );
 
-        toggle.setAttribute("aria-expanded", String(open));
-        toggle.setAttribute(
-          "aria-label",
-          open ? "Close menu" : "Open menu"
-        );
+      const words = [
+        "performance.",
+        "quality.",
+        "efficiency."
+      ];
 
-        menuIcon.setAttribute(
-          "d",
-          open
-            ? "M6 6l12 12M18 6 6 18"
-            : "M4 6h16M4 12h16M4 18h16"
-        );
+      const captions = [
+        "From the production line.",
+        "To the science behind it."
+      ];
 
-        if (restoreFocus) {
-          toggle.focus();
+      const movingWord = document.getElementById("movingWord");
+      const caption = document.getElementById("heroCaption");
+      const pauseButton = document.getElementById("pauseMotion");
+      const previousButton = document.getElementById("previousSlide");
+      const nextButton = document.getElementById("nextSlide");
+
+      let slideIndex = 0;
+      let wordIndex = 0;
+      let paused = reduceMotion.matches;
+      let wordTimer;
+      let slideTimer;
+      let wordAnimation;
+
+      function showSlide(index) {
+        slideIndex = (index + slides.length) % slides.length;
+
+        slides.forEach((slide, i) => {
+          slide.style.transform =
+            `translateX(${(i - slideIndex) * 100}%)`;
+
+          slide.setAttribute(
+            "aria-hidden",
+            String(i !== slideIndex)
+          );
+        });
+
+        caption.textContent = captions[slideIndex];
+      }
+
+      function changeWord() {
+        wordIndex = (wordIndex + 1) % words.length;
+        movingWord.textContent = words[wordIndex];
+
+        if (!reduceMotion.matches && movingWord.animate) {
+          if (wordAnimation) {
+            wordAnimation.cancel();
+          }
+
+          wordAnimation = movingWord.animate(
+            [
+              { transform: "translateY(85%)", opacity: 0 },
+              { transform: "translateY(0)", opacity: 1 }
+            ],
+            {
+              duration: 700,
+              easing: "cubic-bezier(.22,.8,.25,1)"
+            }
+          );
         }
       }
 
-      toggle.addEventListener("click", () => {
+      function stopTimers() {
+        clearInterval(wordTimer);
+        clearInterval(slideTimer);
+      }
+
+      function updateTimers() {
+        stopTimers();
+
+        const motionStopped =
+          paused || reduceMotion.matches;
+
+        pauseButton.textContent =
+          motionStopped ? "Play motion" : "Pause motion";
+
+        pauseButton.setAttribute(
+          "aria-pressed",
+          String(motionStopped)
+        );
+
+        pauseButton.disabled = reduceMotion.matches;
+
+        if (reduceMotion.matches) {
+          pauseButton.textContent = "Motion off";
+          pauseButton.setAttribute(
+            "aria-label",
+            "Automatic motion is off to respect your device preference"
+          );
+        } else {
+          pauseButton.removeAttribute("aria-label");
+        }
+
+        if (motionStopped || document.hidden) {
+          return;
+        }
+
+        wordTimer = setInterval(changeWord, 3200);
+
+        slideTimer = setInterval(() => {
+          showSlide(slideIndex + 1);
+        }, 6500);
+      }
+
+      pauseButton.addEventListener("click", () => {
+        paused = !paused;
+        updateTimers();
+      });
+
+      previousButton.addEventListener("click", () => {
+        showSlide(slideIndex - 1);
+        updateTimers();
+      });
+
+      nextButton.addEventListener("click", () => {
+        showSlide(slideIndex + 1);
+        updateTimers();
+      });
+
+      document.addEventListener(
+        "visibilitychange",
+        updateTimers
+      );
+
+      reduceMotion.addEventListener("change", () => {
+        paused = reduceMotion.matches;
+
+        if (wordAnimation) {
+          wordAnimation.cancel();
+        }
+
+        updateTimers();
+      });
+
+      /* Mobile navigation */
+
+      const menuToggle = document.getElementById("menuToggle");
+      const navigation = document.getElementById("navigation");
+      const header = document.querySelector(".header");
+      const mobile = window.matchMedia("(max-width: 799px)");
+
+      function setMenu(open, restoreFocus = false) {
+        navigation.classList.toggle("open", open);
+        menuToggle.setAttribute("aria-expanded", String(open));
+        menuToggle.setAttribute(
+          "aria-label",
+          open ? "Close navigation" : "Open navigation"
+        );
+
+        if (restoreFocus) {
+          menuToggle.focus();
+        }
+      }
+
+      menuToggle.addEventListener("click", () => {
         const open =
-          toggle.getAttribute("aria-expanded") !== "true";
+          menuToggle.getAttribute("aria-expanded") !== "true";
 
         setMenu(open);
       });
 
-      nav.addEventListener("click", (event) => {
+      navigation.addEventListener("click", event => {
         if (event.target.closest("a")) {
           setMenu(false);
         }
       });
 
-      document.addEventListener("click", (event) => {
+      document.addEventListener("click", event => {
         if (!header.contains(event.target)) {
           setMenu(false);
         }
       });
 
-      document.addEventListener("keydown", (event) => {
+      document.addEventListener("keydown", event => {
         if (
           event.key === "Escape" &&
-          nav.classList.contains("open")
+          navigation.classList.contains("open")
         ) {
           setMenu(false, true);
         }
@@ -2180,315 +1489,47 @@
         });
       });
 
-      desktop.addEventListener("change", () => {
-        setMenu(false);
-      });
+      mobile.addEventListener("change", () => setMenu(false));
 
-      // Enable the collapsible mobile menu only after it is wired.
-      document.documentElement.classList.add("js");
+      /* Image fallbacks */
 
-      // Current year.
-      document.getElementById("year").textContent =
-        String(new Date().getFullYear());
+      document.querySelectorAll("img[data-fallback]").forEach(image => {
+        let usedFallback = false;
+        let replaced = false;
 
-      // Show a visible fallback when an image fails.
-      function addImageFallback(imageId, fallbackId) {
-        const image = document.getElementById(imageId);
-        const fallback = document.getElementById(fallbackId);
+        function handleError() {
+          if (replaced) return;
 
-        if (!image || !fallback) {
-          return;
+          if (!usedFallback) {
+            usedFallback = true;
+            image.src = image.dataset.fallback;
+            return;
+          }
+
+          replaced = true;
+
+          const template = document.getElementById("imageFallback");
+          const illustration = template.content.cloneNode(true);
+
+          image.replaceWith(illustration);
         }
 
-        function showFallback() {
-          image.hidden = true;
-          fallback.hidden = false;
-        }
-
-        image.addEventListener("error", showFallback);
+        image.addEventListener("error", handleError);
 
         if (image.complete && image.naturalWidth === 0) {
-          showFallback();
-        }
-      }
-
-      addImageFallback("siteLogo", "logoFallback");
-      addImageFallback("heroImage", "heroFallback");
-      addImageFallback("aboutImage", "aboutFallback");
-    })();
-
-    /* ---------- About dropdown ---------- */
-
-    (() => {
-      "use strict";
-
-      const item = document.querySelector(".has-sub");
-
-      if (!item) {
-        return;
-      }
-
-      const toggle = item.querySelector(".sub-toggle");
-      const menu = item.querySelector(".sub-menu");
-      const desktop = window.matchMedia("(min-width: 1024px)");
-
-      function setSub(open, restoreFocus = false) {
-        menu.hidden = !open;
-        toggle.setAttribute("aria-expanded", String(open));
-
-        if (restoreFocus) {
-          toggle.focus();
-        }
-      }
-
-      setSub(false);
-
-      toggle.addEventListener("click", () => setSub(menu.hidden));
-
-      menu.addEventListener("click", (event) => {
-        if (event.target.closest("a")) {
-          setSub(false);
+          handleError();
         }
       });
 
-      document.addEventListener("click", (event) => {
-        if (!item.contains(event.target)) {
-          setSub(false);
-        }
-      });
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
 
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && !menu.hidden) {
-          setSub(false, true);
-        }
-      });
-
-      item.addEventListener("focusout", () => {
-        requestAnimationFrame(() => {
-          if (!item.contains(document.activeElement)) {
-            setSub(false);
-          }
-        });
-      });
-
-      desktop.addEventListener("change", () => setSub(false));
-    })();
-
-    /* ---------- Animations: reveal, rotating word, counters, mission ---------- */
-
-    (() => {
-      "use strict";
-
-      const reduce = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches;
-
-      const hasObserver = "IntersectionObserver" in window;
-
-      /* Scroll reveal */
-
-      const reveals = Array.from(
-        document.querySelectorAll(".reveal, .reveal-clip")
-      );
-
-      if (hasObserver && !reduce) {
-        const revealObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("in");
-                revealObserver.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.15, rootMargin: "0px 0px -6% 0px" }
-        );
-
-        reveals.forEach((el) => revealObserver.observe(el));
-      } else {
-        reveals.forEach((el) => el.classList.add("in"));
-      }
-
-      /* Rotating hero word */
-
-      const rotWords = Array.from(document.querySelectorAll(".rot-word"));
-
-      if (rotWords.length > 1 && !reduce) {
-        let index = 0;
-
-        setInterval(() => {
-          const previous = rotWords[index];
-
-          index = (index + 1) % rotWords.length;
-
-          const next = rotWords[index];
-
-          previous.classList.remove("is-active");
-          previous.classList.add("is-leaving");
-
-          next.classList.remove("is-leaving");
-          next.classList.add("is-active");
-
-          setTimeout(() => previous.classList.remove("is-leaving"), 750);
-        }, 2600);
-      }
-
-      /* Counting numbers */
-
-      const counters = Array.from(document.querySelectorAll("[data-count]"));
-
-      function runCounter(el) {
-        const target = Number(el.dataset.count);
-        const duration = 1700;
-        const start = performance.now();
-
-        function tick(now) {
-          const t = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - t, 3);
-
-          el.textContent = String(Math.round(target * eased));
-
-          if (t < 1) {
-            requestAnimationFrame(tick);
-          }
-        }
-
-        requestAnimationFrame(tick);
-      }
-
-      if (hasObserver && !reduce) {
-        const counterObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                runCounter(entry.target);
-                counterObserver.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.6 }
-        );
-
-        counters.forEach((el) => {
-          el.textContent = "0";
-          counterObserver.observe(el);
-        });
-      }
-
-      /* Mission statement: words light up as you scroll */
-
-      const words = Array.from(document.querySelectorAll(".sw"));
-      const statement = document.getElementById("statement");
-
-      if (words.length && statement) {
-        if (reduce) {
-          words.forEach((word) => word.classList.add("on"));
-        } else {
-          let ticking = false;
-
-          function update() {
-            ticking = false;
-
-            const rect = statement.getBoundingClientRect();
-            const vh = window.innerHeight;
-            const progress = Math.min(
-              Math.max((vh * 0.85 - rect.top) / (vh * 0.55), 0),
-              1
-            );
-            const lit = Math.round(progress * words.length);
-
-            words.forEach((word, i) => {
-              word.classList.toggle("on", i < lit);
-            });
-          }
-
-          window.addEventListener(
-            "scroll",
-            () => {
-              if (!ticking) {
-                ticking = true;
-                requestAnimationFrame(update);
-              }
-            },
-            { passive: true }
-          );
-
-          window.addEventListener("resize", update);
-          update();
-        }
-      }
-    })();
-
-    /* ---------- Hero image: mouse and scroll parallax ---------- */
-
-    (() => {
-      "use strict";
-
-      const hero = document.querySelector(".hero");
-      const image = document.getElementById("heroImage");
-
-      if (!hero || !image) {
-        return;
-      }
-
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        return;
-      }
-
-      const finePointer = window.matchMedia(
-        "(hover: hover) and (pointer: fine)"
-      ).matches;
-
-      let mouseX = 0;
-      let mouseY = 0;
-      let scrollShift = 0;
-      let ticking = false;
-
-      function paint() {
-        ticking = false;
-
-        image.style.setProperty("--px", (mouseX * -16).toFixed(1) + "px");
-        image.style.setProperty(
-          "--py",
-          (scrollShift + mouseY * -12).toFixed(1) + "px"
-        );
-      }
-
-      function request() {
-        if (!ticking) {
-          ticking = true;
-          requestAnimationFrame(paint);
-        }
-      }
-
-      if (finePointer) {
-        hero.addEventListener("pointermove", (event) => {
-          const rect = hero.getBoundingClientRect();
-
-          mouseX = (event.clientX - rect.left) / rect.width - 0.5;
-          mouseY = (event.clientY - rect.top) / rect.height - 0.5;
-
-          request();
-        });
-
-        hero.addEventListener("pointerleave", () => {
-          mouseX = 0;
-          mouseY = 0;
-          request();
-        });
-      }
-
-      window.addEventListener(
-        "scroll",
-        () => {
-          const rect = hero.getBoundingClientRect();
-
-          scrollShift = Math.min(Math.max(-rect.top, 0), 400) * 0.1;
-          request();
-        },
-        { passive: true }
-      );
+      showSlide(0);
+      updateTimers();
     })();
   </script>
 </body>
 </html>
+```
+
+**Your image files:** `verticement-slide-1.jpg`, `cement-lab.jpg`, and `cement-materials.jpg` should sit beside `index.html`. Fonts and fallback photos require internet access. Contact buttons open email, phone, or WhatsApp; there is no server-side form.
