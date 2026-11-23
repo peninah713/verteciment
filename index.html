@@ -1,25 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="en-KE">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#193d2b">
 
   <title>Cement Consultancy in Kenya | Verteciments Consulting</title>
+  <meta name="description" content="Independent cement consultancy in Kenya. Practical expertise for better production, consistent quality and lower-carbon cement.">
+  <link rel="canonical" href="https://vertecimentsconsulting.com/">
 
-  <meta
-    name="description"
-    content="Independent cement consultancy in Kenya. Practical expertise for better production, consistent quality and lower-carbon cement."
-  >
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cement Consultancy in Kenya | Verteciments Consulting">
+  <meta property="og:description" content="Practical, science-backed consultancy for smarter production, consistent quality and lower-carbon cement.">
+  <meta property="og:image" content="https://vertecimentsconsulting.com/1.jpg">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 44'%3E%3Cpath d='M2 5h10l10 23L31 5h7L22 40h-5Z' fill='%23295138'/%3E%3Cpath d='M20 5h7l-6 14-4-8Z' fill='%238caa66'/%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+  <script>document.documentElement.classList.add("js");</script>
 
   <style>
     :root {
@@ -33,16 +34,9 @@
       --width: 1240px;
     }
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
-    }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
     body {
       margin: 0;
@@ -53,828 +47,394 @@
       line-height: 1.65;
     }
 
-    h1, h2, h3, p {
-      margin: 0;
-    }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { font-family: "Manrope", sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    img, svg { display: block; }
+    img { width: 100%; height: 100%; object-fit: cover; }
 
-    h1, h2, h3 {
-      font-family: "Manrope", sans-serif;
-    }
+    :focus-visible { outline: 3px solid #729a50; outline-offset: 5px; }
+    ::selection { background: var(--accent); color: var(--green); }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font: inherit;
-      cursor: pointer;
-    }
-
-    button, a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    img, svg {
-      display: block;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    :focus-visible {
-      outline: 3px solid #729a50;
-      outline-offset: 5px;
-    }
-
-    ::selection {
-      background: var(--accent);
-      color: var(--green);
-    }
-
-    .wrap {
-      width: min(var(--width), calc(100% - 64px));
-      margin-inline: auto;
-    }
+    .wrap { width: min(var(--width), calc(100% - 64px)); margin-inline: auto; }
 
     .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
+      position: absolute; width: 1px; height: 1px; padding: 0;
+      overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap;
     }
 
     .skip-link {
-      position: fixed;
-      top: 12px;
-      left: 12px;
-      z-index: 100;
-      padding: 12px 20px;
-      transform: translateY(-160%);
-      background: white;
-      color: var(--green);
+      position: fixed; top: 12px; left: 12px; z-index: 100;
+      padding: 12px 20px; transform: translateY(-160%);
+      background: white; color: var(--green);
     }
-
-    .skip-link:focus {
-      transform: none;
-    }
+    .skip-link:focus { transform: none; }
 
     .icon {
-      width: 22px;
-      height: 22px;
-      flex-shrink: 0;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.6;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+      width: 22px; height: 22px; flex-shrink: 0; fill: none;
+      stroke: currentColor; stroke-width: 1.6;
+      stroke-linecap: round; stroke-linejoin: round;
     }
 
     .button {
-      display: inline-flex;
-      min-height: 54px;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-      padding: 15px 25px;
-      border: 0;
-      border-radius: 5px;
-      background: var(--green);
-      color: white;
-      font-size: 14px;
-      font-weight: 600;
-      transition:
-        background .25s,
-        transform .25s;
+      display: inline-flex; min-height: 54px; align-items: center;
+      justify-content: center; gap: 30px; padding: 15px 25px;
+      border: 0; border-radius: 5px; background: var(--green);
+      color: white; font-size: 14px; font-weight: 600;
+      transition: background .25s, transform .25s;
     }
-
-    .button:hover {
-      background: var(--green-hover);
-      transform: translateY(-2px);
-    }
-
-    .button .icon {
-      transition: transform .3s var(--ease);
-    }
-
-    .button:hover .icon {
-      transform: translateX(5px);
-    }
-
-    .button-accent {
-      background: var(--accent);
-      color: var(--green);
-    }
-
-    .button-accent:hover {
-      background: white;
-    }
+    .button:hover { background: var(--green-hover); transform: translateY(-2px); }
+    .button .icon { transition: transform .3s var(--ease); }
+    .button:hover .icon { transform: translateX(5px); }
+    .button-accent { background: var(--accent); color: var(--green); }
+    .button-accent:hover { background: white; }
 
     .eyebrow {
-      margin-bottom: 20px;
-      color: #4c6b3a;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: .17em;
-      text-transform: uppercase;
+      margin-bottom: 20px; color: #4c6b3a; font-size: 12px;
+      font-weight: 600; letter-spacing: .17em; text-transform: uppercase;
     }
 
     .section-title {
-      font-size: clamp(32px, 4vw, 52px);
-      font-weight: 500;
-      letter-spacing: -.055em;
-      line-height: 1.17;
+      font-size: clamp(32px, 4vw, 52px); font-weight: 500;
+      letter-spacing: -.055em; line-height: 1.17;
     }
 
     .text-link {
-      display: inline-flex;
-      min-height: 46px;
-      align-items: center;
-      gap: 20px;
-      font-size: 14px;
-      font-weight: 600;
+      display: inline-flex; min-height: 46px; align-items: center;
+      gap: 20px; font-size: 14px; font-weight: 600;
     }
+    .text-link:hover { color: #557d3d; }
+    .text-link .icon { transition: transform .3s var(--ease); }
+    .text-link:hover .icon { transform: translateX(5px); }
 
-    .text-link:hover {
-      color: #557d3d;
+    /* SCROLL REVEAL */
+    .js .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity .8s var(--ease), transform .8s var(--ease);
+      transition-delay: var(--d, 0s);
     }
+    .js .reveal.in { opacity: 1; transform: none; }
 
     /* HEADER */
-
     .header {
-      position: relative;
-      z-index: 30;
+      position: sticky; top: 0; z-index: 40;
       background: var(--paper);
+      transition: background .3s, box-shadow .3s, backdrop-filter .3s;
     }
-
+    .header.scrolled {
+      background: rgba(248, 249, 245, .86);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+      box-shadow: 0 6px 24px #193d2b14;
+    }
     .header-inner {
-      display: flex;
-      height: 96px;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
+      display: flex; height: 96px; align-items: center;
+      justify-content: space-between; gap: 28px;
+      transition: height .3s;
     }
+    .header.scrolled .header-inner { height: 76px; }
 
-    .brand {
-      display: inline-flex;
-      min-height: 44px;
-      align-items: center;
-      gap: 11px;
-      flex-shrink: 0;
-    }
-
-    .brand-mark {
-      width: 38px;
-      height: 44px;
-    }
-
+    .brand { display: inline-flex; min-height: 44px; align-items: center; gap: 11px; flex-shrink: 0; }
+    .brand-mark { width: 38px; height: 44px; }
     .brand-name {
-      font-family: "Manrope", sans-serif;
-      font-size: 18px;
-      font-weight: 800;
-      letter-spacing: -.055em;
-      line-height: 1.1;
+      font-family: "Manrope", sans-serif; font-size: 18px; font-weight: 800;
+      letter-spacing: -.055em; line-height: 1.1;
     }
-
     .brand-name small {
-      display: block;
-      margin-top: 7px;
-      font-family: "DM Sans", sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: .29em;
+      display: block; margin-top: 7px; font-family: "DM Sans", sans-serif;
+      font-size: 12px; font-weight: 500; letter-spacing: .29em;
     }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 32px;
+    .nav { display: flex; align-items: center; gap: 32px; }
+    .nav > a, .sub-toggle {
+      display: inline-flex; min-height: 44px; align-items: center; gap: 6px;
+      border: 0; background: none; padding: 0; color: inherit;
+      font-size: 14px; font-weight: 500;
     }
+    .nav > a:hover, .nav > a[aria-current="page"], .sub-toggle:hover { color: #537b3d; }
+    .nav > .button { min-height: 48px; margin-left: 8px; color: white; }
 
-    .nav > a {
-      display: inline-flex;
-      min-height: 44px;
-      align-items: center;
-      font-size: 14px;
-      font-weight: 500;
+    .has-sub { position: relative; }
+    .sub-toggle .icon { width: 14px; height: 14px; transition: transform .25s; }
+    .has-sub.open .sub-toggle .icon { transform: rotate(180deg); }
+    .submenu {
+      position: absolute; top: 100%; left: -18px; min-width: 200px;
+      padding: 10px; border-radius: 8px; background: white;
+      box-shadow: 0 18px 40px #193d2b22;
+      opacity: 0; visibility: hidden; transform: translateY(8px);
+      transition: opacity .25s, transform .25s, visibility .25s;
     }
-
-    .nav > a:hover,
-    .nav > a[aria-current="page"] {
-      color: #537b3d;
+    .has-sub:hover .submenu,
+    .has-sub:focus-within .submenu,
+    .has-sub.open .submenu { opacity: 1; visibility: visible; transform: none; }
+    .submenu a {
+      display: flex; min-height: 44px; align-items: center;
+      padding: 0 14px; border-radius: 5px; font-size: 14px;
     }
-
-    .nav > .button {
-      min-height: 48px;
-      margin-left: 8px;
-      color: white;
-    }
+    .submenu a:hover { background: #edf1e6; color: #537b3d; }
 
     .menu-toggle {
-      display: none;
-      width: 48px;
-      min-height: 48px;
-      align-items: center;
-      justify-content: center;
-      border: 0;
-      border-radius: 5px;
-      background: #e8eddf;
-      color: var(--green);
+      display: none; width: 48px; min-height: 48px; align-items: center;
+      justify-content: center; border: 0; border-radius: 5px;
+      background: #e8eddf; color: var(--green);
     }
 
     /* HERO */
-
     .hero {
-      position: relative;
-      isolation: isolate;
-      overflow: hidden;
-      background: #294735;
-      color: white;
+      position: relative; isolation: isolate; overflow: hidden;
+      background: #294735; color: white;
     }
-
-    .hero-images {
-      position: absolute;
-      inset: 0;
-      z-index: -3;
-      overflow: hidden;
-    }
-
-    .hero-slide {
-      position: absolute;
-      inset: 0;
-      transform: translateX(100%);
-      transition: transform 1.25s var(--ease);
-    }
-
-    .hero-slide:first-child {
-      transform: translateX(0);
-    }
-
-    .hero-slide img,
-    .hero-slide svg {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
+    .hero-images { position: absolute; inset: 0; z-index: -3; overflow: hidden; }
+    .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.4s var(--ease); }
+    .hero-slide.active { opacity: 1; }
+    .hero-slide img { transform: scale(1.02); }
+    .hero-slide.active img { animation: kenburns 11s ease-out forwards; }
+    @keyframes kenburns { to { transform: scale(1.12); } }
 
     .hero::before {
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      background: linear-gradient(
-        90deg,
-        rgba(9, 28, 19, .93) 0%,
-        rgba(9, 28, 19, .83) 33%,
-        rgba(9, 28, 19, .28) 70%,
-        rgba(9, 28, 19, .08) 100%
-      );
-      content: "";
+      position: absolute; inset: 0; z-index: -2; content: "";
+      background: linear-gradient(90deg, rgba(9,28,19,.93) 0%, rgba(9,28,19,.83) 33%, rgba(9,28,19,.28) 70%, rgba(9,28,19,.08) 100%);
     }
-
     .hero::after {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background: linear-gradient(
-        0deg,
-        rgba(9, 28, 19, .65),
-        transparent 35%
-      );
-      content: "";
+      position: absolute; inset: 0; z-index: -1; content: "";
+      background: linear-gradient(0deg, rgba(9,28,19,.65), transparent 35%);
     }
 
     .hero-content {
-      display: flex;
-      min-height: 690px;
-      flex-direction: column;
-      justify-content: center;
-      padding-block: 75px 125px;
+      display: flex; min-height: 700px; flex-direction: column;
+      justify-content: center; padding-block: 75px 125px;
     }
-
-    .hero .eyebrow {
-      color: #e3edd9;
-    }
-
+    .hero .eyebrow { color: #e3edd9; }
     .hero h1 {
-      max-width: 800px;
-      font-size: clamp(50px, 6.7vw, 90px);
-      font-weight: 500;
-      letter-spacing: -.065em;
-      line-height: 1.07;
+      max-width: 800px; font-size: clamp(50px, 6.7vw, 90px);
+      font-weight: 500; letter-spacing: -.065em; line-height: 1.07;
     }
-
     .word-window {
-      display: block;
-      overflow: hidden;
-      margin-bottom: -.13em;
-      padding-bottom: .13em;
-      color: var(--accent);
+      display: block; overflow: hidden; margin-bottom: -.13em;
+      padding-bottom: .13em; color: var(--accent);
     }
-
-    .moving-word {
-      display: inline-block;
-    }
+    .moving-word { display: inline-block; }
 
     .hero-description {
-      max-width: 440px;
-      margin-top: 26px;
-      color: #eff3e8;
-      font-size: 17px;
-      line-height: 1.85;
+      max-width: 440px; margin-top: 26px; color: #eff3e8;
+      font-size: 17px; line-height: 1.85;
     }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 28px;
-      margin-top: 32px;
-    }
-
-    .hero-actions .text-link {
-      color: white;
-    }
-
-    .hero-actions .text-link:hover {
-      color: var(--accent);
-    }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; margin-top: 32px; }
+    .hero-actions .text-link { color: white; }
+    .hero-actions .text-link:hover { color: var(--accent); }
 
     .hero-bottom {
-      position: absolute;
-      right: 0;
-      bottom: 24px;
-      left: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+      position: absolute; right: 0; bottom: 24px; left: 0;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
     }
-
-    .hero-caption {
-      color: #edf2e6;
-      font-size: 13px;
-    }
-
-    .slider-controls {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
+    .hero-caption { color: #edf2e6; font-size: 13px; }
+    .slider-controls { display: flex; align-items: center; gap: 8px; }
     .control {
-      display: inline-flex;
-      min-width: 46px;
-      min-height: 46px;
-      align-items: center;
-      justify-content: center;
-      padding: 10px;
-      border: 0;
-      border-radius: 50%;
-      background: white;
-      color: var(--green);
-      transition: background .2s;
+      display: inline-flex; min-width: 46px; min-height: 46px;
+      align-items: center; justify-content: center; padding: 10px;
+      border: 0; border-radius: 50%; background: white;
+      color: var(--green); transition: background .2s;
     }
+    .control:hover { background: var(--accent); }
+    .control.pause { padding-inline: 16px; border-radius: 30px; font-size: 12px; }
+    .previous .icon { transform: rotate(180deg); }
 
-    .control:hover {
-      background: var(--accent);
+    .progress { position: absolute; right: 0; bottom: 0; left: 0; height: 3px; background: rgba(255,255,255,.15); }
+    .progress span { display: block; height: 100%; width: 0; background: var(--accent); }
+    .progress.run span { animation: fill 6.5s linear forwards; }
+    @keyframes fill { to { width: 100%; } }
+
+    /* MARQUEE */
+    .marquee { overflow: hidden; background: var(--accent); color: var(--green); padding-block: 18px; }
+    .marquee-track { display: flex; width: max-content; animation: scroll 38s linear infinite; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-group { display: flex; align-items: center; flex-shrink: 0; }
+    .marquee-group span {
+      padding-inline: 26px; font-family: "Manrope", sans-serif;
+      font-size: 15px; font-weight: 700; letter-spacing: -.02em; white-space: nowrap;
     }
+    .marquee-group i { width: 8px; height: 8px; border-radius: 50%; background: var(--green); opacity: .5; }
+    @keyframes scroll { to { transform: translateX(-50%); } }
 
-    .control.pause {
-      padding-inline: 16px;
-      border-radius: 30px;
-      font-size: 12px;
-    }
-
-    .previous .icon {
-      transform: rotate(180deg);
-    }
-
-    /* INTRODUCTION */
-
+    /* INTRO */
     .intro {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      align-items: center;
-      gap: 90px;
-      padding-block: 90px;
+      display: grid; grid-template-columns: 1.1fr .9fr; align-items: center;
+      gap: 90px; padding-block: 90px;
     }
-
-    .intro-copy > p {
-      margin-top: 22px;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.85;
-    }
-
-    .intro-copy .text-link {
-      margin-top: 20px;
-    }
-
-    .intro-visual {
-      position: relative;
-      min-width: 0;
-      padding-bottom: 22px;
-    }
-
-    .intro-photo {
-      height: 350px;
-      overflow: hidden;
-      border-radius: 8px;
-      background: #d9e1cd;
-    }
-
-    .intro-photo svg {
-      width: 100%;
-      height: 100%;
-    }
-
+    .intro-copy > p { margin-top: 22px; color: var(--muted); font-size: 16px; line-height: 1.85; }
+    .intro-copy .text-link { margin-top: 20px; }
+    .intro-visual { position: relative; min-width: 0; padding-bottom: 22px; }
+    .intro-photo { height: 400px; overflow: hidden; border-radius: 8px; background: #294735; }
+    .intro-photo img { transition: transform 1.2s var(--ease); }
+    .intro-visual:hover .intro-photo img { transform: scale(1.05); }
     .experience-card {
-      position: absolute;
-      right: 22px;
-      bottom: 0;
-      display: flex;
-      max-width: 280px;
-      align-items: center;
-      gap: 20px;
-      padding: 22px 26px;
-      border-radius: 6px;
-      background: var(--green);
-      color: white;
+      position: absolute; right: 22px; bottom: 0; display: flex;
+      max-width: 280px; align-items: center; gap: 20px;
+      padding: 22px 26px; border-radius: 6px; background: var(--green); color: white;
     }
-
     .experience-card strong {
-      color: var(--accent);
-      font-family: "Manrope", sans-serif;
-      font-size: 47px;
-      font-weight: 500;
-      letter-spacing: -.07em;
-      line-height: 1;
+      color: var(--accent); font-family: "Manrope", sans-serif; font-size: 47px;
+      font-weight: 500; letter-spacing: -.07em; line-height: 1;
     }
+    .experience-card p { font-size: 13px; line-height: 1.6; }
 
-    .experience-card p {
-      font-size: 13px;
-      line-height: 1.6;
+    /* STATS */
+    .stats {
+      padding-block: 70px; color: white; background-color: var(--green);
+      background-image:
+        linear-gradient(rgba(214,237,185,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(214,237,185,.06) 1px, transparent 1px);
+      background-size: 44px 44px;
     }
-
-    /* SERVICE PREVIEWS */
-
-    .expertise {
-      padding-block: 72px 82px;
-      background: #edf1e6;
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+    .stat { padding-left: 24px; border-left: 1px solid rgba(214,237,185,.3); }
+    .stat strong {
+      display: block; color: var(--accent); font-family: "Manrope", sans-serif;
+      font-size: clamp(40px, 5vw, 64px); font-weight: 500; letter-spacing: -.06em; line-height: 1.1;
     }
+    .stat span { display: block; margin-top: 8px; color: #e1e9d8; font-size: 14px; }
 
+    /* SERVICES */
+    .expertise { padding-block: 82px; background: #edf1e6; }
     .section-heading {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 38px;
+      display: flex; align-items: end; justify-content: space-between;
+      gap: 30px; margin-bottom: 38px;
     }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-    }
-
+    .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
     .service-card {
-      display: flex;
-      min-width: 0;
-      min-height: 290px;
-      flex-direction: column;
-      align-items: start;
-      padding: 30px;
-      border-radius: 8px;
-      background: var(--paper);
-      transition:
-        transform .35s var(--ease),
-        box-shadow .35s;
+      display: flex; min-width: 0; flex-direction: column; overflow: hidden;
+      border-radius: 8px; background: var(--paper);
+      transition: transform .35s var(--ease), box-shadow .35s;
     }
+    .service-card:hover { transform: translateY(-8px); box-shadow: 0 22px 40px #203b2b1c; }
+    .service-img { height: 210px; overflow: hidden; background: #294735; }
+    .service-img img { transition: transform .8s var(--ease); }
+    .service-card:hover .service-img img { transform: scale(1.08); }
+    .service-body { display: flex; flex: 1; flex-direction: column; align-items: start; padding: 28px 30px 24px; }
+    .service-card.featured { background: var(--green); color: white; }
+    .service-number { margin-bottom: 16px; color: #546e43; font-size: 13px; font-weight: 500; }
+    .featured .service-number { color: var(--accent); }
+    .service-card h3 { font-size: 24px; font-weight: 500; letter-spacing: -.045em; line-height: 1.3; }
+    .service-card p { margin-top: 12px; margin-bottom: 20px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .featured p { color: #e1e9d8; }
+    .service-card .text-link { justify-content: space-between; width: 100%; margin-top: auto; }
+    .featured .text-link { color: var(--accent); }
 
-    .service-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 18px 35px #203b2b12;
+    /* PROCESS */
+    .process { padding-block: 90px; }
+    .process-head { max-width: 560px; margin-bottom: 52px; }
+    .steps { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+    .steps::before {
+      position: absolute; top: 24px; left: 24px; right: 24px; height: 2px;
+      background: #cfd9c2; content: ""; transform-origin: left;
     }
-
-    .service-card.featured {
-      background: var(--green);
-      color: white;
+    .js .steps::before { transform: scaleX(0); transition: transform 1.6s var(--ease); }
+    .js .steps.in::before { transform: scaleX(1); }
+    .step { position: relative; }
+    .step-dot {
+      display: flex; width: 48px; height: 48px; align-items: center; justify-content: center;
+      margin-bottom: 22px; border-radius: 50%; background: var(--green);
+      color: var(--accent); font-family: "Manrope", sans-serif; font-size: 15px; font-weight: 700;
     }
-
-    .service-number {
-      margin-bottom: 32px;
-      color: #546e43;
-      font-size: 13px;
-      font-weight: 500;
-    }
-
-    .featured .service-number {
-      color: var(--accent);
-    }
-
-    .service-card h3 {
-      max-width: 260px;
-      font-size: 25px;
-      font-weight: 500;
-      letter-spacing: -.045em;
-      line-height: 1.3;
-    }
-
-    .service-card p {
-      margin-top: 14px;
-      margin-bottom: 20px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .featured p {
-      color: #e1e9d8;
-    }
-
-    .service-card .text-link {
-      justify-content: space-between;
-      width: 100%;
-      margin-top: auto;
-    }
-
-    .featured .text-link {
-      color: var(--accent);
-    }
+    .step h3 { font-size: 21px; font-weight: 600; letter-spacing: -.04em; }
+    .step p { margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.75; }
 
     /* CONSULTATION */
-
-    .consultation {
-      padding-block: 76px;
-      background: var(--green);
-      color: white;
-    }
-
-    .consultation-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 50px;
-    }
-
-    .consultation .eyebrow {
-      color: var(--accent);
-    }
-
-    .consultation .section-title {
-      max-width: 690px;
-      font-size: clamp(32px, 4.2vw, 54px);
-    }
-
-    .consultation p:not(.eyebrow) {
-      max-width: 560px;
-      margin-top: 18px;
-      color: #e1e9d8;
-      font-size: 16px;
-    }
-
-    .consultation .button {
-      flex-shrink: 0;
-    }
+    .consultation { padding-block: 80px; background: var(--green); color: white; }
+    .consultation-inner { display: flex; align-items: center; justify-content: space-between; gap: 50px; }
+    .consultation .eyebrow { color: var(--accent); }
+    .consultation .section-title { max-width: 690px; font-size: clamp(32px, 4.2vw, 54px); }
+    .consultation p:not(.eyebrow) { max-width: 560px; margin-top: 18px; color: #e1e9d8; font-size: 16px; }
+    .consultation .button { flex-shrink: 0; }
 
     /* FOOTER */
-
-    .footer {
-      padding-block: 45px 25px;
+    .footer { padding-block: 45px 25px; }
+    .footer-top { display: flex; align-items: start; justify-content: space-between; gap: 30px; }
+    .footer-contact { min-width: 0; }
+    .footer-contact a, .footer-links a {
+      display: flex; min-height: 44px; align-items: center;
+      overflow-wrap: anywhere; font-size: 14px;
     }
-
-    .footer-top {
-      display: flex;
-      align-items: start;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .footer-contact {
-      min-width: 0;
-    }
-
-    .footer-contact a,
-    .footer-links a {
-      display: flex;
-      min-height: 44px;
-      align-items: center;
-      overflow-wrap: anywhere;
-      font-size: 14px;
-    }
-
-    .footer-contact a:hover,
-    .footer-links a:hover {
-      color: #537b3d;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
-
+    .footer-contact a:hover, .footer-links a:hover { color: #537b3d; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 24px; }
     .footer-bottom {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-top: 30px;
-      color: var(--muted);
-      font-size: 12px;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 14px; margin-top: 30px; color: var(--muted); font-size: 12px;
     }
 
     /* RESPONSIVE */
+    @media (min-width: 1500px) { .hero-content { min-height: 780px; } }
 
-    @media (min-width: 1500px) {
-      .hero-content {
-        min-height: 760px;
-      }
+    @media (min-width: 800px) and (max-width: 1023px) {
+      .nav > .button { display: none; }
     }
 
     @media (max-width: 1023px) {
-      .nav {
-        gap: 22px;
-      }
-
-      .nav > .button {
-        display: none;
-      }
-
-      .intro {
-        gap: 45px;
-      }
-
-      .service-card {
-        padding: 25px;
-      }
-
-      .consultation-inner {
-        align-items: start;
-        flex-direction: column;
-        gap: 28px;
-      }
+      .nav { gap: 22px; }
+      .intro { gap: 45px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 30px; }
+      .steps { grid-template-columns: repeat(2, 1fr); gap: 40px 30px; }
+      .steps::before { display: none; }
+      .consultation-inner { align-items: start; flex-direction: column; gap: 28px; }
     }
 
     @media (max-width: 799px) {
-      .wrap {
-        width: calc(100% - 40px);
-      }
-
-      .header-inner {
-        height: 82px;
-      }
-
-      .brand-name {
-        font-size: 16px;
-      }
-
-      .brand-mark {
-        width: 32px;
-        height: 38px;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
+      .wrap { width: calc(100% - 40px); }
+      .header-inner, .header.scrolled .header-inner { height: 78px; }
+      .brand-name { font-size: 16px; }
+      .brand-mark { width: 32px; height: 38px; }
+      .menu-toggle { display: flex; }
 
       .nav {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        left: 0;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding: 15px 20px 24px;
-        background: var(--paper);
+        position: absolute; top: 100%; right: 0; left: 0; display: none;
+        flex-direction: column; align-items: stretch; gap: 0;
+        padding: 15px 20px 24px; background: var(--paper);
         box-shadow: 0 18px 24px #193d2b18;
       }
+      .nav.open { display: flex; }
+      .nav > a, .sub-toggle { min-height: 48px; width: 100%; justify-content: space-between; }
+      .nav > .button { margin: 12px 0 0; justify-content: space-between; }
 
-      .nav.open {
-        display: flex;
+      .submenu {
+        position: static; display: none; min-width: 0; padding: 0 0 6px 14px;
+        background: none; box-shadow: none; opacity: 1; visibility: visible; transform: none;
       }
+      .has-sub:hover .submenu, .has-sub:focus-within .submenu { display: none; }
+      .has-sub.open .submenu { display: block; }
 
-      .nav > a {
-        min-height: 48px;
-      }
+      .hero-content { min-height: 660px; padding-block: 60px 130px; }
+      .hero h1 { font-size: clamp(43px, 9vw, 68px); }
+      .hero::before { background: linear-gradient(90deg, rgba(9,28,19,.92), rgba(9,28,19,.52)); }
+      .hero-description { max-width: 390px; font-size: 16px; }
+      .hero-caption { max-width: 135px; font-size: 12px; }
 
-      .hero-content {
-        min-height: 660px;
-        padding-block: 60px 130px;
-      }
-
-      .hero h1 {
-        font-size: clamp(43px, 9vw, 68px);
-      }
-
-      .hero::before {
-        background: linear-gradient(
-          90deg,
-          rgba(9, 28, 19, .92),
-          rgba(9, 28, 19, .52)
-        );
-      }
-
-      .hero-description {
-        max-width: 390px;
-        font-size: 16px;
-      }
-
-      .hero-caption {
-        max-width: 135px;
-        font-size: 12px;
-      }
-
-      .intro {
-        grid-template-columns: 1fr;
-        gap: 35px;
-        padding-block: 60px;
-      }
-
-      .intro-photo {
-        height: 340px;
-      }
-
-      .expertise {
-        padding-block: 55px;
-      }
-
-      .section-heading {
-        flex-direction: column;
-        align-items: start;
-        gap: 12px;
-      }
-
-      .service-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .service-card {
-        min-height: 260px;
-        padding: 28px;
-      }
-
-      .service-card h3 {
-        max-width: 100%;
-      }
-
-      .consultation {
-        padding-block: 55px;
-      }
-
-      .footer-top {
-        flex-wrap: wrap;
-      }
-
-      .footer-top > .brand {
-        width: 100%;
-      }
-
-      .footer-links {
-        gap: 18px;
-      }
+      .intro { grid-template-columns: 1fr; gap: 35px; padding-block: 60px; }
+      .intro-photo { height: 340px; }
+      .stats { padding-block: 55px; }
+      .expertise, .process { padding-block: 60px; }
+      .section-heading { flex-direction: column; align-items: start; gap: 12px; }
+      .service-grid { grid-template-columns: 1fr; gap: 16px; }
+      .steps { grid-template-columns: 1fr; gap: 32px; }
+      .consultation { padding-block: 55px; }
+      .footer-top { flex-wrap: wrap; }
+      .footer-top > .brand { width: 100%; }
+      .footer-links { gap: 18px; }
     }
 
     @media (max-width: 380px) {
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .hero-actions {
-        gap: 12px;
-      }
-
-      .hero-caption {
-        display: none;
-      }
-
-      .hero-bottom {
-        justify-content: flex-end;
-      }
+      .hero h1 { font-size: 40px; }
+      .hero-actions { gap: 12px; }
+      .hero-caption { display: none; }
+      .hero-bottom { justify-content: flex-end; }
+      .stats-grid { grid-template-columns: 1fr; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation: none !important;
-        transition: none !important;
-      }
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .js .reveal { opacity: 1; transform: none; }
+      .js .steps::before { transform: none; }
     }
   </style>
 </head>
@@ -884,88 +444,65 @@
 
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
-      <symbol id="arrow" viewBox="0 0 24 24">
-        <path d="M4 12h16m-6-6 6 6-6 6"></path>
-      </symbol>
+      <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"></path></symbol>
+      <symbol id="chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></symbol>
     </defs>
   </svg>
 
   <!-- HEADER -->
-  <header class="header">
+  <header class="header" id="header">
     <div class="wrap header-inner">
-      <a
-        class="brand"
-        href="index.html"
-        aria-label="Verteciments Consulting home"
-      >
+      <a class="brand" href="index.html" aria-label="Verteciments Consulting home">
         <svg class="brand-mark" viewBox="0 0 40 44" aria-hidden="true">
-          <path
-            d="M2 5h10l10 23L31 5h7L22 40h-5Z"
-            fill="#295138"
-          ></path>
-          <path
-            d="M20 5h7l-6 14-4-8Z"
-            fill="#8caa66"
-          ></path>
+          <path d="M2 5h10l10 23L31 5h7L22 40h-5Z" fill="#295138"></path>
+          <path d="M20 5h7l-6 14-4-8Z" fill="#8caa66"></path>
         </svg>
-
-        <span class="brand-name">
-          VERTECIMENTS
-          <small>CONSULTING</small>
-        </span>
+        <span class="brand-name">VERTECIMENTS<small>CONSULTING</small></span>
       </a>
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        type="button"
-        aria-label="Open navigation"
-        aria-expanded="false"
-        aria-controls="mainNav"
-      >
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 8h16M4 16h16"></path>
-        </svg>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mainNav">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"></path></svg>
       </button>
 
       <nav class="nav" id="mainNav" aria-label="Main navigation">
         <a href="index.html" aria-current="page">Home</a>
-        <a href="about.html">About us</a>
+
+        <div class="has-sub" id="aboutSub">
+          <button class="sub-toggle" id="subToggle" type="button" aria-expanded="false" aria-controls="aboutMenu">
+            About us
+            <svg class="icon" aria-hidden="true"><use href="#chevron"></use></svg>
+          </button>
+          <div class="submenu" id="aboutMenu">
+            <a href="about.html">Overview</a>
+            <a href="ourstory.html">Our Story</a>
+            <a href="ourteam.html">Our Team</a>
+            <a href="gallery.html">Gallery</a>
+          </div>
+        </div>
+
         <a href="service.html">Our services</a>
         <a href="contact.html">Contact us</a>
 
         <a class="button" href="contact.html">
           Let’s talk
-          <svg class="icon" aria-hidden="true">
-            <use href="#arrow"></use>
-          </svg>
+          <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
         </a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <!-- HERO -->
+    <!-- HERO: images 1.jpg, 2.jpg, 3.jpg -->
     <section class="hero" aria-labelledby="heroTitle">
-      <div
-        class="hero-images"
-        role="region"
-        aria-roledescription="carousel"
-        aria-label="Cement production and laboratory photography"
-      >
-        <div class="hero-slide" aria-hidden="false">
-          <img
-            src="verticement-slide-1.jpg"
-            alt="Cement production infrastructure"
-            fetchpriority="high"
-          >
+      <div class="hero-images" role="region" aria-roledescription="carousel" aria-label="Cement production and laboratory photography">
+        <div class="hero-slide active" aria-hidden="false">
+          <img src="1.jpg" alt="Cement production infrastructure" fetchpriority="high">
         </div>
-
         <div class="hero-slide" aria-hidden="true">
-          <img
-            src="cement-lab.jpg"
-            alt="Cement laboratory testing equipment"
-          >
+          <img src="2.jpg" alt="Cement laboratory testing" >
+        </div>
+        <div class="hero-slide" aria-hidden="true">
+          <img src="3.jpg" alt="Cement plant operations">
         </div>
       </div>
 
@@ -975,14 +512,9 @@
         <h1 id="heroTitle">
           Better cement.<br>
           Better
-          <span class="sr-only">
-            performance, quality and efficiency.
-          </span>
-
+          <span class="sr-only">performance, quality and efficiency.</span>
           <span class="word-window" aria-hidden="true">
-            <span class="moving-word" id="movingWord">
-              performance.
-            </span>
+            <span class="moving-word" id="movingWord">performance.</span>
           </span>
         </h1>
 
@@ -994,93 +526,78 @@
         <div class="hero-actions">
           <a class="button button-accent" href="service.html">
             Explore our services
-            <svg class="icon" aria-hidden="true">
-              <use href="#arrow"></use>
-            </svg>
+            <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
           </a>
-
           <a class="text-link" href="contact.html">
             Talk to a specialist
-            <svg class="icon" aria-hidden="true">
-              <use href="#arrow"></use>
-            </svg>
+            <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
           </a>
         </div>
       </div>
 
       <div class="wrap hero-bottom">
-        <p class="hero-caption" id="heroCaption">
-          From the production line.
-        </p>
-
+        <p class="hero-caption" id="heroCaption">From the production line.</p>
         <div class="slider-controls">
-          <button
-            class="control pause"
-            id="pauseMotion"
-            type="button"
-            aria-pressed="false"
-          >
-            Pause motion
+          <button class="control pause" id="pauseMotion" type="button" aria-pressed="false">Pause motion</button>
+          <button class="control previous" id="previousSlide" type="button" aria-label="Previous image">
+            <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
           </button>
-
-          <button
-            class="control previous"
-            id="previousSlide"
-            type="button"
-            aria-label="Previous image"
-          >
-            <svg class="icon" aria-hidden="true">
-              <use href="#arrow"></use>
-            </svg>
-          </button>
-
-          <button
-            class="control"
-            id="nextSlide"
-            type="button"
-            aria-label="Next image"
-          >
-            <svg class="icon" aria-hidden="true">
-              <use href="#arrow"></use>
-            </svg>
+          <button class="control" id="nextSlide" type="button" aria-label="Next image">
+            <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
           </button>
         </div>
       </div>
+
+      <div class="progress" id="progress" aria-hidden="true"><span></span></div>
     </section>
 
-    <!-- A BRIEF INTRODUCTION, NOT THE FULL ABOUT PAGE -->
-    <section class="wrap intro" aria-labelledby="introTitle">
-      <div class="intro-copy">
-        <p class="eyebrow">Welcome to Verteciments</p>
+    <!-- CAPABILITY MARQUEE -->
+    <div class="marquee" aria-label="Areas of expertise">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span>Process optimization</span><i></i>
+          <span>Laboratory quality assurance</span><i></i>
+          <span>Clinker factor reduction</span><i></i>
+          <span>Calcined clay and LC3</span><i></i>
+          <span>Plant audits</span><i></i>
+          <span>Technical training</span><i></i>
+          <span>Lower-carbon cement</span><i></i>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span>Process optimization</span><i></i>
+          <span>Laboratory quality assurance</span><i></i>
+          <span>Clinker factor reduction</span><i></i>
+          <span>Calcined clay and LC3</span><i></i>
+          <span>Plant audits</span><i></i>
+          <span>Technical training</span><i></i>
+          <span>Lower-carbon cement</span><i></i>
+        </div>
+      </div>
+    </div>
 
+    <!-- INTRO: image 4.jpg -->
+    <section class="wrap intro" aria-labelledby="introTitle">
+      <div class="intro-copy reveal">
+        <p class="eyebrow">Welcome to Verteciments</p>
         <h2 class="section-title" id="introTitle">
           Science-led advice.<br>
           Real plant understanding.
         </h2>
-
         <p>
           We are a Kenya-based cement consultancy helping manufacturers
           improve quality, optimize production and develop lower-carbon
           products—with practical solutions shaped around your plant.
         </p>
-
         <a class="text-link" href="about.html">
           Get to know us
-          <svg class="icon" aria-hidden="true">
-            <use href="#arrow"></use>
-          </svg>
+          <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
         </a>
       </div>
 
-      <div class="intro-visual">
+      <div class="intro-visual reveal" style="--d:.15s">
         <div class="intro-photo">
-          <img
-            src="cement-lab.jpg"
-            alt="Laboratory equipment used for cement testing"
-            loading="lazy"
-          >
+          <img src="4.jpg" alt="Cement testing and plant expertise" loading="lazy">
         </div>
-
         <div class="experience-card">
           <strong>15+</strong>
           <p>Years of industry experience behind our advice.</p>
@@ -1088,151 +605,151 @@
       </div>
     </section>
 
-    <!-- SHORT SERVICE PREVIEWS -->
+    <!-- STATS (REPLACE the numbers below with real figures) -->
+    <section class="stats" aria-label="Verteciments at a glance">
+      <div class="wrap stats-grid">
+        <div class="stat reveal">
+          <strong><span data-count="15">15</span>+</strong>
+          <span>Years of industry experience</span>
+        </div>
+        <div class="stat reveal" style="--d:.1s">
+          <strong><span data-count="30">30</span>+</strong>
+          <span>Plants and laboratories advised</span>
+        </div>
+        <div class="stat reveal" style="--d:.2s">
+          <strong><span data-count="500">500</span>+</strong>
+          <span>Professionals trained</span>
+        </div>
+        <div class="stat reveal" style="--d:.3s">
+          <strong><span data-count="10">10</span>+</strong>
+          <span>Countries of experience</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES: images 5.jpg, 6.jpg, 7.jpg -->
     <section class="expertise" aria-labelledby="expertiseTitle">
       <div class="wrap">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <div>
             <p class="eyebrow">How we help</p>
-
-            <h2 class="section-title" id="expertiseTitle">
-              Move your plant forward.
-            </h2>
+            <h2 class="section-title" id="expertiseTitle">Move your plant forward.</h2>
           </div>
-
           <a class="text-link" href="service.html">
             View all services
-            <svg class="icon" aria-hidden="true">
-              <use href="#arrow"></use>
-            </svg>
+            <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
           </a>
         </div>
 
         <div class="service-grid">
-          <article class="service-card">
-            <span class="service-number">01 / Production</span>
-
-            <h3>Improve process performance.</h3>
-
-            <p>
-              Identify opportunities to improve efficiency,
-              optimize clinker use and strengthen production consistency.
-            </p>
-
-            <a
-              class="text-link"
-              href="service.html#process-optimization"
-            >
-              Process optimization
-              <svg class="icon" aria-hidden="true">
-                <use href="#arrow"></use>
-              </svg>
-            </a>
+          <article class="service-card reveal">
+            <div class="service-img"><img src="5.jpg" alt="Cement plant production" loading="lazy"></div>
+            <div class="service-body">
+              <span class="service-number">01 / Production</span>
+              <h3>Improve process performance.</h3>
+              <p>Identify opportunities to improve efficiency, optimize clinker use and strengthen production consistency.</p>
+              <a class="text-link" href="service.html#process-optimization">
+                Process optimization
+                <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
+              </a>
+            </div>
           </article>
 
-          <article class="service-card featured">
-            <span class="service-number">02 / Quality</span>
-
-            <h3>Build confidence in every batch.</h3>
-
-            <p>
-              Strengthen your testing capability, laboratory practices
-              and quality assurance through specialist technical support.
-            </p>
-
-            <a class="text-link" href="service.html#training">
-              Quality & training
-              <svg class="icon" aria-hidden="true">
-                <use href="#arrow"></use>
-              </svg>
-            </a>
+          <article class="service-card featured reveal" style="--d:.12s">
+            <div class="service-img"><img src="6.jpg" alt="Laboratory testing of cement samples" loading="lazy"></div>
+            <div class="service-body">
+              <span class="service-number">02 / Quality</span>
+              <h3>Build confidence in every batch.</h3>
+              <p>Strengthen your testing capability, laboratory practices and quality assurance through specialist technical support.</p>
+              <a class="text-link" href="service.html#training">
+                Quality &amp; training
+                <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
+              </a>
+            </div>
           </article>
 
-          <article class="service-card">
-            <span class="service-number">03 / Innovation</span>
-
-            <h3>Develop lower-carbon possibilities.</h3>
-
-            <p>
-              Explore alternative materials and new formulations
-              with cement performance at the centre.
-            </p>
-
-            <a
-              class="text-link"
-              href="service.html#product-development"
-            >
-              Product development
-              <svg class="icon" aria-hidden="true">
-                <use href="#arrow"></use>
-              </svg>
-            </a>
+          <article class="service-card reveal" style="--d:.24s">
+            <div class="service-img"><img src="7.jpg" alt="Alternative materials for lower-carbon cement" loading="lazy"></div>
+            <div class="service-body">
+              <span class="service-number">03 / Innovation</span>
+              <h3>Develop lower-carbon possibilities.</h3>
+              <p>Explore alternative materials and new formulations with cement performance at the centre.</p>
+              <a class="text-link" href="service.html#product-development">
+                Product development
+                <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
+              </a>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ONE CLEAR NEXT STEP -->
+    <!-- HOW WE WORK -->
+    <section class="wrap process" aria-labelledby="processTitle">
+      <div class="process-head reveal">
+        <p class="eyebrow">How we work</p>
+        <h2 class="section-title" id="processTitle">A clear path from problem to result.</h2>
+      </div>
+
+      <div class="steps reveal" id="steps">
+        <div class="step">
+          <div class="step-dot">01</div>
+          <h3>Assess</h3>
+          <p>We study your plant, data and goals first.</p>
+        </div>
+        <div class="step">
+          <div class="step-dot">02</div>
+          <h3>Analyse</h3>
+          <p>Laboratory and process findings turned into clear insight.</p>
+        </div>
+        <div class="step">
+          <div class="step-dot">03</div>
+          <h3>Advise</h3>
+          <p>Practical recommendations shaped around your operation.</p>
+        </div>
+        <div class="step">
+          <div class="step-dot">04</div>
+          <h3>Support</h3>
+          <p>We stay involved while changes take hold.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
     <section class="consultation" aria-labelledby="consultationTitle">
       <div class="wrap consultation-inner">
-        <div>
+        <div class="reveal">
           <p class="eyebrow">Let’s work on what’s next</p>
-
           <h2 class="section-title" id="consultationTitle">
             Your next improvement<br>
             starts with a conversation.
           </h2>
-
-          <p>
-            Tell us about your production challenges.
-            Let’s find a practical way forward.
-          </p>
+          <p>Tell us about your production challenges. Let’s find a practical way forward.</p>
         </div>
 
-        <a class="button button-accent" href="contact.html">
+        <a class="button button-accent reveal" style="--d:.15s" href="contact.html">
           Request a consultation
-          <svg class="icon" aria-hidden="true">
-            <use href="#arrow"></use>
-          </svg>
+          <svg class="icon" aria-hidden="true"><use href="#arrow"></use></svg>
         </a>
       </div>
     </section>
   </main>
 
-  <!-- COMPACT FOOTER -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="wrap">
       <div class="footer-top">
-        <a
-          class="brand"
-          href="index.html"
-          aria-label="Verteciments Consulting home"
-        >
+        <a class="brand" href="index.html" aria-label="Verteciments Consulting home">
           <svg class="brand-mark" viewBox="0 0 40 44" aria-hidden="true">
-            <path
-              d="M2 5h10l10 23L31 5h7L22 40h-5Z"
-              fill="#295138"
-            ></path>
-            <path
-              d="M20 5h7l-6 14-4-8Z"
-              fill="#8caa66"
-            ></path>
+            <path d="M2 5h10l10 23L31 5h7L22 40h-5Z" fill="#295138"></path>
+            <path d="M20 5h7l-6 14-4-8Z" fill="#8caa66"></path>
           </svg>
-
-          <span class="brand-name">
-            VERTECIMENTS
-            <small>CONSULTING</small>
-          </span>
+          <span class="brand-name">VERTECIMENTS<small>CONSULTING</small></span>
         </a>
 
         <div class="footer-contact">
-          <a href="mailto:info@vertecimentsconsulting.com">
-            info@vertecimentsconsulting.com
-          </a>
-
-          <a href="tel:+254721788079">
-            +254 721 788 079
-          </a>
+          <a href="mailto:info@vertecimentsconsulting.com">info@vertecimentsconsulting.com</a>
+          <a href="tel:+254721788079">+254 721 788 079</a>
         </div>
 
         <nav class="footer-links" aria-label="Footer navigation">
@@ -1243,125 +760,61 @@
       </div>
 
       <div class="footer-bottom">
-        <p>
-          © <span id="year">2026</span>
-          Verteciments Consulting.
-        </p>
-
+        <p>© <span id="year">2026</span> Verteciments Consulting.</p>
         <p>Independent expertise. Based in Kenya.</p>
       </div>
     </div>
   </footer>
 
-  <!-- FALLBACK USED ONLY IF AN IMAGE IS MISSING -->
-  <template id="imageFallback">
-    <svg
-      viewBox="0 0 1200 800"
-      preserveAspectRatio="xMidYMid slice"
-      role="img"
-      aria-label="Illustration of cement production infrastructure"
-    >
-      <rect width="1200" height="800" fill="#aab89a"></rect>
-
-      <path
-        d="M0 540 230 340 460 480 790 250 1200 460V800H0Z"
-        fill="#788f68"
-      ></path>
-
-      <g fill="#d7d8cb">
-        <path d="M530 700V270h140v430Z"></path>
-        <path d="M690 700V220h140v480Z"></path>
-        <path d="M850 700V370h220v330Z"></path>
-      </g>
-
-      <path
-        d="M470 700h640M830 220l240 150"
-        fill="none"
-        stroke="#40583e"
-        stroke-width="16"
-      ></path>
-    </svg>
-  </template>
-
   <script>
     (() => {
       "use strict";
 
-      /* HERO MOTION */
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-      const motionPreference = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      );
+      /* MISSING IMAGES: remove the broken image so the green block shows */
+      document.querySelectorAll("img").forEach(img => {
+        const drop = () => img.remove();
+        img.addEventListener("error", drop);
+        if (img.complete && img.naturalWidth === 0) drop();
+      });
 
-      const slides = Array.from(
-        document.querySelectorAll(".hero-slide")
-      );
-
-      const words = [
-        "performance.",
-        "quality.",
-        "efficiency."
-      ];
-
-      const captions = [
-        "From the production line.",
-        "To the science behind it."
-      ];
+      /* HERO */
+      const slides = Array.from(document.querySelectorAll(".hero-slide"));
+      const words = ["performance.", "quality.", "efficiency."];
+      const captions = ["From the production line.", "To the science behind it.", "Built on real plant data."];
 
       const word = document.getElementById("movingWord");
       const caption = document.getElementById("heroCaption");
+      const progress = document.getElementById("progress");
       const pauseButton = document.getElementById("pauseMotion");
-      const previousButton = document.getElementById("previousSlide");
-      const nextButton = document.getElementById("nextSlide");
 
-      let slideIndex = 0;
-      let wordIndex = 0;
-      let paused = motionPreference.matches;
+      let slideIndex = 0, wordIndex = 0, paused = reduced.matches;
+      let slideTimer, wordTimer, wordAnimation;
 
-      let slideTimer;
-      let wordTimer;
-      let wordAnimation;
+      function restartProgress(run) {
+        progress.classList.remove("run");
+        void progress.offsetWidth;
+        if (run) progress.classList.add("run");
+      }
 
       function showSlide(index) {
         slideIndex = (index + slides.length) % slides.length;
-
         slides.forEach((slide, i) => {
-          slide.style.transform =
-            `translateX(${(i - slideIndex) * 100}%)`;
-
-          slide.setAttribute(
-            "aria-hidden",
-            String(i !== slideIndex)
-          );
+          slide.classList.toggle("active", i === slideIndex);
+          slide.setAttribute("aria-hidden", String(i !== slideIndex));
         });
-
         caption.textContent = captions[slideIndex];
       }
 
       function changeWord() {
         wordIndex = (wordIndex + 1) % words.length;
         word.textContent = words[wordIndex];
-
-        if (!motionPreference.matches && word.animate) {
-          if (wordAnimation) {
-            wordAnimation.cancel();
-          }
-
+        if (!reduced.matches && word.animate) {
+          if (wordAnimation) wordAnimation.cancel();
           wordAnimation = word.animate(
-            [
-              {
-                transform: "translateY(85%)",
-                opacity: 0
-              },
-              {
-                transform: "translateY(0)",
-                opacity: 1
-              }
-            ],
-            {
-              duration: 700,
-              easing: "cubic-bezier(.22,.8,.25,1)"
-            }
+            [{ transform: "translateY(85%)", opacity: 0 }, { transform: "translateY(0)", opacity: 1 }],
+            { duration: 700, easing: "cubic-bezier(.22,.8,.25,1)" }
           );
         }
       }
@@ -1370,149 +823,109 @@
         clearInterval(slideTimer);
         clearInterval(wordTimer);
 
-        const reduced = motionPreference.matches;
-        const stopped = paused || reduced;
+        const stopped = paused || reduced.matches;
+        pauseButton.disabled = reduced.matches;
+        pauseButton.textContent = reduced.matches ? "Motion off" : paused ? "Play motion" : "Pause motion";
+        pauseButton.setAttribute("aria-pressed", String(stopped));
 
-        pauseButton.disabled = reduced;
+        if (stopped || document.hidden) { restartProgress(false); return; }
 
-        pauseButton.textContent = reduced
-          ? "Motion off"
-          : paused
-            ? "Play motion"
-            : "Pause motion";
-
-        pauseButton.setAttribute(
-          "aria-pressed",
-          String(stopped)
-        );
-
-        if (stopped || document.hidden) {
-          return;
-        }
-
+        restartProgress(true);
         wordTimer = setInterval(changeWord, 3200);
-
-        slideTimer = setInterval(() => {
-          showSlide(slideIndex + 1);
-        }, 6500);
+        slideTimer = setInterval(() => { showSlide(slideIndex + 1); restartProgress(true); }, 6500);
       }
 
-      pauseButton.addEventListener("click", () => {
-        paused = !paused;
+      pauseButton.addEventListener("click", () => { paused = !paused; updateMotion(); });
+      document.getElementById("previousSlide").addEventListener("click", () => { showSlide(slideIndex - 1); updateMotion(); });
+      document.getElementById("nextSlide").addEventListener("click", () => { showSlide(slideIndex + 1); updateMotion(); });
+      document.addEventListener("visibilitychange", updateMotion);
+      reduced.addEventListener("change", () => {
+        paused = reduced.matches;
+        if (wordAnimation) wordAnimation.cancel();
         updateMotion();
       });
 
-      previousButton.addEventListener("click", () => {
-        showSlide(slideIndex - 1);
-        updateMotion();
-      });
+      /* STICKY HEADER */
+      const header = document.getElementById("header");
+      const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 30);
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
 
-      nextButton.addEventListener("click", () => {
-        showSlide(slideIndex + 1);
-        updateMotion();
-      });
-
-      document.addEventListener(
-        "visibilitychange",
-        updateMotion
-      );
-
-      motionPreference.addEventListener("change", () => {
-        paused = motionPreference.matches;
-
-        if (wordAnimation) {
-          wordAnimation.cancel();
-        }
-
-        updateMotion();
-      });
-
-      /* MOBILE NAVIGATION */
-
+      /* NAVIGATION */
       const menuToggle = document.getElementById("menuToggle");
       const navigation = document.getElementById("mainNav");
-      const header = document.querySelector(".header");
+      const aboutSub = document.getElementById("aboutSub");
+      const subToggle = document.getElementById("subToggle");
       const mobile = window.matchMedia("(max-width: 799px)");
+
+      function setSub(open) {
+        aboutSub.classList.toggle("open", open);
+        subToggle.setAttribute("aria-expanded", String(open));
+      }
 
       function setMenu(open, restoreFocus = false) {
         navigation.classList.toggle("open", open);
-
-        menuToggle.setAttribute(
-          "aria-expanded",
-          String(open)
-        );
-
-        menuToggle.setAttribute(
-          "aria-label",
-          open ? "Close navigation" : "Open navigation"
-        );
-
-        if (restoreFocus) {
-          menuToggle.focus();
-        }
+        menuToggle.setAttribute("aria-expanded", String(open));
+        menuToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+        if (!open) setSub(false);
+        if (restoreFocus) menuToggle.focus();
       }
 
-      menuToggle.addEventListener("click", () => {
-        setMenu(
-          menuToggle.getAttribute("aria-expanded") !== "true"
-        );
+      menuToggle.addEventListener("click", () => setMenu(menuToggle.getAttribute("aria-expanded") !== "true"));
+      subToggle.addEventListener("click", () => setSub(subToggle.getAttribute("aria-expanded") !== "true"));
+
+      navigation.addEventListener("click", e => { if (e.target.closest("a")) setMenu(false); });
+
+      document.addEventListener("click", e => {
+        if (!header.contains(e.target)) setMenu(false);
+        else if (!aboutSub.contains(e.target)) setSub(false);
       });
 
-      navigation.addEventListener("click", event => {
-        if (event.target.closest("a")) {
-          setMenu(false);
-        }
-      });
-
-      document.addEventListener("click", event => {
-        if (!header.contains(event.target)) {
-          setMenu(false);
-        }
-      });
-
-      document.addEventListener("keydown", event => {
-        if (
-          event.key === "Escape" &&
-          navigation.classList.contains("open")
-        ) {
-          setMenu(false, true);
-        }
+      document.addEventListener("keydown", e => {
+        if (e.key !== "Escape") return;
+        if (aboutSub.classList.contains("open")) { setSub(false); subToggle.focus(); }
+        else if (navigation.classList.contains("open")) setMenu(false, true);
       });
 
       header.addEventListener("focusout", () => {
-        requestAnimationFrame(() => {
-          if (!header.contains(document.activeElement)) {
-            setMenu(false);
-          }
-        });
+        requestAnimationFrame(() => { if (!header.contains(document.activeElement)) setMenu(false); });
       });
 
-      mobile.addEventListener("change", () => {
-        setMenu(false);
-      });
+      mobile.addEventListener("change", () => setMenu(false));
 
-      /* VISIBLE IMAGE FALLBACKS */
+      /* SCROLL REVEAL + COUNTERS */
+      const counters = Array.from(document.querySelectorAll("[data-count]"));
 
-      document.querySelectorAll("img").forEach(image => {
-        let replaced = false;
+      function runCounter(el) {
+        const target = Number(el.dataset.count);
+        if (reduced.matches) { el.textContent = target; return; }
+        const start = performance.now(), duration = 1600;
+        const tick = now => {
+          const t = Math.min((now - start) / duration, 1);
+          el.textContent = Math.round(target * (1 - Math.pow(1 - t, 3)));
+          if (t < 1) requestAnimationFrame(tick);
+        };
+        el.textContent = "0";
+        requestAnimationFrame(tick);
+      }
 
-        function showFallback() {
-          if (replaced) return;
-          replaced = true;
+      const targets = document.querySelectorAll(".reveal");
 
-          const template = document.getElementById("imageFallback");
-          image.replaceWith(template.content.cloneNode(true));
-        }
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("in");
+            entry.target.querySelectorAll("[data-count]").forEach(runCounter);
+            obs.unobserve(entry.target);
+          });
+        }, { threshold: .15, rootMargin: "0px 0px -40px 0px" });
+        targets.forEach(el => observer.observe(el));
+      } else {
+        targets.forEach(el => el.classList.add("in"));
+      }
 
-        image.addEventListener("error", showFallback);
-
-        if (image.complete && image.naturalWidth === 0) {
-          showFallback();
-        }
-      });
-
-      document.getElementById("year").textContent =
-        new Date().getFullYear();
+      document.getElementById("year").textContent = new Date().getFullYear();
 
       showSlide(0);
       updateMotion();
@@ -1520,5 +933,3 @@
   </script>
 </body>
 </html>
-
-
