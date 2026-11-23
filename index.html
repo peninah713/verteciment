@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Cement Consultancy in Kenya | Verteciments Consulting">
   <meta property="og:description" content="Practical, science-backed consultancy for smarter production, consistent quality and lower-carbon cement.">
-  <meta property="og:image" content="https://vertecimentsconsulting.com/1.jpg">
+  <meta property="og:image" content="https://vertecimentsconsulting.com/logo-3.jpg">
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 44'%3E%3Cpath d='M2 5h10l10 23L31 5h7L22 40h-5Z' fill='%23295138'/%3E%3Cpath d='M20 5h7l-6 14-4-8Z' fill='%238caa66'/%3E%3C/svg%3E">
 
@@ -315,6 +315,18 @@
       position: relative; z-index: 1; height: 400px; overflow: hidden;
       border-radius: 10px; background: var(--placeholder);
     }
+    .brand-logo {
+  width: 190px;
+  height: 65px;
+  object-fit: contain;
+  display: block;
+}
+    @media (max-width: 799px) {
+  .brand-logo {
+    width: 155px;
+    height: 55px;
+  }
+}
     .intro-photo img { transition: transform 1.2s var(--ease); }
     .intro-visual:hover .intro-photo img { transform: scale(1.05); }
     .experience-card {
@@ -499,16 +511,9 @@
     </defs>
   </svg>
 
-  <!-- HEADER -->
-  <header class="header" id="header">
-    <div class="wrap header-inner">
-      <a class="brand" href="index.html" aria-label="Verteciments Consulting home">
-        <svg class="brand-mark" viewBox="0 0 40 44" aria-hidden="true">
-          <path d="M2 5h10l10 23L31 5h7L22 40h-5Z" fill="#295138"></path>
-          <path d="M20 5h7l-6 14-4-8Z" fill="#8caa66"></path>
-        </svg>
-        <span class="brand-name">VERTECIMENTS<small>CONSULTING</small></span>
-      </a>
+  <a class="brand" href="index.html" aria-label="Verteciments Consulting home">
+  <img class="brand-logo" src="logo-3.jpg" alt="Verteciments Consulting">
+</a>
 
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mainNav">
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"></path></svg>
