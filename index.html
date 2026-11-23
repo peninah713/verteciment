@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-KE">
 <head>
@@ -33,7 +34,7 @@
   <meta property="og:url" content="https://vertecimentsconsulting.com/">
   <meta
     property="og:image"
-    content="https://vertecimentsconsulting.com/images/verticement-slide-1.jpg"
+    content="https://vertecimentsconsulting.com/verticement-slide-1.jpg"
   >
   <meta property="og:image:alt" content="Cement industry expertise from Verteciments Consulting">
   <meta name="twitter:card" content="summary_large_image">
@@ -48,6 +49,9 @@
     rel="stylesheet"
   >
 
+  <!-- Enables scroll animations only when JavaScript is available -->
+  <script>document.documentElement.classList.add("anim");</script>
+
   <!-- Factual business information only -->
   <script type="application/ld+json">
   {
@@ -58,8 +62,8 @@
         "@id": "https://vertecimentsconsulting.com/#business",
         "name": "Verteciments Consulting",
         "url": "https://vertecimentsconsulting.com/",
-        "logo": "https://vertecimentsconsulting.com/images/logo-3.jpg",
-        "image": "https://vertecimentsconsulting.com/images/verticement-slide-1.jpg",
+        "logo": "https://vertecimentsconsulting.com/logo-3.jpg",
+        "image": "https://vertecimentsconsulting.com/verticement-slide-1.jpg",
         "description": "Kenya-based cement consultancy specializing in production optimization, quality assurance and sustainable product development.",
         "telephone": "+254721788079",
         "email": "info@vertecimentsconsulting.com",
@@ -124,6 +128,7 @@
       --white: #fff;
       --max: 1180px;
       --radius: 8px;
+      --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     html {
@@ -151,7 +156,7 @@
     h1,
     h2,
     h3 {
-      line-height: 1.18;
+      line-height: 1.15;
     }
 
     a {
@@ -178,6 +183,18 @@
       outline-offset: 5px;
     }
 
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     .wrap {
       width: min(var(--max), calc(100% - 48px));
       margin-inline: auto;
@@ -200,7 +217,7 @@
     }
 
     .section {
-      padding-block: 96px;
+      padding-block: 110px;
     }
 
     .alt {
@@ -228,23 +245,23 @@
 
     .title {
       margin-bottom: 22px;
-      font-size: clamp(32px, 3.6vw, 46px);
-      font-weight: 600;
-      letter-spacing: -1.3px;
+      font-size: clamp(34px, 4.2vw, 58px);
+      font-weight: 700;
+      letter-spacing: -0.035em;
     }
 
     .description {
       color: var(--muted);
-      font-size: 17px;
+      font-size: 18px;
     }
 
     .btn {
       display: inline-flex;
-      min-height: 50px;
+      min-height: 52px;
       align-items: center;
       justify-content: center;
       gap: 22px;
-      padding: 14px 24px;
+      padding: 14px 26px;
       border: 1px solid var(--gold);
       border-radius: 5px;
       background: var(--gold);
@@ -260,9 +277,17 @@
     }
 
     .btn:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
       background: #ffda7d;
-      box-shadow: 0 8px 22px #00000014;
+      box-shadow: 0 10px 26px #0000001f;
+    }
+
+    .btn .icon {
+      transition: transform 0.25s var(--ease);
+    }
+
+    .btn:hover .icon {
+      transform: translateX(5px);
     }
 
     .btn-outline {
@@ -280,7 +305,7 @@
       display: inline-flex;
       min-height: 44px;
       align-items: center;
-      gap: 22px;
+      gap: 18px;
       font-size: 15px;
       font-weight: 600;
       text-decoration-color: var(--gold);
@@ -397,11 +422,165 @@
       color: #fff;
     }
 
+    /* ----- About dropdown ----- */
+
+    .sub-toggle {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border: 0;
+      background: none;
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .sub-toggle:hover,
+    .has-sub.current > .sub-toggle {
+      color: var(--gold);
+    }
+
+    .chev {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.2s;
+    }
+
+    .sub-toggle[aria-expanded="true"] .chev {
+      transform: rotate(180deg);
+    }
+
+    .has-sub {
+      position: relative;
+    }
+
+    .sub-menu {
+      margin: 0;
+      padding: 0 0 0 16px;
+      list-style: none;
+    }
+
+    .nav-list .sub-menu a {
+      display: flex;
+      min-height: 44px;
+      align-items: center;
+      padding: 10px 16px;
+      color: #fff;
+      font-size: 15px;
+      text-decoration: none;
+    }
+
+    .nav-list .sub-menu a:hover,
+    .nav-list .sub-menu a[aria-current="page"] {
+      color: var(--gold);
+    }
+
+    @media (min-width: 1024px) {
+      .js .sub-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 40;
+        min-width: 210px;
+        padding: 8px;
+        border-radius: 6px;
+        background: #fff;
+        box-shadow: 0 12px 32px #0003;
+      }
+
+      .js .nav-list .sub-menu a {
+        border-radius: 4px;
+        color: var(--text);
+      }
+
+      .js .nav-list .sub-menu a:hover,
+      .js .nav-list .sub-menu a[aria-current="page"] {
+        background: var(--soft);
+        color: #674900;
+      }
+    }
+
+    /* ================= ENTRANCE ANIMATIONS ================= */
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(46px);
+      }
+    }
+
+    @keyframes kenburns {
+      from {
+        transform: scale(1.12);
+      }
+    }
+
+    @keyframes drift {
+      from {
+        transform: translate(0, 0) rotate(0deg);
+      }
+
+      to {
+        transform: translate(-34px, 28px) rotate(14deg);
+      }
+    }
+
+    @keyframes cue {
+      0% {
+        transform: translateY(-100%);
+      }
+
+      60%,
+      100% {
+        transform: translateY(100%);
+      }
+    }
+
+    @keyframes scroll-x {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .fade {
+      animation: rise 0.9s var(--ease) backwards;
+      animation-delay: var(--d, 0ms);
+    }
+
+    /* Scroll reveal (only when JavaScript is available) */
+
+    .anim .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition:
+        opacity 0.8s var(--ease),
+        transform 0.8s var(--ease);
+      transition-delay: var(--d, 0ms);
+    }
+
+    .anim .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    .anim .reveal-clip .about-frame {
+      clip-path: inset(0 0 100% 0);
+      transition: clip-path 1.2s var(--ease);
+    }
+
+    .anim .reveal-clip.in .about-frame {
+      clip-path: inset(0);
+    }
+
     /* ================= HERO ================= */
 
     .hero {
       position: relative;
       isolation: isolate;
+      display: flex;
+      min-height: min(86svh, 820px);
+      align-items: center;
       overflow: hidden;
       background: #263029;
       color: #fff;
@@ -420,21 +599,41 @@
     .hero-image {
       object-fit: cover;
       object-position: center;
+      animation: kenburns 22s ease-out both;
     }
 
     .hero-shade {
       background:
         linear-gradient(
           90deg,
-          #101713f0 0%,
-          #131a16c9 48%,
-          #13131345 100%
+          #101713f2 0%,
+          #131a16cc 50%,
+          #13131352 100%
         ),
-        linear-gradient(0deg, #13131380, transparent 65%);
+        linear-gradient(0deg, #13131390, transparent 60%);
+    }
+
+    .hero::after {
+      position: absolute;
+      top: 6%;
+      right: -150px;
+      z-index: -1;
+      width: 560px;
+      height: 560px;
+      border: 1px solid #fcc23638;
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 70px #fcc2360d,
+        0 0 0 140px #fcc23608;
+      content: "";
+      pointer-events: none;
+      animation: drift 16s ease-in-out infinite alternate;
     }
 
     .hero-inner {
-      padding-block: 112px 100px;
+      position: relative;
+      z-index: 1;
+      padding-block: 100px 130px;
     }
 
     .hero .eyebrow {
@@ -442,24 +641,61 @@
     }
 
     .hero h1 {
-      max-width: 900px;
-      margin-bottom: 26px;
-      font-size: clamp(44px, 5.8vw, 76px);
-      font-weight: 600;
-      letter-spacing: -2.6px;
-      line-height: 1.06;
+      max-width: 1000px;
+      margin-bottom: 28px;
+      font-size: clamp(46px, 7.4vw, 104px);
+      font-weight: 700;
+      letter-spacing: -0.045em;
+      line-height: 1.02;
     }
 
-    .hero h1 span {
+    .h1-line {
       display: block;
+    }
+
+    .word {
+      display: inline-block;
+      animation: rise 0.9s var(--ease) backwards;
+      animation-delay: calc(var(--i) * 130ms + 150ms);
+    }
+
+    .rot-line {
+      animation: rise 0.9s var(--ease) 560ms backwards;
+    }
+
+    .rot-window {
+      display: inline-grid;
+      margin-bottom: -0.14em;
+      padding-bottom: 0.14em;
+      overflow: hidden;
+      vertical-align: top;
       color: var(--gold);
     }
 
+    .rot-word {
+      grid-area: 1 / 1;
+      opacity: 0;
+      transform: translateY(80%);
+      transition:
+        transform 0.7s var(--ease),
+        opacity 0.5s ease;
+    }
+
+    .rot-word.is-active {
+      opacity: 1;
+      transform: none;
+    }
+
+    .rot-word.is-leaving {
+      opacity: 0;
+      transform: translateY(-80%);
+    }
+
     .hero-description {
-      max-width: 570px;
-      margin-bottom: 34px;
+      max-width: 560px;
+      margin-bottom: 36px;
       color: #ededeb;
-      font-size: 19px;
+      font-size: 20px;
       line-height: 1.7;
     }
 
@@ -469,61 +705,97 @@
       gap: 14px;
     }
 
-    .hero-note {
+    .scroll-cue {
+      position: absolute;
+      right: max(24px, calc((100% - var(--max)) / 2));
+      bottom: 34px;
+      z-index: 2;
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin: 32px 0 0;
-      color: #e4e6e2;
-      font-size: 14px;
+      gap: 14px;
+      color: #e8eae5;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-decoration: none;
+      text-transform: uppercase;
     }
 
-    .hero-note .icon {
-      width: 18px;
-      height: 18px;
-      color: var(--gold);
+    .scroll-cue i {
+      position: relative;
+      display: block;
+      width: 2px;
+      height: 54px;
+      overflow: hidden;
+      background: #ffffff35;
     }
 
-    /* ================= HIGHLIGHT STRIP ================= */
-
-    .focus-strip {
-      padding-block: 27px;
-      border-bottom: 1px solid var(--line);
-      background: #fff;
+    .scroll-cue i::after {
+      position: absolute;
+      inset: 0;
+      background: var(--gold);
+      content: "";
+      animation: cue 2s ease-in-out infinite;
     }
 
-    .focus-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 30px;
+    /* ================= WORD MARQUEE ================= */
+
+    .marquee {
+      overflow: hidden;
+      background: var(--gold);
+      color: var(--dark);
     }
 
-    .focus-item {
+    .marquee-track {
       display: flex;
-      min-width: 0;
+      width: max-content;
+      animation: scroll-x 40s linear infinite;
+    }
+
+    .marquee:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    .marquee-list {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .marquee-list li {
+      display: flex;
       align-items: center;
-      gap: 15px;
-      font-size: 15px;
-      font-weight: 500;
+      padding-block: 22px;
+      font-size: clamp(20px, 2.4vw, 30px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
     }
 
-    .focus-item .icon {
-      color: #806000;
+    .marquee-list li::after {
+      width: 10px;
+      height: 10px;
+      margin-inline: 40px;
+      background: var(--dark);
+      content: "";
+      transform: rotate(45deg);
     }
 
-    /* ================= ABOUT PREVIEW ================= */
+    /* ================= ABOUT ================= */
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 0.95fr 1.05fr;
       align-items: center;
-      gap: 76px;
+      gap: 88px;
     }
 
     .about-visual {
       position: relative;
+      isolation: isolate;
       min-width: 0;
-      padding: 0 24px 24px 0;
+      padding: 0 28px 28px 0;
     }
 
     .about-visual::after {
@@ -531,69 +803,81 @@
       right: 0;
       bottom: 0;
       z-index: -1;
-      width: 70%;
-      height: 70%;
+      width: 72%;
+      height: 72%;
       border-radius: var(--radius);
-      background: var(--gold-soft);
+      background: var(--gold);
       content: "";
+    }
+
+    .about-frame {
+      overflow: hidden;
+      border-radius: var(--radius);
     }
 
     .about-photo,
     .about-fallback {
       width: 100%;
-      height: 430px;
+      height: 520px;
       border-radius: var(--radius);
       object-fit: cover;
       object-position: center;
       background: var(--soft);
     }
 
-    .about-caption {
-      position: relative;
-      margin: -37px 18px 0;
-      padding: 20px 23px;
-      border-left: 3px solid var(--gold);
-      border-radius: 4px;
-      background: var(--dark);
-      color: #fff;
-      box-shadow: 0 10px 24px #00000015;
+    .about-copy .description {
+      max-width: 520px;
+      margin-bottom: 30px;
     }
 
-    .about-caption strong {
-      display: block;
-      font-size: 17px;
-      font-weight: 500;
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin: 0 0 36px;
+      padding-top: 32px;
+      border-top: 1px solid var(--line);
     }
 
-    .about-caption span {
-      color: #d3d5d0;
-      font-size: 14px;
+    .stat {
+      display: flex;
+      min-width: 0;
+      flex-direction: column-reverse;
     }
 
-    .about-copy p {
-      margin-bottom: 22px;
+    .stat dt {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.6px;
+      line-height: 1.4;
+      text-transform: uppercase;
     }
 
-    .about-copy .text-link {
-      margin-top: 4px;
+    .stat dd {
+      margin: 0 0 8px;
+      color: var(--dark);
+      font-size: clamp(42px, 4.6vw, 64px);
+      font-weight: 700;
+      letter-spacing: -0.045em;
+      line-height: 1;
     }
 
-    /* ================= SERVICES PREVIEW ================= */
+    .stat .suffix {
+      color: #a06f00;
+    }
+
+    /* ================= SERVICES ================= */
 
     .section-head {
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
       gap: 40px;
-      margin-bottom: 42px;
+      margin-bottom: 52px;
     }
 
     .section-head .title {
-      margin-bottom: 0;
-    }
-
-    .section-head > p {
-      max-width: 420px;
       margin-bottom: 0;
     }
 
@@ -603,158 +887,204 @@
       gap: 22px;
     }
 
-    .service-card {
+    .svc {
+      position: relative;
       display: flex;
+      min-height: 290px;
       min-width: 0;
       flex-direction: column;
       align-items: flex-start;
-      padding: 28px;
+      padding: 32px;
+      overflow: hidden;
       border: 1px solid var(--line);
-      border-top: 3px solid transparent;
-      border-radius: 6px;
+      border-radius: 8px;
       background: #fff;
+      color: var(--text);
+      text-decoration: none;
       transition:
-        transform 0.2s,
-        border-color 0.2s,
-        box-shadow 0.2s;
+        transform 0.35s var(--ease),
+        background 0.35s,
+        color 0.35s,
+        border-color 0.35s,
+        box-shadow 0.35s;
     }
 
-    .service-card:hover {
-      transform: translateY(-4px);
-      border-top-color: var(--gold);
-      box-shadow: 0 12px 28px #1313130d;
+    .svc::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gold);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.45s var(--ease);
     }
 
-    .service-icon {
+    .svc:hover,
+    .svc:focus-visible {
+      transform: translateY(-8px);
+      border-color: var(--dark);
+      background: var(--dark);
+      box-shadow: 0 22px 44px #13131333;
+      color: #fff;
+    }
+
+    .svc:hover::before,
+    .svc:focus-visible::before {
+      transform: scaleX(1);
+    }
+
+    .svc-num {
+      position: absolute;
+      top: 22px;
+      right: 28px;
+      color: var(--line);
+      font-size: 56px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      transition: color 0.35s;
+    }
+
+    .svc:hover .svc-num,
+    .svc:focus-visible .svc-num {
+      color: #fcc23655;
+    }
+
+    .svc-icon {
       display: grid;
-      width: 48px;
-      height: 48px;
-      margin-bottom: 25px;
+      width: 54px;
+      height: 54px;
+      margin-bottom: 28px;
       place-items: center;
-      border-radius: 7px;
+      border-radius: 8px;
       background: var(--gold-soft);
       color: #755400;
+      transition:
+        background 0.35s,
+        color 0.35s;
     }
 
-    .service-card h3 {
-      margin-bottom: 12px;
-      font-size: 21px;
+    .svc:hover .svc-icon,
+    .svc:focus-visible .svc-icon {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .svc h3 {
+      margin-bottom: 10px;
+      font-size: 23px;
       font-weight: 600;
-      letter-spacing: -0.3px;
+      letter-spacing: -0.02em;
     }
 
-    .service-card p {
-      margin-bottom: 18px;
+    .svc p {
+      margin-bottom: 24px;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 16px;
+      transition: color 0.35s;
     }
 
-    .service-card .text-link {
+    .svc:hover p,
+    .svc:focus-visible p {
+      color: #d4d7d1;
+    }
+
+    .svc-go {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
       margin-top: auto;
       font-size: 14px;
+      font-weight: 600;
+    }
+
+    .svc-go .icon {
+      width: 20px;
+      height: 20px;
+      color: #8a6200;
+      transition:
+        transform 0.35s var(--ease),
+        color 0.35s;
+    }
+
+    .svc:hover .svc-go .icon,
+    .svc:focus-visible .svc-go .icon {
+      color: var(--gold);
+      transform: translateX(8px);
     }
 
     .section-bottom {
-      margin-top: 36px;
+      margin-top: 44px;
       text-align: center;
     }
 
-    /* ================= WHY CHOOSE US ================= */
+    /* ================= MISSION STATEMENT ================= */
 
-    .why {
+    .statement {
+      position: relative;
+      overflow: hidden;
+      padding-block: 140px;
       background: var(--dark);
       color: #fff;
     }
 
-    .why .eyebrow {
+    .statement::before {
+      position: absolute;
+      bottom: -200px;
+      left: -170px;
+      width: 520px;
+      height: 520px;
+      border: 1px solid #fcc23630;
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 70px #fcc2360a,
+        0 0 0 140px #fcc23606;
+      content: "";
+      pointer-events: none;
+    }
+
+    .statement .wrap {
+      position: relative;
+    }
+
+    .statement .eyebrow {
       color: var(--gold);
     }
 
-    .why .section-head > p {
-      color: #d4d7d1;
+    .statement-text {
+      max-width: 1020px;
+      margin: 0;
+      font-size: clamp(34px, 5.6vw, 76px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
     }
 
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 36px;
-      margin-top: 48px;
+    .sw {
+      transition:
+        opacity 0.4s ease,
+        color 0.4s ease;
     }
 
-    .why-card {
-      min-width: 0;
-      padding-top: 25px;
-      border-top: 1px solid #ffffff35;
+    .anim .sw {
+      opacity: 0.2;
     }
 
-    .why-number {
-      display: block;
-      margin-bottom: 24px;
+    .anim .sw.on {
+      opacity: 1;
+    }
+
+    .sw.hl {
       color: var(--gold);
-      font-size: 14px;
-      letter-spacing: 2px;
-    }
-
-    .why-card h3 {
-      margin-bottom: 14px;
-      font-size: 23px;
-      font-weight: 500;
-    }
-
-    .why-card p {
-      margin: 0;
-      color: #d4d7d1;
-      font-size: 16px;
-    }
-
-    /* ================= EXPERTISE / TRUST ================= */
-
-    .expertise-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
-      gap: 80px;
-    }
-
-    .expertise-panel {
-      padding: 34px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--soft);
-    }
-
-    .expertise-panel h3 {
-      margin-bottom: 22px;
-      font-size: 21px;
-    }
-
-    .expertise-list {
-      display: grid;
-      gap: 16px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .expertise-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .expertise-list .icon {
-      width: 20px;
-      height: 20px;
-      margin-top: 3px;
-      color: #7b5900;
     }
 
     /* ================= CTA ================= */
 
     .cta {
-      padding-block: 64px;
+      padding-block: 84px;
       background: var(--gold);
     }
 
@@ -766,20 +1096,27 @@
     }
 
     .cta h2 {
-      max-width: 670px;
-      margin-bottom: 15px;
-      font-size: clamp(30px, 3.2vw, 42px);
-      letter-spacing: -1.1px;
+      max-width: 720px;
+      margin-bottom: 14px;
+      font-size: clamp(32px, 4vw, 54px);
+      font-weight: 700;
+      letter-spacing: -0.035em;
     }
 
     .cta p {
-      max-width: 620px;
+      max-width: 600px;
       margin: 0;
-      font-size: 17px;
+      font-size: 18px;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .cta .btn {
-      flex-shrink: 0;
       border-color: var(--dark);
       background: var(--dark);
       color: #fff;
@@ -787,6 +1124,16 @@
 
     .cta .btn:hover {
       background: #303030;
+    }
+
+    .cta .btn-outline {
+      background: transparent;
+      color: var(--dark);
+    }
+
+    .cta .btn-outline:hover {
+      background: var(--dark);
+      color: #fff;
     }
 
     /* ================= FOOTER ================= */
@@ -966,13 +1313,17 @@
         width: 100%;
       }
 
+      .js .sub-toggle {
+        width: 100%;
+        justify-content: space-between;
+      }
+
       .nav-list > li > .header-cta {
         margin-left: 0;
       }
 
-      .about-grid,
-      .expertise-grid {
-        gap: 40px;
+      .about-grid {
+        gap: 48px;
       }
 
       .service-grid {
@@ -986,7 +1337,7 @@
       .cta-inner {
         align-items: flex-start;
         flex-direction: column;
-        gap: 28px;
+        gap: 30px;
       }
     }
 
@@ -996,67 +1347,51 @@
       }
 
       .section {
-        padding-block: 64px;
+        padding-block: 72px;
+      }
+
+      .statement {
+        padding-block: 90px;
+      }
+
+      .hero {
+        min-height: 0;
       }
 
       .hero-inner {
-        padding-block: 76px;
+        padding-block: 76px 90px;
       }
 
       .hero h1 {
-        font-size: clamp(43px, 8vw, 62px);
-        letter-spacing: -1.7px;
+        letter-spacing: -0.04em;
       }
 
       .hero-description {
-        font-size: 17px;
+        font-size: 18px;
       }
 
       .hero-shade {
-        background: linear-gradient(90deg, #101713ed, #131a16b8);
+        background: linear-gradient(90deg, #101713ee, #131a16bd);
       }
 
-      .focus-grid {
-        grid-template-columns: 1fr;
-        gap: 17px;
-      }
-
-      .focus-strip {
-        padding-block: 25px;
-      }
-
-      .about-grid,
-      .expertise-grid,
-      .why-grid {
-        grid-template-columns: 1fr;
+      .scroll-cue {
+        display: none;
       }
 
       .about-grid {
-        gap: 45px;
+        grid-template-columns: 1fr;
       }
 
       .about-photo,
       .about-fallback {
-        height: 360px;
+        height: 380px;
       }
 
       .section-head {
         align-items: flex-start;
         flex-direction: column;
         gap: 20px;
-      }
-
-      .why-grid {
-        gap: 28px;
-        margin-top: 35px;
-      }
-
-      .why-number {
-        margin-bottom: 15px;
-      }
-
-      .expertise-grid {
-        gap: 28px;
+        margin-bottom: 36px;
       }
 
       .footer-grid {
@@ -1078,8 +1413,17 @@
       }
     }
 
+    @media (max-width: 599px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .svc {
+        min-height: 0;
+      }
+    }
+
     @media (max-width: 520px) {
-      .service-grid,
       .footer-grid {
         grid-template-columns: 1fr;
       }
@@ -1097,14 +1441,16 @@
         width: 100%;
       }
 
-      .service-card {
-        padding: 26px;
+      .stats {
+        gap: 14px;
       }
 
-      .expertise-panel {
-        padding: 26px;
+      .stat dt {
+        font-size: 11px;
+        letter-spacing: 1px;
       }
 
+      .cta-actions,
       .cta .btn {
         width: 100%;
       }
@@ -1114,6 +1460,8 @@
         letter-spacing: 1.5px;
       }
     }
+
+    /* ================= REDUCED MOTION ================= */
 
     @media (prefers-reduced-motion: reduce) {
       html {
@@ -1125,6 +1473,31 @@
       *::after {
         animation: none !important;
         transition: none !important;
+      }
+
+      .anim .reveal,
+      .anim .sw {
+        opacity: 1;
+        transform: none;
+      }
+
+      .anim .reveal-clip .about-frame {
+        clip-path: none;
+      }
+
+      .marquee-track {
+        width: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .marquee-list[aria-hidden="true"] {
+        display: none;
+      }
+
+      .marquee-list {
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
   </style>
@@ -1144,10 +1517,6 @@
     <defs>
       <symbol id="icon-arrow" viewBox="0 0 24 24">
         <path d="M5 12h14M13 6l6 6-6 6"/>
-      </symbol>
-
-      <symbol id="icon-check" viewBox="0 0 24 24">
-        <path d="m5 12 4 4L19 6"/>
       </symbol>
 
       <symbol id="icon-lab" viewBox="0 0 24 24">
@@ -1237,8 +1606,30 @@
         <ul class="nav-list">
           <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="service.html">Services</a></li>
-          <li><a href="about.html">About</a></li>
+
+          <li class="has-sub">
+            <button
+              class="sub-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="aboutMenu"
+            >
+              About
+              <svg class="icon chev" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 9 6 6 6-6"/>
+              </svg>
+            </button>
+
+            <ul class="sub-menu" id="aboutMenu">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="ourstory.html">Our Story</a></li>
+              <li><a href="ourteam.html">Our Team</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+          </li>
+
           <li><a href="contact.html">Contact</a></li>
+
           <li>
             <a class="btn header-cta" href="contact.html">
               Request a Consultation
@@ -1281,19 +1672,32 @@
       <div class="hero-shade"></div>
 
       <div class="wrap hero-inner">
-        <div class="eyebrow">Science-led. Performance-driven.</div>
+        <div class="eyebrow fade">Science-led. Performance-driven.</div>
 
         <h1 id="hero-title">
-          Better Cement Performance.
-          <span>Lower Carbon Impact.</span>
+          <span class="h1-line">
+            <span class="word" style="--i:0">Better</span>
+            <span class="word" style="--i:1">cement</span>
+          </span>
+
+          <span class="h1-line rot-line">
+            <span class="sr-only">performance, quality, efficiency and sustainability.</span>
+
+            <span class="rot-window" aria-hidden="true">
+              <span class="rot-word is-active">performance.</span>
+              <span class="rot-word">quality.</span>
+              <span class="rot-word">efficiency.</span>
+              <span class="rot-word">sustainability.</span>
+            </span>
+          </span>
         </h1>
 
-        <p class="hero-description">
-          Practical, science-backed consultancy helping cement manufacturers
-          improve quality, optimize production and develop sustainable products.
+        <p class="hero-description fade" style="--d:900ms">
+          Practical, science-backed consultancy for cement manufacturers:
+          better quality, smarter production, lower carbon.
         </p>
 
-        <div class="hero-actions">
+        <div class="hero-actions fade" style="--d:1050ms">
           <a class="btn" href="service.html">
             Explore Our Services
             <svg class="icon" aria-hidden="true">
@@ -1305,105 +1709,109 @@
             Talk to Us
           </a>
         </div>
+      </div>
 
-        <p class="hero-note">
-          <svg class="icon" aria-hidden="true">
-            <use href="#icon-pin"/>
-          </svg>
-          Focused on your production challenges.
-        </p>
+      <a class="scroll-cue" href="#intro" aria-label="Scroll to the next section">
+        Scroll
+        <i aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <!-- ================= WORD MARQUEE ================= -->
+    <section class="marquee" aria-label="Our focus areas">
+      <div class="marquee-track">
+        <ul class="marquee-list">
+          <li>Production efficiency</li>
+          <li>Consistent quality</li>
+          <li>Low-carbon cement</li>
+          <li>Process optimization</li>
+          <li>Laboratory standardization</li>
+          <li>Product innovation</li>
+        </ul>
+
+        <ul class="marquee-list" aria-hidden="true">
+          <li>Production efficiency</li>
+          <li>Consistent quality</li>
+          <li>Low-carbon cement</li>
+          <li>Process optimization</li>
+          <li>Laboratory standardization</li>
+          <li>Product innovation</li>
+        </ul>
       </div>
     </section>
 
-    <!-- ================= QUICK VALUE STRIP ================= -->
-    <section class="focus-strip" aria-label="Our focus">
-      <div class="wrap focus-grid">
-        <div class="focus-item">
-          <svg class="icon" aria-hidden="true">
-            <use href="#icon-chart"/>
-          </svg>
-          Production efficiency
-        </div>
-
-        <div class="focus-item">
-          <svg class="icon" aria-hidden="true">
-            <use href="#icon-shield"/>
-          </svg>
-          Consistent product quality
-        </div>
-
-        <div class="focus-item">
-          <svg class="icon" aria-hidden="true">
-            <use href="#icon-leaf"/>
-          </svg>
-          Lower-carbon cement solutions
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= SHORT INTRODUCTION ================= -->
-    <section class="section" aria-labelledby="about-title">
+    <!-- ================= ABOUT ================= -->
+    <section class="section" id="intro" aria-labelledby="about-title">
       <div class="wrap about-grid">
-        <div class="about-visual">
-          <img
-            class="about-photo"
-            id="aboutImage"
-            src="cement-lab.jpg"
-            width="600"
-            height="600"
-            alt="Cement laboratory testing equipment and samples"
-            loading="lazy"
-            decoding="async"
-          >
+        <div class="about-visual reveal-clip reveal">
+          <div class="about-frame">
+            <img
+              class="about-photo"
+              id="aboutImage"
+              src="cement-lab.jpg"
+              width="600"
+              height="600"
+              alt="Cement laboratory testing equipment and samples"
+              loading="lazy"
+              decoding="async"
+            >
 
-          <svg
-            class="about-fallback"
-            id="aboutFallback"
-            viewBox="0 0 600 600"
-            role="img"
-            aria-label="Cement laboratory testing"
-            hidden
-          >
-            <rect width="600" height="600" fill="#e9ece4"/>
-            <path
-              d="M250 130h100M265 130v130L170 440a22 22 0 0 0 19 32h222a22 22 0 0 0 19-32L335 260V130M215 370h170"
-              fill="none"
-              stroke="#354338"
-              stroke-width="14"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path d="M215 370h170l37 70a22 22 0 0 1-19 32H197a22 22 0 0 1-19-32Z" fill="#fcc236"/>
-          </svg>
-
-          <div class="about-caption">
-            <strong>Science meets real-world experience.</strong>
-            <span>Practical thinking for the cement industry.</span>
+            <svg
+              class="about-fallback"
+              id="aboutFallback"
+              viewBox="0 0 600 600"
+              role="img"
+              aria-label="Cement laboratory testing"
+              hidden
+            >
+              <rect width="600" height="600" fill="#e9ece4"/>
+              <path
+                d="M250 130h100M265 130v130L170 440a22 22 0 0 0 19 32h222a22 22 0 0 0 19-32L335 260V130M215 370h170"
+                fill="none"
+                stroke="#354338"
+                stroke-width="14"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path d="M215 370h170l37 70a22 22 0 0 1-19 32H197a22 22 0 0 1-19-32Z" fill="#fcc236"/>
+            </svg>
           </div>
         </div>
 
         <div class="about-copy">
-          <div class="eyebrow">About Verteciments</div>
+          <div class="eyebrow reveal">About Verteciments</div>
 
-          <h2 class="title" id="about-title">
-            Cement expertise.<br>
-            Built around your goals.
+          <h2 class="title reveal" id="about-title" style="--d:80ms">
+            Science meets real<br>
+            plant experience.
           </h2>
 
-          <p class="description">
-            Verteciments Consulting is a Kenya-based cement consultancy
-            supporting manufacturers with production optimization, quality
-            enhancement and sustainable product development.
+          <p class="description reveal" style="--d:160ms">
+            A Kenya-based cement consultancy helping manufacturers
+            improve quality, optimize production and develop
+            lower-carbon products.
           </p>
 
-          <p class="description">
-            Led by Dr. Munyao, our team connects material science with practical
-            plant experience. We help you understand your materials, address
-            production challenges and identify opportunities to improve
-            performance while reducing clinker consumption.
-          </p>
+          <dl class="stats reveal" style="--d:240ms">
+            <div class="stat">
+              <dt>Years of industry experience</dt>
+              <dd>
+                <span data-count="15">15</span><span class="suffix">+</span>
+              </dd>
+            </div>
 
-          <a class="text-link" href="about.html">
+            <div class="stat">
+              <dt>Specialist services</dt>
+              <dd><span data-count="6">6</span></dd>
+            </div>
+
+            <div class="stat">
+              <dt>Founded in</dt>
+              <dd><span data-count="2017">2017</span></dd>
+            </div>
+          </dl>
+
+          <a class="text-link reveal" style="--d:320ms" href="about.html">
             About Verteciments
             <svg class="icon" aria-hidden="true">
               <use href="#icon-arrow"/>
@@ -1413,177 +1821,100 @@
       </div>
     </section>
 
-    <!-- ================= SERVICES OVERVIEW ================= -->
+    <!-- ================= SERVICES ================= -->
     <section class="section alt" aria-labelledby="services-title">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <div class="eyebrow">What we do</div>
-            <h2 class="title" id="services-title">
-              Specialist support.<br>
-              At every stage.
+            <div class="eyebrow reveal">What we do</div>
+            <h2 class="title reveal" id="services-title" style="--d:80ms">
+              Six ways<br>
+              we help.
             </h2>
           </div>
-
-          <p class="description">
-            From laboratory testing to product development, discover practical
-            support for your cement production goals.
-          </p>
         </div>
 
         <div class="service-grid">
-          <article class="service-card">
-            <div class="service-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-book"/>
-              </svg>
-            </div>
-
+          <a class="svc reveal" href="service.html#training">
+            <span class="svc-num" aria-hidden="true">01</span>
+            <span class="svc-icon">
+              <svg class="icon" aria-hidden="true"><use href="#icon-book"/></svg>
+            </span>
             <h3>Training &amp; Quality Assurance</h3>
-            <p>
-              Build your team's testing capability and improve consistency
-              in cement quality.
-            </p>
+            <p>Build your team's testing capability.</p>
+            <span class="svc-go">
+              Explore
+              <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            </span>
+          </a>
 
-            <a
-              class="text-link"
-              href="service.html#training"
-              aria-label="Learn about training and quality assurance"
-            >
-              Explore service
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-arrow"/>
-              </svg>
-            </a>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-chart"/>
-              </svg>
-            </div>
-
+          <a class="svc reveal" style="--d:100ms" href="service.html#process-optimization">
+            <span class="svc-num" aria-hidden="true">02</span>
+            <span class="svc-icon">
+              <svg class="icon" aria-hidden="true"><use href="#icon-chart"/></svg>
+            </span>
             <h3>Process Optimization</h3>
-            <p>
-              Improve production efficiency and reduce clinker consumption
-              while maintaining performance.
-            </p>
+            <p>Cut clinker use without losing performance.</p>
+            <span class="svc-go">
+              Explore
+              <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            </span>
+          </a>
 
-            <a
-              class="text-link"
-              href="service.html#process-optimization"
-              aria-label="Learn about process optimization"
-            >
-              Explore service
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-arrow"/>
-              </svg>
-            </a>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-leaf"/>
-              </svg>
-            </div>
-
+          <a class="svc reveal" style="--d:200ms" href="service.html#product-development">
+            <span class="svc-num" aria-hidden="true">03</span>
+            <span class="svc-icon">
+              <svg class="icon" aria-hidden="true"><use href="#icon-leaf"/></svg>
+            </span>
             <h3>Product Development &amp; Innovation</h3>
-            <p>
-              Develop lower-carbon cement products for evolving customer
-              and performance needs.
-            </p>
+            <p>Develop lower-carbon cement products.</p>
+            <span class="svc-go">
+              Explore
+              <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            </span>
+          </a>
 
-            <a
-              class="text-link"
-              href="service.html#product-development"
-              aria-label="Learn about product development and innovation"
-            >
-              Explore service
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-arrow"/>
-              </svg>
-            </a>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-shield"/>
-              </svg>
-            </div>
-
+          <a class="svc reveal" href="service.html#regulatory">
+            <span class="svc-num" aria-hidden="true">04</span>
+            <span class="svc-icon">
+              <svg class="icon" aria-hidden="true"><use href="#icon-shield"/></svg>
+            </span>
             <h3>Regulatory Compliance &amp; Approvals</h3>
-            <p>
-              Navigate relevant industry standards and approval requirements
-              with informed guidance.
-            </p>
+            <p>Navigate standards and approvals.</p>
+            <span class="svc-go">
+              Explore
+              <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            </span>
+          </a>
 
-            <a
-              class="text-link"
-              href="service.html#regulatory"
-              aria-label="Learn about regulatory compliance and approvals"
-            >
-              Explore service
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-arrow"/>
-              </svg>
-            </a>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-mix"/>
-              </svg>
-            </div>
-
+          <a class="svc reveal" style="--d:100ms" href="service.html#additives">
+            <span class="svc-num" aria-hidden="true">05</span>
+            <span class="svc-icon">
+              <svg class="icon" aria-hidden="true"><use href="#icon-mix"/></svg>
+            </span>
             <h3>Cement Additives &amp; Grinding Aids</h3>
-            <p>
-              Select suitable additives and admixtures for cement production
-              and concrete performance.
-            </p>
+            <p>Select the right additives and admixtures.</p>
+            <span class="svc-go">
+              Explore
+              <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            </span>
+          </a>
 
-            <a
-              class="text-link"
-              href="service.html#additives"
-              aria-label="Learn about cement additives and grinding aids"
-            >
-              Explore service
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-arrow"/>
-              </svg>
-            </a>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-lab"/>
-              </svg>
-            </div>
-
+          <a class="svc reveal" style="--d:200ms" href="service.html#laboratory">
+            <span class="svc-num" aria-hidden="true">06</span>
+            <span class="svc-icon">
+              <svg class="icon" aria-hidden="true"><use href="#icon-lab"/></svg>
+            </span>
             <h3>Laboratory Standardization</h3>
-            <p>
-              Establish reliable testing methods and procedures for consistent
-              laboratory results.
-            </p>
-
-            <a
-              class="text-link"
-              href="service.html#laboratory"
-              aria-label="Learn about laboratory standardization"
-            >
-              Explore service
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-arrow"/>
-              </svg>
-            </a>
-          </article>
+            <p>Reliable, consistent testing procedures.</p>
+            <span class="svc-go">
+              Explore
+              <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            </span>
+          </a>
         </div>
 
-        <div class="section-bottom">
+        <div class="section-bottom reveal">
           <a class="btn" href="service.html">
             View All Services
             <svg class="icon" aria-hidden="true">
@@ -1594,136 +1925,55 @@
       </div>
     </section>
 
-    <!-- ================= WHY CHOOSE US ================= -->
-    <section class="section why" aria-labelledby="why-title">
+    <!-- ================= MISSION STATEMENT ================= -->
+    <section class="statement" id="statement" aria-labelledby="statement-title">
       <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">The Verteciments difference</div>
-            <h2 class="title" id="why-title">
-              Practical thinking.<br>
-              Purposeful progress.
-            </h2>
-          </div>
+        <div class="eyebrow">Our mission</div>
 
-          <p class="description">
-            Your materials, your plant and your commercial goals shape
-            our recommendations—not a one-size-fits-all formula.
-          </p>
-        </div>
-
-        <div class="why-grid">
-          <article class="why-card">
-            <span class="why-number" aria-hidden="true">01 / EXPERIENCE</span>
-            <h3>Grounded in the industry</h3>
-            <p>
-              Hands-on cement industry experience helps us address the
-              production challenges your team faces every day.
-            </p>
-          </article>
-
-          <article class="why-card">
-            <span class="why-number" aria-hidden="true">02 / SCIENCE</span>
-            <h3>Tailored to your operation</h3>
-            <p>
-              Material science and practical assessment guide recommendations
-              suited to your products and production conditions.
-            </p>
-          </article>
-
-          <article class="why-card">
-            <span class="why-number" aria-hidden="true">03 / SUSTAINABILITY</span>
-            <h3>Performance with responsibility</h3>
-            <p>
-              We focus on opportunities to lower carbon impact while keeping
-              product quality and operational efficiency in view.
-            </p>
-          </article>
-        </div>
+        <h2 class="statement-text" id="statement-title">
+          <span class="sw">We</span>
+          <span class="sw">turn</span>
+          <span class="sw">cement</span>
+          <span class="sw">from</span>
+          <span class="sw">a</span>
+          <span class="sw">carbon</span>
+          <span class="sw">challenge</span>
+          <span class="sw">into</span>
+          <span class="sw">a</span>
+          <span class="sw hl">climate</span>
+          <span class="sw hl">solution.</span>
+        </h2>
       </div>
     </section>
 
-    <!-- ================= CREDIBILITY ================= -->
-    <section class="section" aria-labelledby="expertise-title">
-      <div class="wrap expertise-grid">
-        <div>
-          <div class="eyebrow">Meet the expertise behind the advice</div>
-
-          <h2 class="title" id="expertise-title">
-            A scientific approach.<br>
-            A practical perspective.
-          </h2>
-
-          <p class="description">
-            Dr. Munyao and the Verteciments team bring a material-science
-            perspective to cement production, testing and innovation.
-            Our focus is helping your team turn technical insight into
-            practical decisions.
-          </p>
-
-          <a class="text-link" href="about.html">
-            Meet Verteciments
-            <svg class="icon" aria-hidden="true">
-              <use href="#icon-arrow"/>
-            </svg>
-          </a>
-        </div>
-
-        <aside class="expertise-panel" aria-labelledby="expertise-panel-title">
-          <h3 id="expertise-panel-title">Our technical focus</h3>
-
-          <ul class="expertise-list">
-            <li>
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-check"/>
-              </svg>
-              Low-carbon cement formulations
-            </li>
-
-            <li>
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-check"/>
-              </svg>
-              Alternative supplementary cementitious materials
-            </li>
-
-            <li>
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-check"/>
-              </svg>
-              Cement testing and quality assurance
-            </li>
-
-            <li>
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-check"/>
-              </svg>
-              Production efficiency and product performance
-            </li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <!-- ================= FINAL CALL TO ACTION ================= -->
+    <!-- ================= CALL TO ACTION ================= -->
     <section class="cta" aria-labelledby="cta-title">
       <div class="wrap cta-inner">
-        <div>
+        <div class="reveal">
           <h2 id="cta-title">
             Ready to improve your cement performance?
           </h2>
           <p>
-            Tell us about your production challenges.
-            Let's explore the right next step for your operation.
+            Tell us about your production challenges and we will advise
+            on the next step.
           </p>
         </div>
 
-        <a class="btn" href="contact.html">
-          Request a Consultation
-          <svg class="icon" aria-hidden="true">
-            <use href="#icon-arrow"/>
-          </svg>
-        </a>
+        <div class="cta-actions reveal" style="--d:120ms">
+          <a class="btn" href="contact.html">
+            Request a Consultation
+            <svg class="icon" aria-hidden="true">
+              <use href="#icon-arrow"/>
+            </svg>
+          </a>
+
+          <a class="btn btn-outline" href="tel:+254721788079">
+            <svg class="icon" aria-hidden="true">
+              <use href="#icon-phone"/>
+            </svg>
+            +254 721 788 079
+          </a>
+        </div>
       </div>
     </section>
   </main>
@@ -1933,6 +2183,208 @@
       addImageFallback("siteLogo", "logoFallback");
       addImageFallback("heroImage", "heroFallback");
       addImageFallback("aboutImage", "aboutFallback");
+    })();
+
+    /* ---------- About dropdown ---------- */
+
+    (() => {
+      "use strict";
+
+      const item = document.querySelector(".has-sub");
+
+      if (!item) {
+        return;
+      }
+
+      const toggle = item.querySelector(".sub-toggle");
+      const menu = item.querySelector(".sub-menu");
+      const desktop = window.matchMedia("(min-width: 1024px)");
+
+      function setSub(open, restoreFocus = false) {
+        menu.hidden = !open;
+        toggle.setAttribute("aria-expanded", String(open));
+
+        if (restoreFocus) {
+          toggle.focus();
+        }
+      }
+
+      setSub(false);
+
+      toggle.addEventListener("click", () => setSub(menu.hidden));
+
+      menu.addEventListener("click", (event) => {
+        if (event.target.closest("a")) {
+          setSub(false);
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!item.contains(event.target)) {
+          setSub(false);
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !menu.hidden) {
+          setSub(false, true);
+        }
+      });
+
+      item.addEventListener("focusout", () => {
+        requestAnimationFrame(() => {
+          if (!item.contains(document.activeElement)) {
+            setSub(false);
+          }
+        });
+      });
+
+      desktop.addEventListener("change", () => setSub(false));
+    })();
+
+    /* ---------- Animations: reveal, rotating word, counters, mission ---------- */
+
+    (() => {
+      "use strict";
+
+      const reduce = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      const hasObserver = "IntersectionObserver" in window;
+
+      /* Scroll reveal */
+
+      const reveals = Array.from(
+        document.querySelectorAll(".reveal, .reveal-clip")
+      );
+
+      if (hasObserver && !reduce) {
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("in");
+                revealObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15, rootMargin: "0px 0px -6% 0px" }
+        );
+
+        reveals.forEach((el) => revealObserver.observe(el));
+      } else {
+        reveals.forEach((el) => el.classList.add("in"));
+      }
+
+      /* Rotating hero word */
+
+      const rotWords = Array.from(document.querySelectorAll(".rot-word"));
+
+      if (rotWords.length > 1 && !reduce) {
+        let index = 0;
+
+        setInterval(() => {
+          const previous = rotWords[index];
+
+          index = (index + 1) % rotWords.length;
+
+          const next = rotWords[index];
+
+          previous.classList.remove("is-active");
+          previous.classList.add("is-leaving");
+
+          next.classList.remove("is-leaving");
+          next.classList.add("is-active");
+
+          setTimeout(() => previous.classList.remove("is-leaving"), 750);
+        }, 2600);
+      }
+
+      /* Counting numbers */
+
+      const counters = Array.from(document.querySelectorAll("[data-count]"));
+
+      function runCounter(el) {
+        const target = Number(el.dataset.count);
+        const duration = 1700;
+        const start = performance.now();
+
+        function tick(now) {
+          const t = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - t, 3);
+
+          el.textContent = String(Math.round(target * eased));
+
+          if (t < 1) {
+            requestAnimationFrame(tick);
+          }
+        }
+
+        requestAnimationFrame(tick);
+      }
+
+      if (hasObserver && !reduce) {
+        const counterObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                runCounter(entry.target);
+                counterObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.6 }
+        );
+
+        counters.forEach((el) => {
+          el.textContent = "0";
+          counterObserver.observe(el);
+        });
+      }
+
+      /* Mission statement: words light up as you scroll */
+
+      const words = Array.from(document.querySelectorAll(".sw"));
+      const statement = document.getElementById("statement");
+
+      if (words.length && statement) {
+        if (reduce) {
+          words.forEach((word) => word.classList.add("on"));
+        } else {
+          let ticking = false;
+
+          function update() {
+            ticking = false;
+
+            const rect = statement.getBoundingClientRect();
+            const vh = window.innerHeight;
+            const progress = Math.min(
+              Math.max((vh * 0.85 - rect.top) / (vh * 0.55), 0),
+              1
+            );
+            const lit = Math.round(progress * words.length);
+
+            words.forEach((word, i) => {
+              word.classList.toggle("on", i < lit);
+            });
+          }
+
+          window.addEventListener(
+            "scroll",
+            () => {
+              if (!ticking) {
+                ticking = true;
+                requestAnimationFrame(update);
+              }
+            },
+            { passive: true }
+          );
+
+          window.addEventListener("resize", update);
+          update();
+        }
+      }
     })();
   </script>
 </body>
