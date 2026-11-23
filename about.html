@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-KE">
 <head>
@@ -6,16 +7,20 @@
     name="viewport"
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   >
-  <meta name="theme-color" content="#131313">
+  <meta name="theme-color" content="#193d2b">
 
   <title>About Verteciments Consulting | Cement Expertise in Kenya</title>
+
   <meta
     name="description"
-    content="Meet Verteciments Consulting, a Kenya-based cement consultancy connecting material science with practical plant experience to improve quality, efficiency and sustainability."
+    content="Meet Verteciments Consulting, a Kenya-based cement consultancy connecting material science with practical plant experience."
   >
   <meta name="robots" content="index, follow, max-image-preview:large">
 
-  <link rel="canonical" href="https://vertecimentsconsulting.com/about.html">
+  <link
+    rel="canonical"
+    href="https://vertecimentsconsulting.com/about.html"
+  >
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_KE">
@@ -23,22 +28,29 @@
   <meta property="og:title" content="About Verteciments Consulting">
   <meta
     property="og:description"
-    content="The people, principles and practical thinking behind our cement consultancy."
+    content="Science-led thinking. Real plant experience. Meet the expertise behind Verteciments Consulting."
   >
-  <meta property="og:url" content="https://vertecimentsconsulting.com/about.html">
+  <meta
+    property="og:url"
+    content="https://vertecimentsconsulting.com/about.html"
+  >
   <meta
     property="og:image"
     content="https://vertecimentsconsulting.com/verticement-slide-1.jpg"
   >
-  <meta property="og:image:alt" content="Cement industry expertise from Verteciments Consulting">
+  <meta
+    property="og:image:alt"
+    content="Cement industry expertise from Verteciments Consulting"
+  >
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="logo-3.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
@@ -51,9 +63,6 @@
     "url": "https://vertecimentsconsulting.com/about.html",
     "description": "The expertise, approach and principles behind Verteciments Consulting.",
     "inLanguage": "en-KE",
-    "isPartOf": {
-      "@id": "https://vertecimentsconsulting.com/#website"
-    },
     "mainEntity": {
       "@type": "ProfessionalService",
       "@id": "https://vertecimentsconsulting.com/#business",
@@ -65,14 +74,23 @@
       "areaServed": {
         "@type": "Country",
         "name": "Kenya"
-      },
-      "description": "Kenya-based cement consultancy specializing in production optimization, quality enhancement and sustainable product development."
+      }
     }
   }
   </script>
 
   <style>
-    /* ================= FOUNDATION ================= */
+    :root {
+      --green: #193d2b;
+      --green-hover: #2d593c;
+      --accent: #d6edb9;
+      --paper: #f8f9f5;
+      --soft: #edf1e6;
+      --ink: #203b2b;
+      --muted: #596452;
+      --width: 1240px;
+      --ease: cubic-bezier(.22, .8, .25, 1);
+    }
 
     *,
     *::before,
@@ -80,59 +98,47 @@
       box-sizing: border-box;
     }
 
-    :root {
-      --dark: #131313;
-      --gold: #fcc236;
-      --gold-soft: #fff5d8;
-      --text: #303030;
-      --muted: #5b5f66;
-      --line: #e6e7ea;
-      --soft: #f6f6f4;
-      --max: 1180px;
-    }
-
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 28px;
+      scroll-padding-top: 30px;
       -webkit-text-size-adjust: 100%;
     }
 
     body {
       margin: 0;
       overflow-x: hidden;
-      background: #fff;
-      color: var(--text);
-      font-family: "Roboto", system-ui, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
       line-height: 1.7;
     }
 
-    h1,
-    h2,
-    h3,
-    p {
-      margin-top: 0;
+    h1, h2, h3, p {
+      margin: 0;
     }
 
-    h1,
-    h2,
-    h3 {
-      line-height: 1.18;
+    h1, h2, h3 {
+      font-family: "Manrope", sans-serif;
     }
 
     a {
       color: inherit;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
+      text-decoration: none;
     }
 
     button {
-      min-height: 44px;
       font: inherit;
       cursor: pointer;
+    }
+
+    img, svg {
+      display: block;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     [hidden] {
@@ -140,632 +146,633 @@
     }
 
     :focus-visible {
-      outline: 3px solid var(--gold);
+      outline: 3px solid #729a50;
       outline-offset: 5px;
     }
 
+    ::selection {
+      background: var(--accent);
+      color: var(--green);
+    }
+
     .wrap {
-      width: min(var(--max), calc(100% - 48px));
+      width: min(var(--width), calc(100% - 64px));
       margin-inline: auto;
     }
 
     .section {
-      padding-block: 88px;
-    }
-
-    .alt {
-      background: var(--soft);
+      padding-block: 90px;
     }
 
     .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
       margin-bottom: 20px;
+      color: #4c6b3a;
       font-size: 12px;
       font-weight: 600;
-      letter-spacing: 2px;
+      letter-spacing: .16em;
       text-transform: uppercase;
     }
 
-    .eyebrow::before {
-      content: "";
-      width: 30px;
-      height: 2px;
-      flex-shrink: 0;
-      background: var(--gold);
-    }
-
     .title {
-      margin-bottom: 22px;
-      font-size: clamp(31px, 3.6vw, 45px);
-      font-weight: 600;
-      letter-spacing: -1.2px;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 500;
+      letter-spacing: -.055em;
+      line-height: 1.18;
     }
 
-    .description {
+    .copy {
       color: var(--muted);
-      font-size: 17px;
+      font-size: 16px;
+      line-height: 1.85;
     }
 
     .icon {
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       flex-shrink: 0;
       fill: none;
       stroke: currentColor;
-      stroke-width: 1.7;
+      stroke-width: 1.6;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
-    /* ----- About dropdown ----- */
-.sub-toggle {
-  display: inline-flex;
-  min-height: 44px;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  border: 0;
-  background: none;
-  color: #fff;
-  font-size: 15px;
-}
 
-.sub-toggle:hover,
-.has-sub.current > .sub-toggle {
-  color: var(--gold);
-}
-
-.chev {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.2s;
-}
-
-.sub-toggle[aria-expanded="true"] .chev {
-  transform: rotate(180deg);
-}
-
-.has-sub {
-  position: relative;
-}
-
-.sub-menu {
-  margin: 0;
-  padding: 0 0 0 16px;
-  list-style: none;
-}
-
-.nav-list .sub-menu a {
-  display: flex;
-  min-height: 44px;
-  align-items: center;
-  padding: 10px 16px;
-  color: #fff;
-  font-size: 15px;
-  text-decoration: none;
-}
-
-.nav-list .sub-menu a:hover,
-.nav-list .sub-menu a[aria-current="page"] {
-  color: var(--gold);
-}
-
-@media (min-width: 1024px) {
-  .js .sub-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 40;
-    min-width: 210px;
-    padding: 8px;
-    border-radius: 6px;
-    background: #fff;
-    box-shadow: 0 12px 32px #0003;
-  }
-
-  .js .nav-list .sub-menu a {
-    border-radius: 4px;
-    color: var(--text);
-  }
-
-  .js .nav-list .sub-menu a:hover,
-  .js .nav-list .sub-menu a[aria-current="page"] {
-    background: var(--soft);
-    color: #674900;
-  }
-}
-
-@media (max-width: 1023px) {
-  .js .sub-toggle {
-    width: 100%;
-    justify-content: space-between;
-  }
-}
-
-    .btn {
+    .button {
       display: inline-flex;
-      min-height: 50px;
+      min-height: 54px;
       align-items: center;
       justify-content: center;
-      gap: 18px;
-      padding: 14px 24px;
-      border: 1px solid var(--gold);
+      gap: 28px;
+      padding: 15px 25px;
+      border: 0;
       border-radius: 5px;
-      background: var(--gold);
-      color: var(--dark);
-      font-size: 15px;
+      background: var(--green);
+      color: white;
+      font-size: 14px;
       font-weight: 600;
-      text-align: center;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.2s;
+      transition:
+        background .25s,
+        transform .25s;
     }
 
-    .btn:hover {
+    .button:hover {
+      background: var(--green-hover);
       transform: translateY(-2px);
-      background: #ffda7d;
+    }
+
+    .button .icon {
+      transition: transform .3s var(--ease);
+    }
+
+    .button:hover .icon {
+      transform: translateX(5px);
+    }
+
+    .button-accent {
+      background: var(--accent);
+      color: var(--green);
+    }
+
+    .button-accent:hover {
+      background: white;
     }
 
     .text-link {
       display: inline-flex;
-      min-height: 44px;
+      min-height: 46px;
       align-items: center;
       gap: 18px;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 600;
-      text-decoration-color: var(--gold);
-      text-underline-offset: 7px;
     }
 
     .text-link:hover {
-      color: #785500;
+      color: #557d3d;
     }
 
     .skip-link {
       position: fixed;
-      top: 8px;
-      left: 8px;
+      top: 12px;
+      left: 12px;
       z-index: 100;
       padding: 12px 20px;
       transform: translateY(-160%);
-      background: var(--gold);
-      color: var(--dark);
-      font-weight: 600;
+      background: white;
+      color: var(--green);
     }
 
     .skip-link:focus {
       transform: none;
     }
 
-    /* ================= HEADER ================= */
+    /* HEADER */
 
-    .site-header {
+    .header {
       position: relative;
       z-index: 30;
-      padding-block: 18px;
-      border-bottom: 1px solid #ffffff20;
-      background: var(--dark);
+      background: var(--paper);
     }
 
     .header-inner {
       display: flex;
+      height: 96px;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
     }
 
-    .logo {
+    .brand {
       display: inline-flex;
-      flex-shrink: 0;
+      min-height: 44px;
       align-items: center;
-      text-decoration: none;
+      gap: 11px;
+      flex-shrink: 0;
     }
 
-    .logo img {
-      width: 90px;
+    .brand-logo {
+      width: 94px;
       height: 64px;
-      border-radius: 5px;
       object-fit: contain;
     }
 
-    .logo-fallback {
-      display: flex;
+    .brand-fallback {
+      display: inline-flex;
       align-items: center;
       gap: 10px;
-      color: var(--gold);
+    }
+
+    .brand-mark {
+      width: 35px;
+      height: 42px;
+    }
+
+    .brand-name {
+      font-family: "Manrope", sans-serif;
       font-size: 17px;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .logo-fallback small {
-      display: block;
-      margin-top: 6px;
-      color: #fff;
-      font-size: 12px;
-      letter-spacing: 3px;
-    }
-
-    .nav-list {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .nav-list > li > a {
-      display: inline-flex;
-      min-height: 44px;
-      align-items: center;
-      padding: 10px 16px;
-      color: #fff;
-      font-size: 15px;
-      text-decoration: none;
-    }
-
-    .nav-list > li > a:hover,
-    .nav-list > li > a[aria-current="page"] {
-      color: var(--gold);
-    }
-
-    .nav-list > li > .header-cta {
-      margin-left: 14px;
-      padding: 13px 22px;
-      background: var(--gold);
-      color: var(--dark);
-    }
-
-    .nav-list > li > .header-cta:hover {
-      color: var(--dark);
-    }
-
-    .nav-toggle {
-      display: none;
-      width: 48px;
-      min-height: 46px;
-      place-items: center;
-      border: 1px solid #ffffff60;
-      border-radius: 5px;
-      background: transparent;
-      color: #fff;
-    }
-
-    /* ================= BANNER ================= */
-
-    .banner {
-      position: relative;
-      overflow: hidden;
-      padding-block: 32px 70px;
-      border-bottom: 3px solid var(--gold);
-      background: var(--dark);
-      color: #fff;
-    }
-
-    .banner::after {
-      position: absolute;
-      top: -130px;
-      right: -130px;
-      width: 480px;
-      height: 480px;
-      border: 1px solid #fcc23626;
-      border-radius: 50%;
-      box-shadow:
-        0 0 0 65px #fcc23608,
-        0 0 0 130px #fcc23605;
-      content: "";
-      pointer-events: none;
-    }
-
-    .banner .wrap {
-      position: relative;
-      z-index: 1;
-    }
-
-    .crumbs {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 0 0 36px;
-      padding: 0;
-      color: #d0d0cc;
-      font-size: 14px;
-      list-style: none;
-    }
-
-    .crumbs a {
-      display: inline-flex;
-      min-height: 44px;
-      align-items: center;
-      color: var(--gold);
-      text-decoration: none;
-    }
-
-    .crumbs li + li::before {
-      content: "/";
-      margin-right: 12px;
-    }
-
-    .banner .eyebrow {
-      color: var(--gold);
-    }
-
-    .banner h1 {
-      max-width: 850px;
-      margin-bottom: 24px;
-      font-size: clamp(40px, 5vw, 64px);
-      font-weight: 600;
-      letter-spacing: -2px;
+      font-weight: 800;
+      letter-spacing: -.055em;
       line-height: 1.1;
     }
 
-    .banner h1 span {
-      color: var(--gold);
-    }
-
-    .banner p {
-      max-width: 650px;
-      margin: 0;
-      color: #dcded8;
-      font-size: 18px;
-    }
-
-    /* ================= COMPANY INTRODUCTION ================= */
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .intro-copy p:last-child {
-      margin-bottom: 0;
-    }
-
-    .intro-copy .lead {
-      color: var(--text);
-      font-size: 22px;
-      line-height: 1.55;
-    }
-
-    /* ================= EXPERTISE ================= */
-
-    .leadership-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      align-items: center;
-      gap: 76px;
-    }
-
-    .lab-visual {
-      margin: 0;
-      overflow: hidden;
-      border-radius: 8px;
-      background: #e6e9e1;
-    }
-
-    .lab-visual img,
-    .lab-fallback {
-      width: 100%;
-      height: 450px;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .lab-visual figcaption {
-      padding: 20px 24px;
-      border-bottom: 3px solid var(--gold);
-      background: var(--dark);
-      color: #fff;
-    }
-
-    .lab-visual figcaption strong {
+    .brand-name small {
       display: block;
-      font-size: 18px;
+      margin-top: 7px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .27em;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav > a,
+    .about-menu > summary {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      font-size: 14px;
       font-weight: 500;
     }
 
-    .lab-visual figcaption span {
-      color: #d0d4cc;
+    .nav > a:hover,
+    .about-menu > summary:hover,
+    .about-menu > summary {
+      color: #4e7439;
+    }
+
+    .nav > .button {
+      min-height: 48px;
+      margin-left: 6px;
+      color: white;
+    }
+
+    .about-menu {
+      position: relative;
+    }
+
+    .about-menu > summary {
+      gap: 7px;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .chevron {
+      width: 16px;
+      height: 16px;
+      transition: transform .2s;
+    }
+
+    .about-menu[open] .chevron {
+      transform: rotate(180deg);
+    }
+
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: -18px;
+      min-width: 200px;
+      padding: 10px;
+      border-radius: 7px;
+      background: white;
+      box-shadow: 0 16px 40px #193d2b1c;
+    }
+
+    .dropdown a {
+      display: flex;
+      min-height: 44px;
+      align-items: center;
+      padding: 10px 13px;
+      border-radius: 4px;
       font-size: 14px;
     }
 
-    .leadership-copy h3 {
-      margin: 28px 0 16px;
+    .dropdown a:hover,
+    .dropdown a[aria-current="page"] {
+      background: var(--soft);
+      color: #456a32;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 48px;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 5px;
+      background: #e8eddf;
+      color: var(--green);
+    }
+
+    /* PAGE HERO */
+
+    .about-hero {
+      overflow: hidden;
+      background: var(--green);
+      color: white;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      min-height: 550px;
+      align-items: center;
+      gap: 60px;
+      padding-block: 48px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 32px;
+      padding: 0;
+      color: #e2ead9;
+      font-size: 12px;
+      list-style: none;
+    }
+
+    .breadcrumb a {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent);
+    }
+
+    .breadcrumb li + li::before {
+      margin-right: 12px;
+      content: "/";
+    }
+
+    .hero-copy .eyebrow {
+      color: var(--accent);
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(43px, 5vw, 69px);
+      font-weight: 500;
+      letter-spacing: -.065em;
+      line-height: 1.09;
+    }
+
+    .hero-copy h1 span {
+      color: var(--accent);
+    }
+
+    .hero-description {
+      max-width: 450px;
+      margin-top: 25px;
+      color: #e3eadc;
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .hero-photo {
+      position: relative;
+      min-width: 0;
+      height: 440px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #75856a;
+    }
+
+    .hero-photo > img,
+    .hero-photo > svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero-photo figcaption {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      left: 16px;
+      padding: 17px 20px;
+      border-radius: 5px;
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .hero-photo figcaption span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* WHO WE ARE */
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      align-items: start;
+      gap: 90px;
+    }
+
+    .intro-copy .lead {
+      margin-bottom: 22px;
+      color: var(--ink);
+      font-size: 22px;
+      line-height: 1.65;
+      letter-spacing: -.025em;
+    }
+
+    .intro-copy .copy + .copy {
+      margin-top: 18px;
+    }
+
+    .intro-copy .text-link {
+      margin-top: 22px;
+    }
+
+    /* EXPERIENCE / TECHNICAL EXPERTISE */
+
+    .expertise {
+      background: var(--soft);
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      align-items: center;
+      gap: 80px;
+    }
+
+    .plant-photo {
+      position: relative;
+      min-width: 0;
+      height: 510px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #b5c1a6;
+    }
+
+    .plant-photo > img,
+    .plant-photo > svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .photo-note {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      left: 18px;
+      padding: 22px;
+      border-radius: 6px;
+      background: var(--green);
+      color: white;
       font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .photo-note span {
+      color: var(--accent);
+    }
+
+    .expertise-copy > .copy {
+      margin-top: 22px;
     }
 
     .expertise-list {
       display: grid;
-      gap: 13px;
-      margin: 0 0 22px;
+      gap: 14px;
+      margin: 26px 0 20px;
       padding: 0;
       list-style: none;
     }
 
     .expertise-list li {
       display: flex;
-      align-items: flex-start;
-      gap: 11px;
-      color: var(--muted);
-      font-size: 15px;
+      align-items: start;
+      gap: 12px;
+      color: #48583e;
+      font-size: 14px;
     }
 
     .expertise-list .icon {
       width: 19px;
       height: 19px;
       margin-top: 3px;
-      color: #806000;
+      color: #4d7438;
     }
 
-    .video-link {
-      margin-top: 8px;
-    }
+    /* PRINCIPLES */
 
-    /* ================= PRINCIPLES ================= */
-
-    .principles-head {
-      max-width: 700px;
+    .principles-heading {
+      max-width: 660px;
       margin-bottom: 40px;
+    }
+
+    .principles-heading .copy {
+      margin-top: 20px;
     }
 
     .principles-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 25px;
+      gap: 22px;
     }
 
     .principle {
       min-width: 0;
-      padding: 30px;
-      border: 1px solid var(--line);
-      border-top: 3px solid var(--gold);
-      border-radius: 6px;
+      padding: 32px;
+      border-radius: 8px;
+      background: var(--soft);
+      transition:
+        transform .35s var(--ease),
+        box-shadow .35s;
+    }
+
+    .principle:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 35px #193d2b0d;
+    }
+
+    .principle.featured {
+      background: var(--green);
+      color: white;
     }
 
     .principle-number {
       display: block;
-      margin-bottom: 25px;
-      color: #785500;
-      font-size: 13px;
+      margin-bottom: 36px;
+      color: #4d6d39;
+      font-size: 12px;
       font-weight: 600;
-      letter-spacing: 2px;
+      letter-spacing: .1em;
+    }
+
+    .featured .principle-number {
+      color: var(--accent);
     }
 
     .principle h3 {
-      margin-bottom: 14px;
-      font-size: 22px;
+      margin-bottom: 15px;
+      font-size: 24px;
       font-weight: 500;
+      letter-spacing: -.045em;
+      line-height: 1.3;
     }
 
     .principle p {
-      margin-bottom: 0;
       color: var(--muted);
-      font-size: 16px;
+      font-size: 14px;
+      line-height: 1.85;
     }
 
-    /* ================= PURPOSE ================= */
+    .featured p {
+      color: #e1e9d8;
+    }
+
+    /* PURPOSE */
 
     .purpose {
-      background: var(--dark);
-      color: #fff;
+      background: var(--green);
+      color: white;
     }
 
     .purpose-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: start;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
       gap: 80px;
     }
 
     .purpose .eyebrow {
-      color: var(--gold);
+      color: var(--accent);
     }
 
     .purpose .title {
-      margin-bottom: 0;
+      font-size: clamp(34px, 4.4vw, 58px);
+    }
+
+    .purpose .title span {
+      color: var(--accent);
     }
 
     .purpose-copy p {
-      margin-bottom: 22px;
-      color: #d4d7d1;
-      font-size: 18px;
+      color: #e1e9d8;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .purpose-copy p + p {
+      margin-top: 18px;
     }
 
     .purpose-copy .text-link {
-      color: #fff;
+      margin-top: 22px;
+      color: var(--accent);
     }
 
-    .purpose-copy .text-link:hover {
-      color: var(--gold);
+    /* CTA */
+
+    .contact-section {
+      padding-block: 68px;
+      background: #e4ecd9;
     }
 
-    /* ================= CTA ================= */
-
-    .cta {
-      padding-block: 64px;
-      background: var(--gold);
-    }
-
-    .cta-inner {
+    .contact-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 45px;
     }
 
-    .cta h2 {
-      margin-bottom: 14px;
-      font-size: clamp(29px, 3.2vw, 40px);
-      letter-spacing: -1px;
+    .contact-inner .title {
+      max-width: 720px;
+      font-size: clamp(30px, 3.7vw, 45px);
     }
 
-    .cta p {
-      max-width: 630px;
-      margin: 0;
-      font-size: 17px;
+    .contact-inner p {
+      max-width: 580px;
+      margin-top: 16px;
+      color: #495b40;
+      font-size: 16px;
     }
 
-    .cta .btn {
+    .contact-inner .button {
       flex-shrink: 0;
-      border-color: var(--dark);
-      background: var(--dark);
-      color: #fff;
     }
 
-    .cta .btn:hover {
-      background: #303030;
+    /* FOOTER */
+
+    .footer {
+      padding-block: 48px 25px;
     }
 
-    /* ================= FOOTER ================= */
-
-    .site-footer {
-      padding-top: 66px;
-      background: var(--dark);
-      color: #d1d3ce;
-    }
-
-    .footer-grid {
+    .footer-top {
       display: grid;
-      grid-template-columns: 1.5fr 0.8fr 1fr;
-      gap: 70px;
+      grid-template-columns: 1.15fr 1fr .75fr;
+      gap: 50px;
+      align-items: start;
     }
 
-    .footer-grid > div {
-      min-width: 0;
+    .footer-description {
+      max-width: 310px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.85;
     }
 
-    .footer-brand {
-      display: inline-block;
-      margin-bottom: 20px;
-      color: #fff;
-      font-size: 24px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .footer-brand span {
-      display: block;
-      margin-top: 5px;
-      color: var(--gold);
-      font-size: 12px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-    }
-
-    .footer-about {
-      max-width: 350px;
-      margin-bottom: 0;
-      font-size: 15px;
-    }
-
-    .site-footer h2 {
-      margin-bottom: 18px;
-      color: #fff;
-      font-size: 17px;
-      font-weight: 500;
+    .footer h2 {
+      margin-bottom: 12px;
+      font-size: 14px;
+      font-weight: 700;
     }
 
     .footer-links {
@@ -775,29 +782,18 @@
     }
 
     .footer-links a,
-    .contact-link {
-      display: inline-flex;
+    .footer-contact a {
+      display: flex;
       min-height: 44px;
       align-items: center;
       gap: 10px;
-      font-size: 15px;
-      text-decoration: none;
+      overflow-wrap: anywhere;
+      font-size: 14px;
     }
 
     .footer-links a:hover,
-    .contact-link:hover {
-      color: var(--gold);
-    }
-
-    .footer-contact p {
-      margin-bottom: 9px;
-      font-size: 15px;
-    }
-
-    .footer-contact .icon {
-      width: 18px;
-      height: 18px;
-      color: var(--gold);
+    .footer-contact a:hover {
+      color: #537b3d;
     }
 
     .footer-bottom {
@@ -806,118 +802,84 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      margin-top: 48px;
-      padding-block: 22px;
-      border-top: 1px solid #ffffff26;
-      font-size: 14px;
-    }
-
-    .footer-bottom p {
-      margin: 0;
+      margin-top: 36px;
+      color: var(--muted);
+      font-size: 12px;
     }
 
     .footer-bottom a {
       display: inline-flex;
       min-height: 44px;
       align-items: center;
-      text-underline-offset: 4px;
     }
 
-    /* ================= WHATSAPP ================= */
+    /* MOTION: CONTENT REMAINS VISIBLE */
 
-    .wa-btn {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 40;
-      display: flex;
-      min-height: 48px;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 18px;
-      border: 1px solid #ffffff40;
-      border-radius: 40px;
-      background: #156c36;
-      color: #fff;
-      box-shadow: 0 5px 22px #0003;
-      font-size: 14px;
-      text-decoration: none;
+    @keyframes enter-up {
+      from {
+        transform: translateY(24px);
+      }
+      to {
+        transform: translateY(0);
+      }
     }
 
-    .wa-btn:hover {
-      background: #10552a;
+    @keyframes image-enter {
+      from {
+        transform: scale(1.07);
+      }
+      to {
+        transform: scale(1);
+      }
     }
 
-    /* ================= RESPONSIVE ================= */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-copy {
+        animation: enter-up 1s var(--ease) both;
+      }
+
+      .hero-photo > img {
+        animation: image-enter 1.8s var(--ease) both;
+      }
+    }
+
+    /* RESPONSIVE */
 
     @media (max-width: 1023px) {
-      .header-inner {
-        flex-wrap: wrap;
+      .nav {
+        gap: 22px;
       }
 
-      .main-nav {
-        width: 100%;
-      }
-
-      .nav-list {
-        flex-wrap: wrap;
-      }
-
-      .js .header-inner {
-        flex-wrap: nowrap;
-      }
-
-      .js .nav-toggle {
-        display: grid;
-      }
-
-      .js .main-nav {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        left: 0;
-        max-height: calc(100svh - 101px);
-        overflow-y: auto;
-        padding: 20px 24px;
-        border-top: 1px solid #ffffff25;
-        background: var(--dark);
-      }
-
-      .js .main-nav:not(.open) {
+      .nav > .button {
         display: none;
       }
 
-      .js .nav-list {
-        flex-direction: column;
-        align-items: stretch;
+      .hero-grid {
+        gap: 35px;
       }
 
-      .js .nav-list > li > a {
-        width: 100%;
-      }
-
-      .nav-list > li > .header-cta {
-        margin-left: 0;
+      .hero-photo {
+        height: 420px;
       }
 
       .intro-grid,
-      .leadership-grid,
+      .expertise-grid,
       .purpose-grid {
-        gap: 40px;
+        gap: 45px;
       }
 
       .principle {
-        padding: 25px;
+        padding: 26px;
       }
 
-      .footer-grid {
-        gap: 36px;
+      .footer-top {
+        gap: 30px;
       }
 
-      .cta-inner {
+      .contact-inner {
+        align-items: start;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 28px;
+        gap: 26px;
       }
     }
 
@@ -930,76 +892,178 @@
         padding-block: 60px;
       }
 
-      .banner {
-        padding-block: 22px 50px;
+      .header-inner {
+        height: 82px;
       }
 
-      .banner h1 {
-        letter-spacing: -1.3px;
+      .brand-logo {
+        width: 82px;
+        height: 58px;
+      }
+
+      .brand-name {
+        font-size: 15px;
+      }
+
+      .brand-mark {
+        width: 30px;
+        height: 36px;
+      }
+
+      .js .menu-toggle {
+        display: flex;
+      }
+
+      .header-inner {
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 82px;
+        padding-block: 12px;
+      }
+
+      .nav {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 8px 20px;
+      }
+
+      .js .header-inner {
+        height: 82px;
+        flex-wrap: nowrap;
+        padding-block: 0;
+      }
+
+      .js .nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: none;
+        width: 100%;
+        max-height: calc(100svh - 82px);
+        overflow-y: auto;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px 20px 24px;
+        background: var(--paper);
+        box-shadow: 0 18px 24px #193d2b18;
+      }
+
+      .js .nav.open {
+        display: flex;
+      }
+
+      .nav > a,
+      .about-menu > summary {
+        min-height: 48px;
+      }
+
+      .about-menu > summary {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .dropdown {
+        position: static;
+        margin-bottom: 10px;
+        padding-left: 12px;
+        background: #edf1e6;
+        box-shadow: none;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding-block: 22px 35px;
+      }
+
+      .breadcrumb {
+        margin-bottom: 25px;
+      }
+
+      .hero-copy h1 {
+        max-width: 620px;
+      }
+
+      .hero-description {
+        max-width: 580px;
+        font-size: 16px;
+      }
+
+      .hero-photo {
+        height: 340px;
+        margin: 0;
       }
 
       .intro-grid,
-      .leadership-grid,
+      .expertise-grid,
       .principles-grid,
       .purpose-grid {
         grid-template-columns: 1fr;
       }
 
       .intro-grid {
-        gap: 8px;
+        gap: 25px;
       }
 
-      .leadership-grid {
-        gap: 35px;
+      .intro-copy .lead {
+        font-size: 20px;
       }
 
-      .lab-visual {
-        max-width: 540px;
+      .expertise-grid {
+        gap: 34px;
       }
 
-      .lab-visual img,
-      .lab-fallback {
+      .plant-photo {
         height: 390px;
       }
 
-      .purpose-grid {
-        gap: 24px;
+      .principles-grid {
+        gap: 16px;
       }
 
-      .footer-grid {
+      .principle-number {
+        margin-bottom: 24px;
+      }
+
+      .purpose-grid {
+        gap: 26px;
+      }
+
+      .contact-section {
+        padding-block: 52px;
+      }
+
+      .footer-top {
         grid-template-columns: 1fr 1fr;
       }
 
-      .footer-grid > :first-child {
+      .footer-top > div:first-child {
         grid-column: 1 / -1;
-      }
-
-      .wa-btn {
-        right: 16px;
-        bottom: 16px;
-        padding: 13px;
-      }
-
-      .wa-btn span {
-        display: none;
       }
     }
 
     @media (max-width: 480px) {
-      .footer-grid {
+      .hero-photo {
+        height: 290px;
+      }
+
+      .hero-copy h1 {
+        font-size: 42px;
+      }
+
+      .plant-photo {
+        height: 340px;
+      }
+
+      .footer-top {
         grid-template-columns: 1fr;
+        gap: 25px;
       }
 
-      .footer-grid > :first-child {
-        grid-column: auto;
-      }
-
-      .cta .btn {
+      .contact-inner .button {
         width: 100%;
-      }
-
-      .eyebrow {
-        letter-spacing: 1.4px;
       }
     }
 
@@ -1021,410 +1085,448 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Shared decorative icons -->
+  <!-- SHARED ICONS -->
   <svg
-    xmlns="http://www.w3.org/2000/svg"
     width="0"
     height="0"
-    aria-hidden="true"
     style="position:absolute;overflow:hidden"
+    aria-hidden="true"
   >
     <defs>
-      <symbol id="icon-arrow" viewBox="0 0 24 24">
-        <path d="M5 12h14M13 6l6 6-6 6"/>
+      <symbol id="arrow" viewBox="0 0 24 24">
+        <path d="M4 12h16m-6-6 6 6-6 6"></path>
       </symbol>
 
-      <symbol id="icon-check" viewBox="0 0 24 24">
-        <path d="m5 12 4 4L19 6"/>
+      <symbol id="check" viewBox="0 0 24 24">
+        <path d="m5 12 4 4L19 6"></path>
       </symbol>
 
-      <symbol id="icon-play" viewBox="0 0 24 24">
-        <path d="m9 5 11 7-11 7Z"/>
-      </symbol>
-
-      <symbol id="icon-phone" viewBox="0 0 24 24">
-        <path d="m5 3 4 1 1 5-2 2a14 14 0 0 0 5 5l2-2 5 1 1 4c-1 5-8 2-12-2S1 4 5 3Z"/>
-      </symbol>
-
-      <symbol id="icon-pin" viewBox="0 0 24 24">
-        <path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/>
-        <circle cx="12" cy="10" r="2.5"/>
-      </symbol>
-
-      <symbol id="icon-chat" viewBox="0 0 24 24">
-        <path d="M21 11.5a9 9 0 0 1-13.5 7.8L3 21l1.7-4.5A9 9 0 1 1 21 11.5Z"/>
-        <path d="M8 7c-2 3 3 8 6 8l2-2-3-1-1 1-2-2 1-1-1-3Z"/>
-      </symbol>
-
-      <symbol id="icon-mail" viewBox="0 0 24 24">
-        <rect x="3" y="5" width="18" height="14" rx="2"/>
-        <path d="m3 7 9 6 9-6"/>
+      <symbol id="play" viewBox="0 0 24 24">
+        <path d="m9 5 11 7-11 7Z"></path>
       </symbol>
     </defs>
   </svg>
 
-  <!-- ================= HEADER ================= -->
-  <header class="site-header">
+  <!-- HEADER -->
+  <header class="header">
     <div class="wrap header-inner">
       <a
-        class="logo"
+        class="brand"
         href="index.html"
         aria-label="Verteciments Consulting home"
       >
         <img
+          class="brand-logo"
           id="siteLogo"
           src="logo-3.jpg"
-          width="90"
+          width="94"
           height="64"
           alt="Verteciments Consulting"
         >
 
-        <span class="logo-fallback" id="logoFallback" hidden>
-          <svg
-            width="26"
-            height="28"
-            viewBox="0 0 28 28"
-            aria-hidden="true"
-          >
-            <path d="m2 4 12 22L26 4h-6l-6 12L8 4Z" fill="#fcc236"/>
+        <span class="brand-fallback" id="logoFallback" hidden>
+          <svg class="brand-mark" viewBox="0 0 40 44" aria-hidden="true">
+            <path
+              d="M2 5h10l10 23L31 5h7L22 40h-5Z"
+              fill="#295138"
+            ></path>
+            <path
+              d="M20 5h7l-6 14-4-8Z"
+              fill="#8caa66"
+            ></path>
           </svg>
-          <span>VERTECIMENTS<small>CONSULTING</small></span>
+
+          <span class="brand-name">
+            VERTECIMENTS
+            <small>CONSULTING</small>
+          </span>
         </span>
       </a>
 
       <button
-        class="nav-toggle"
-        id="navToggle"
+        class="menu-toggle"
+        id="menuToggle"
         type="button"
-        aria-label="Open menu"
+        aria-label="Open navigation"
         aria-expanded="false"
         aria-controls="mainNav"
       >
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path id="menuIcon" d="M4 6h16M4 12h16M4 18h16"/>
+          <path id="menuPath" d="M4 8h16M4 16h16"></path>
         </svg>
       </button>
 
-      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
-        <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="service.html">Services</a></li>
-         <li class="has-sub">
-  <button
-    class="sub-toggle"
-    type="button"
-    aria-expanded="false"
-    aria-controls="aboutMenu"
-  >
-    About
-    <svg class="icon chev" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="m6 9 6 6 6-6"/>
-    </svg>
-  </button>
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="service.html">Our services</a>
 
-  <ul class="sub-menu" id="aboutMenu">
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="ourstory.html">Our Story</a></li>
-    <li><a href="ourteam.html">Our Team</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-  </ul>
-</li>
-          <li><a href="contact.html">Contact</a></li>
-          <li>
-            <a class="btn header-cta" href="contact.html">
-              Request a Consultation
-            </a>
-          </li>
-        </ul>
+        <details class="about-menu" id="aboutMenu">
+          <summary>
+            About us
+
+            <svg class="icon chevron" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </summary>
+
+          <div class="dropdown">
+            <a href="about.html" aria-current="page">About us</a>
+            <a href="ourstory.html">Our story</a>
+            <a href="ourteam.html">Our team</a>
+            <a href="gallery.html">Gallery</a>
+          </div>
+        </details>
+
+        <a href="contact.html">Contact us</a>
+
+        <a class="button" href="contact.html">
+          Let’s talk
+          <svg class="icon" aria-hidden="true">
+            <use href="#arrow"></use>
+          </svg>
+        </a>
       </nav>
     </div>
   </header>
 
-  <main id="main" tabindex="-1">
-    <!-- ================= BANNER ================= -->
-    <section class="banner" aria-labelledby="page-title">
-      <div class="wrap">
-        <nav aria-label="Breadcrumb">
-          <ol class="crumbs">
-            <li><a href="index.html">Home</a></li>
-            <li aria-current="page">About Us</li>
-          </ol>
-        </nav>
+  <main id="main">
+    <!-- INTRODUCTORY HERO -->
+    <section class="about-hero" aria-labelledby="pageTitle">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <nav aria-label="Breadcrumb">
+            <ol class="breadcrumb">
+              <li><a href="index.html">Home</a></li>
+              <li aria-current="page">About us</li>
+            </ol>
+          </nav>
 
-        <div class="eyebrow">About Verteciments Consulting</div>
+          <p class="eyebrow">The expertise behind the advice</p>
 
-        <h1 id="page-title">
-          Rooted in science.<br>
-          <span>Connected to industry.</span>
-        </h1>
+          <h1 id="pageTitle">
+            Rooted in science.<br>
+            <span>Grounded in<br>real experience.</span>
+          </h1>
 
-        <p>
-          We connect material science with practical plant experience
-          to help cement manufacturers make informed decisions.
-        </p>
+          <p class="hero-description">
+            We connect material science with the realities of cement
+            manufacturing—helping technical teams make better decisions.
+          </p>
+        </div>
+
+        <figure class="hero-photo">
+          <img
+            src="cement-lab.jpg"
+            alt="Cement laboratory testing equipment and samples"
+            width="650"
+            height="650"
+            fetchpriority="high"
+            data-photo
+          >
+
+          <figcaption>
+            Science with a practical purpose.
+            <span>From laboratory insight to plant performance.</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
-    <!-- ================= WHO WE ARE ================= -->
-    <section class="section" aria-labelledby="company-title">
+    <!-- WHO WE ARE -->
+    <section class="section" aria-labelledby="companyTitle">
       <div class="wrap intro-grid">
         <div>
-          <div class="eyebrow">Who we are</div>
-          <h2 class="title" id="company-title">
-            A specialist partner<br>
-            for the cement industry.
+          <p class="eyebrow">Who we are</p>
+
+          <h2 class="title" id="companyTitle">
+            A specialist partner.<br>
+            A practical perspective.
           </h2>
         </div>
 
         <div class="intro-copy">
           <p class="lead">
-            Verteciments Consulting is a Kenya-based consultancy
-            focused on cement production, quality and sustainable
-            product development.
+            Verteciments Consulting is a Kenya-based consultancy focused
+            on cement production, quality and sustainable product
+            development.
           </p>
 
-          <p class="description">
-            We work with cement manufacturers to understand the relationship
-            between raw materials, production conditions and product
-            performance. That understanding shapes recommendations suited
-            to each operation—not a generic set of answers.
+          <p class="copy">
+            We work with cement manufacturers to understand how raw
+            materials, operating conditions and testing practices
+            influence product performance.
           </p>
 
-          <p class="description">
-            Our work brings together technical analysis and hands-on industry
-            experience, with attention to the balance between quality,
+          <p class="copy">
+            That understanding shapes advice suited to each operation.
+            Our recommendations bring technical analysis together with
+            hands-on industry experience, balancing product quality,
             operational cost and environmental responsibility.
           </p>
+
+          <a class="text-link" href="ourstory.html">
+            Discover our story
+            <svg class="icon" aria-hidden="true">
+              <use href="#arrow"></use>
+            </svg>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ================= EXPERTISE ================= -->
-    <section class="section alt" aria-labelledby="leadership-title">
-      <div class="wrap leadership-grid">
-        <figure class="lab-visual">
+    <!-- TECHNICAL EXPERTISE -->
+    <section class="section expertise" aria-labelledby="expertiseTitle">
+      <div class="wrap expertise-grid">
+        <div class="plant-photo">
           <img
-            id="labImage"
-            src="cement-lab.jpg"
-            width="600"
-            height="650"
-            alt="Cement laboratory testing equipment and samples"
+            src="verticement-slide-1.jpg"
+            alt="Cement manufacturing plant infrastructure"
+            width="650"
+            height="750"
             loading="lazy"
             decoding="async"
+            data-photo
           >
 
-          <svg
-            class="lab-fallback"
-            id="labFallback"
-            viewBox="0 0 600 650"
-            role="img"
-            aria-label="Cement laboratory testing"
-            hidden
-          >
-            <rect width="600" height="650" fill="#e9ece4"/>
-            <path
-              d="M250 150h100M265 150v140L170 470a22 22 0 0 0 19 32h222a22 22 0 0 0 19-32L335 290V150M215 400h170"
-              fill="none"
-              stroke="#354338"
-              stroke-width="14"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path d="M215 400h170l37 70a22 22 0 0 1-19 32H197a22 22 0 0 1-19-32Z" fill="#fcc236"/>
-          </svg>
+          <p class="photo-note">
+            Advice that understands<br>
+            <span>the plant behind the process.</span>
+          </p>
+        </div>
 
-          <figcaption>
-            <strong>Science meets real-world experience.</strong>
-            <span>Practical thinking for the cement industry.</span>
-          </figcaption>
-        </figure>
+        <div class="expertise-copy">
+          <p class="eyebrow">Knowledge that connects</p>
 
-        <div class="leadership-copy">
-          <div class="eyebrow">The expertise behind the advice</div>
-
-          <h2 class="title" id="leadership-title">
-            Technical understanding.<br>
-            Practical perspective.
+          <h2 class="title" id="expertiseTitle">
+            Technical depth.<br>
+            Practical judgement.
           </h2>
 
-          <p class="description">
-            Dr. Munyao and the Verteciments team focus on practical,
-            science-backed solutions for cement and construction
-            industry challenges.
+          <p class="copy">
+            Dr. Munyao and the Verteciments team focus on science-backed
+            solutions for cement and construction industry challenges.
+            Our perspective is shaped by understanding the conditions
+            under which technical recommendations must perform.
           </p>
-
-          <p class="description">
-            Our perspective is shaped by working inside cement plants
-            and understanding the conditions under which technical
-            recommendations must perform.
-          </p>
-
-          <h3>Areas of technical focus</h3>
 
           <ul class="expertise-list">
             <li>
               <svg class="icon" aria-hidden="true">
-                <use href="#icon-check"/>
+                <use href="#check"></use>
               </svg>
               Cement chemistry and product performance
             </li>
 
             <li>
               <svg class="icon" aria-hidden="true">
-                <use href="#icon-check"/>
+                <use href="#check"></use>
               </svg>
-              Alternative supplementary cementitious materials
+              Supplementary cementitious materials
             </li>
 
             <li>
               <svg class="icon" aria-hidden="true">
-                <use href="#icon-check"/>
+                <use href="#check"></use>
               </svg>
               Testing reliability and quality assurance
             </li>
 
             <li>
               <svg class="icon" aria-hidden="true">
-                <use href="#icon-check"/>
+                <use href="#check"></use>
               </svg>
-              Low-carbon cement development
+              Lower-carbon cement development
             </li>
           </ul>
 
-          <!-- External link avoids loading a video embed on page load. -->
           <a
-            class="text-link video-link"
+            class="text-link"
             href="https://www.youtube.com/watch?v=MLpWrANjFbI"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Watch our introduction on YouTube, opens in a new tab"
           >
             <svg class="icon" aria-hidden="true">
-              <use href="#icon-play"/>
+              <use href="#play"></use>
             </svg>
-            Watch our introduction on YouTube ↗
+
+            Watch our introduction
           </a>
         </div>
       </div>
     </section>
 
-    <!-- ================= PRINCIPLES ================= -->
-    <section class="section" aria-labelledby="principles-title">
+    <!-- PRINCIPLES -->
+    <section class="section" aria-labelledby="principlesTitle">
       <div class="wrap">
-        <div class="principles-head">
-          <div class="eyebrow">What guides our work</div>
+        <div class="principles-heading">
+          <p class="eyebrow">What guides our work</p>
 
-          <h2 class="title" id="principles-title">
-            Clear thinking.<br>
-            Responsible recommendations.
+          <h2 class="title" id="principlesTitle">
+            Better answers start<br>
+            with the right approach.
           </h2>
 
-          <p class="description">
-            The way we approach a challenge matters as much as the
-            recommendation itself.
+          <p class="copy">
+            How we understand a challenge matters as much as the
+            recommendation we make.
           </p>
         </div>
 
         <div class="principles-grid">
           <article class="principle">
-            <span class="principle-number" aria-hidden="true">01 / EVIDENCE</span>
-            <h3>Start with understanding</h3>
+            <span class="principle-number">01 / UNDERSTAND</span>
+
+            <h3>Start with the evidence.</h3>
+
             <p>
-              We look at materials, testing data and operating conditions
-              before recommending a direction.
+              Materials, testing data and operating conditions come
+              first. We build an understanding before recommending
+              a direction.
+            </p>
+          </article>
+
+          <article class="principle featured">
+            <span class="principle-number">02 / COLLABORATE</span>
+
+            <h3>Work with your people.</h3>
+
+            <p>
+              Your team knows the operation. Their experience and
+              production priorities help shape recommendations that
+              fit the way your plant works.
             </p>
           </article>
 
           <article class="principle">
-            <span class="principle-number" aria-hidden="true">02 / COLLABORATION</span>
-            <h3>Work with your team</h3>
-            <p>
-              Your team's experience and production priorities help shape
-              solutions that fit the realities of your operation.
-            </p>
-          </article>
+            <span class="principle-number">03 / CONSIDER</span>
 
-          <article class="principle">
-            <span class="principle-number" aria-hidden="true">03 / BALANCE</span>
-            <h3>Keep the bigger picture</h3>
+            <h3>Keep the full picture.</h3>
+
             <p>
               We consider product quality, operational cost and carbon
-              impact together rather than treating them in isolation.
+              impact together—not as separate conversations.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ================= PURPOSE ================= -->
-    <section class="section purpose" aria-labelledby="purpose-title">
+    <!-- PURPOSE -->
+    <section class="section purpose" aria-labelledby="purposeTitle">
       <div class="wrap purpose-grid">
         <div>
-          <div class="eyebrow">Our purpose</div>
+          <p class="eyebrow">Our purpose</p>
 
-          <h2 class="title" id="purpose-title">
-            Help the industry move forward.<br>
-            Without losing sight of performance.
+          <h2 class="title" id="purposeTitle">
+            Move the industry forward.<br>
+            <span>Keep performance<br>at the centre.</span>
           </h2>
         </div>
 
         <div class="purpose-copy">
           <p>
-            Cement has a vital role in the built environment.
-            Improving how it is produced requires both scientific
-            understanding and practical judgement.
+            Cement has a vital role in the built environment. Improving
+            how it is produced takes both scientific understanding and
+            practical judgement.
           </p>
 
           <p>
-            Our purpose is to help manufacturers explore more efficient
-            and lower-carbon ways of working while keeping product
-            performance at the centre of the discussion.
+            We help manufacturers explore more efficient and
+            lower-carbon ways of working, without losing sight of
+            the performance their products need to deliver.
           </p>
 
           <a class="text-link" href="service.html">
-            Explore how we can help
+            Explore our services
             <svg class="icon" aria-hidden="true">
-              <use href="#icon-arrow"/>
+              <use href="#arrow"></use>
             </svg>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- ================= CONTACT CTA ================= -->
-    <section class="cta" aria-labelledby="cta-title">
-      <div class="wrap cta-inner">
+    <!-- CONTACT -->
+    <section class="contact-section" aria-labelledby="contactTitle">
+      <div class="wrap contact-inner">
         <div>
-          <h2 id="cta-title">Let's start with a conversation.</h2>
+          <h2 class="title" id="contactTitle">
+            Let’s start with<br>
+            your challenge.
+          </h2>
+
           <p>
-            Tell us about your operation, your priorities and the
-            challenges you want to address.
+            Tell us about your operation, your priorities and what
+            you want to improve.
           </p>
         </div>
 
-        <a class="btn" href="contact.html">
-          Contact Our Team
+        <a class="button" href="contact.html">
+          Talk to our team
           <svg class="icon" aria-hidden="true">
-            <use href="#icon-arrow"/>
+            <use href="#arrow"></use>
           </svg>
         </a>
       </div>
     </section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="site-footer">
+  <!-- FOOTER -->
+  <footer class="footer">
     <div class="wrap">
-      <div class="footer-grid">
+      <div class="footer-top">
         <div>
-          <a class="footer-brand" href="index.html">
-            Verteciments
-            <span>Consulting</span>
+          <a
+            class="brand"
+            href="index.html"
+            aria-label="Verteciments Consulting home"
+          >
+            <svg class="brand-mark" viewBox="0 0 40 44" aria-hidden="true">
+              <path
+                d="M2 5h10l10 23L31 5h7L22 40h-5Z"
+                fill="#295138"
+              ></path>
+              <path
+                d="M20 5h7l-6 14-4-8Z"
+                fill="#8caa66"
+              ></path>
+            </svg>
+
+            <span class="brand-name">
+              VERTECIMENTS
+              <small>CONSULTING</small>
+            </span>
           </a>
 
-          <p class="footer-about">
-            Kenya-based cement consultancy for efficient production,
+          <p class="footer-description">
+            Independent cement expertise for efficient production,
             consistent quality and a lower-carbon future.
           </p>
+        </div>
+
+        <div class="footer-contact">
+          <h2>Let’s talk</h2>
+
+          <a href="mailto:info@vertecimentsconsulting.com">
+            info@vertecimentsconsulting.com
+          </a>
+
+          <a href="tel:+254721788079">
+            +254 721 788 079
+          </a>
+
+          <a
+            href="https://wa.me/254721788079"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat on WhatsApp, opens in a new tab"
+          >
+            Chat on WhatsApp
+            <svg class="icon" aria-hidden="true">
+              <use href="#arrow"></use>
+            </svg>
+          </a>
         </div>
 
         <div>
@@ -1432,146 +1534,138 @@
 
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="service.html">Services</a></li>
-            <li><a href="about.html" aria-current="page">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="service.html">Our services</a></li>
+            <li><a href="about.html" aria-current="page">About us</a></li>
+            <li><a href="contact.html">Contact us</a></li>
           </ul>
-        </div>
-
-        <div class="footer-contact">
-          <h2>Let's Talk</h2>
-
-          <p>
-            <a class="contact-link" href="tel:+254721788079">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-phone"/>
-              </svg>
-              +254 721 788 079
-            </a>
-          </p>
-
-          <p>
-            <a
-              class="contact-link"
-              href="mailto:info@vertecimentsconsulting.com"
-            >
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-mail"/>
-              </svg>
-              info@vertecimentsconsulting.com
-            </a>
-          </p>
-
-          <p>
-            <a
-              class="contact-link"
-              href="https://wa.me/254721788079"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-chat"/>
-              </svg>
-              Chat on WhatsApp ↗
-            </a>
-          </p>
-
-          <p>
-            <span class="contact-link">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-pin"/>
-              </svg>
-              Kenya
-            </span>
-          </p>
         </div>
       </div>
 
       <div class="footer-bottom">
         <p>
-          © <span id="year">2026</span> Verteciments Consulting.
-          All rights reserved.
+          © <span id="year">2026</span>
+          Verteciments Consulting.
         </p>
 
-        <a href="privacy-policy.html">
-          Privacy Policy
-        </a>
+        <a href="privacy-policy.html">Privacy policy</a>
       </div>
     </div>
   </footer>
 
-  <!-- ================= WHATSAPP ================= -->
-  <a
-    class="wa-btn"
-    href="https://wa.me/254721788079"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Chat with us on WhatsApp (opens a new tab)"
-  >
-    <svg class="icon" aria-hidden="true">
-      <use href="#icon-chat"/>
-    </svg>
-    <span>Chat with us</span>
-  </a>
+  <!-- VISIBLE FALLBACK FOR MISSING PHOTOS -->
+  <template id="photoFallback">
+    <svg
+      viewBox="0 0 1200 900"
+      preserveAspectRatio="xMidYMid slice"
+      role="img"
+      aria-label="Illustration of cement production infrastructure"
+    >
+      <rect width="1200" height="900" fill="#b1bda2"></rect>
 
-  <!-- ================= JAVASCRIPT ================= -->
+      <path
+        d="M0 600 240 370 480 500 800 280 1200 490V900H0Z"
+        fill="#7d936d"
+      ></path>
+
+      <g fill="#d8dbcf">
+        <path d="M480 800V300h150v500Z"></path>
+        <path d="M650 800V250h150v550Z"></path>
+        <path d="M830 800V420h240v380Z"></path>
+      </g>
+
+      <path
+        d="M430 800h680M800 250l270 170"
+        fill="none"
+        stroke="#40583e"
+        stroke-width="16"
+      ></path>
+    </svg>
+  </template>
+
   <script>
     (() => {
       "use strict";
 
-      const toggle = document.getElementById("navToggle");
-      const nav = document.getElementById("mainNav");
-      const header = document.querySelector(".site-header");
-      const menuIcon = document.getElementById("menuIcon");
-      const desktop = window.matchMedia("(min-width: 1024px)");
+      const header = document.querySelector(".header");
+      const menuToggle = document.getElementById("menuToggle");
+      const menuPath = document.getElementById("menuPath");
+      const navigation = document.getElementById("mainNav");
+      const aboutMenu = document.getElementById("aboutMenu");
+      const mobile = window.matchMedia("(max-width: 799px)");
 
       function setMenu(open, restoreFocus = false) {
-        nav.classList.toggle("open", open);
+        navigation.classList.toggle("open", open);
 
-        toggle.setAttribute("aria-expanded", String(open));
-        toggle.setAttribute(
-          "aria-label",
-          open ? "Close menu" : "Open menu"
+        menuToggle.setAttribute(
+          "aria-expanded",
+          String(open)
         );
 
-        menuIcon.setAttribute(
+        menuToggle.setAttribute(
+          "aria-label",
+          open ? "Close navigation" : "Open navigation"
+        );
+
+        menuPath.setAttribute(
           "d",
           open
             ? "M6 6l12 12M18 6 6 18"
-            : "M4 6h16M4 12h16M4 18h16"
+            : "M4 8h16M4 16h16"
         );
 
+        if (!open) {
+          aboutMenu.open = false;
+        }
+
         if (restoreFocus) {
-          toggle.focus();
+          menuToggle.focus();
         }
       }
 
-      toggle.addEventListener("click", () => {
-        const open =
-          toggle.getAttribute("aria-expanded") !== "true";
-
-        setMenu(open);
+      menuToggle.addEventListener("click", () => {
+        setMenu(
+          menuToggle.getAttribute("aria-expanded") !== "true"
+        );
       });
 
-      nav.addEventListener("click", (event) => {
+      navigation.addEventListener("click", event => {
         if (event.target.closest("a")) {
           setMenu(false);
         }
       });
 
-      document.addEventListener("click", (event) => {
+      document.addEventListener("click", event => {
+        if (!aboutMenu.contains(event.target)) {
+          aboutMenu.open = false;
+        }
+
         if (!header.contains(event.target)) {
           setMenu(false);
         }
       });
 
-      document.addEventListener("keydown", (event) => {
-        if (
-          event.key === "Escape" &&
-          nav.classList.contains("open")
-        ) {
+      document.addEventListener("keydown", event => {
+        if (event.key !== "Escape") {
+          return;
+        }
+
+        if (aboutMenu.open) {
+          aboutMenu.open = false;
+          aboutMenu.querySelector("summary").focus();
+          return;
+        }
+
+        if (navigation.classList.contains("open")) {
           setMenu(false, true);
         }
+      });
+
+      aboutMenu.addEventListener("focusout", () => {
+        requestAnimationFrame(() => {
+          if (!aboutMenu.contains(document.activeElement)) {
+            aboutMenu.open = false;
+          }
+        });
       });
 
       header.addEventListener("focusout", () => {
@@ -1582,29 +1676,43 @@
         });
       });
 
-      desktop.addEventListener("change", () => {
+      mobile.addEventListener("change", () => {
         setMenu(false);
       });
 
-      // Enable the collapsed mobile menu after its controls are ready.
+      /*
+       * Collapse mobile navigation only after its controls are wired.
+       * Without JavaScript, navigation links remain available.
+       */
       document.documentElement.classList.add("js");
 
-      // Current copyright year.
-      document.getElementById("year").textContent =
-        String(new Date().getFullYear());
+      /* Logo fallback */
 
-      // Visible fallbacks for unavailable images.
-      function addImageFallback(imageId, fallbackId) {
-        const image = document.getElementById(imageId);
-        const fallback = document.getElementById(fallbackId);
+      const logo = document.getElementById("siteLogo");
+      const logoFallback = document.getElementById("logoFallback");
 
-        if (!image || !fallback) {
-          return;
-        }
+      function showLogoFallback() {
+        logo.hidden = true;
+        logoFallback.hidden = false;
+      }
+
+      logo.addEventListener("error", showLogoFallback);
+
+      if (logo.complete && logo.naturalWidth === 0) {
+        showLogoFallback();
+      }
+
+      /* Photo fallbacks */
+
+      document.querySelectorAll("[data-photo]").forEach(image => {
+        let replaced = false;
 
         function showFallback() {
-          image.hidden = true;
-          fallback.hidden = false;
+          if (replaced) return;
+          replaced = true;
+
+          const template = document.getElementById("photoFallback");
+          image.replaceWith(template.content.cloneNode(true));
         }
 
         image.addEventListener("error", showFallback);
@@ -1612,67 +1720,49 @@
         if (image.complete && image.naturalWidth === 0) {
           showFallback();
         }
-      }
-
-      addImageFallback("siteLogo", "logoFallback");
-      addImageFallback("labImage", "labFallback");
-    })();
-    
-  (() => {
-    "use strict";
-
-    const item = document.querySelector(".has-sub");
-
-    if (!item) {
-      return;
-    }
-
-    const toggle = item.querySelector(".sub-toggle");
-    const menu = item.querySelector(".sub-menu");
-    const desktop = window.matchMedia("(min-width: 1024px)");
-
-    function setSub(open, restoreFocus = false) {
-      menu.hidden = !open;
-      toggle.setAttribute("aria-expanded", String(open));
-
-      if (restoreFocus) {
-        toggle.focus();
-      }
-    }
-
-    setSub(false);
-
-    toggle.addEventListener("click", () => setSub(menu.hidden));
-
-    menu.addEventListener("click", (event) => {
-      if (event.target.closest("a")) {
-        setSub(false);
-      }
-    });
-
-    document.addEventListener("click", (event) => {
-      if (!item.contains(event.target)) {
-        setSub(false);
-      }
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && !menu.hidden) {
-        setSub(false, true);
-      }
-    });
-
-    item.addEventListener("focusout", () => {
-      requestAnimationFrame(() => {
-        if (!item.contains(document.activeElement)) {
-          setSub(false);
-        }
       });
-    });
 
-    desktop.addEventListener("change", () => setSub(false));
-  })();
+      /* Subtle scroll entrance, without hiding content */
 
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      );
+
+      if (
+        "IntersectionObserver" in window &&
+        !reduceMotion.matches
+      ) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+
+            if (!reduceMotion.matches && entry.target.animate) {
+              entry.target.animate(
+                [
+                  { transform: "translateY(25px)" },
+                  { transform: "translateY(0)" }
+                ],
+                {
+                  duration: 850,
+                  easing: "cubic-bezier(.22,.8,.25,1)"
+                }
+              );
+            }
+
+            observer.unobserve(entry.target);
+          });
+        }, {
+          threshold: 0.15
+        });
+
+        document.querySelectorAll(
+          ".intro-grid, .expertise-copy, .principle, .purpose-grid"
+        ).forEach(element => observer.observe(element));
+      }
+
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+    })();
   </script>
 </body>
 </html>
