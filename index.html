@@ -932,6 +932,142 @@
       color: rgba(255, 255, 255, .82);
       font-size: 16px;
     }
+    /* Hero background transition */
+.slide {
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 1s ease, transform 7s ease;
+  will-change: opacity, transform;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1.07);
+}
+
+/* Hero text entrance animation */
+.hero-inner > * {
+  opacity: 0;
+  transform: translateY(22px);
+  animation: heroTextIn .75s ease forwards;
+}
+
+.hero-inner > *:nth-child(1) {
+  animation-delay: .15s;
+}
+
+.hero-inner > *:nth-child(2) {
+  animation-delay: .35s;
+}
+
+.hero-inner > *:nth-child(3) {
+  animation-delay: .55s;
+}
+
+@keyframes heroTextIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide.active {
+    transform: none;
+  }
+
+  .hero-inner > * {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+    /* Better "Why Choose" layout */
+#why-title {
+  margin-bottom: 12px;
+}
+
+#why-title + .sub {
+  margin-bottom: 34px;
+}
+
+#expertiseTabs {
+  max-width: 1040px;
+}
+
+#expertiseTabs .tab-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  align-items: stretch;
+  margin-bottom: 20px;
+}
+
+#expertiseTabs .tab-btn {
+  min-height: 76px;
+  padding: 13px 12px;
+  border-radius: 9px;
+  background: #fff;
+  color: var(--dark);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+#expertiseTabs .tab-btn[aria-selected="true"] {
+  border-color: var(--dark);
+  background: var(--dark);
+  color: #fff;
+  box-shadow: 0 5px 14px rgba(11, 51, 32, .16);
+}
+
+#expertiseTabs .tab-panel {
+  min-height: 120px;
+  display: grid;
+  place-items: center;
+  padding: 28px 34px;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--accent);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(11, 51, 32, .06);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+#expertiseTabs .tab-panel[hidden] {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  #expertiseTabs .tab-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #expertiseTabs .tab-btn:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  #expertiseTabs .tab-list {
+    grid-template-columns: 1fr;
+  }
+
+  #expertiseTabs .tab-btn:last-child {
+    grid-column: auto;
+  }
+
+  #expertiseTabs .tab-btn {
+    min-height: 52px;
+    text-align: left;
+  }
+
+  #expertiseTabs .tab-panel {
+    min-height: 0;
+    padding: 22px;
+    text-align: left;
+  }
+}
 
     /* ---------- Footer ---------- */
     .site-footer {
@@ -980,10 +1116,15 @@
     }
 
     .footer-logo {
-      width: 185px;
-      margin-bottom: 17px;
-      border-radius: 10px;
-    }
+  display: block;
+  width: min(185px, 100%);
+  height: auto;
+  aspect-ratio: 500 / 355;
+  object-fit: contain;
+  object-position: left center;
+  margin-bottom: 17px;
+  border-radius: 10px;
+}
 
     .footer-text {
       max-width: 300px;
