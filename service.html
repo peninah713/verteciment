@@ -13,7 +13,6 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://vertecimentsconsulting.com/service.html">
 
-  <!-- Social sharing -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_KE">
   <meta property="og:site_name" content="Verteciments Consulting">
@@ -25,14 +24,12 @@
   <meta property="og:url" content="https://vertecimentsconsulting.com/service.html">
   <meta
     property="og:image"
-    content="https://vertecimentsconsulting.com/verticement-slide-1.jpg"
+    content="https://vertecimentsconsulting.com/wp-content/uploads/2025/04/verticement-slide-1.jpg"
   >
   <meta property="og:image:alt" content="Cement industry expertise from Verteciments Consulting">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="logo-3.jpg">
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -50,66 +47,18 @@
       "@id": "https://vertecimentsconsulting.com/#business"
     },
     "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Training & Quality Assurance",
-          "areaServed": "Kenya"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Process Optimization",
-          "areaServed": "Kenya"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Product Development & Innovation",
-          "areaServed": "Kenya"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Regulatory Compliance & Approvals",
-          "areaServed": "Kenya"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Cement Additives & Grinding Aids",
-          "areaServed": "Kenya"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Laboratory Standardization",
-          "areaServed": "Kenya"
-        }
-      }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Training & Quality Assurance", "areaServed": "Kenya" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Process Optimization", "areaServed": "Kenya" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Product Development & Innovation", "areaServed": "Kenya" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Regulatory Compliance & Approvals", "areaServed": "Kenya" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cement Additives & Grinding Aids", "areaServed": "Kenya" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Laboratory Standardization", "areaServed": "Kenya" } }
     ]
   }
   </script>
 
   <style>
-    /* ================= RESET AND DESIGN TOKENS ================= */
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
 
     :root {
       --dark: #0b3320;
@@ -136,22 +85,9 @@
       line-height: 1.65;
     }
 
-    h1,
-    h2,
-    h3,
-    p {
-      margin-top: 0;
-    }
-
-    h1,
-    h2,
-    h3 {
-      line-height: 1.2;
-    }
-
-    a {
-      color: inherit;
-    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { line-height: 1.2; }
+    a { color: inherit; }
 
     button {
       min-height: 44px;
@@ -165,9 +101,7 @@
       height: auto;
     }
 
-    [hidden] {
-      display: none !important;
-    }
+    [hidden] { display: none !important; }
 
     :focus-visible {
       outline: 3px solid var(--accent);
@@ -191,9 +125,7 @@
       font-weight: 600;
     }
 
-    .skip-link:focus {
-      transform: none;
-    }
+    .skip-link:focus { transform: none; }
 
     .icon {
       width: 24px;
@@ -205,8 +137,6 @@
       stroke-linecap: round;
       stroke-linejoin: round;
     }
-
-    /* ================= BUTTONS ================= */
 
     .btn {
       display: inline-flex;
@@ -223,7 +153,7 @@
       font-weight: 600;
       text-align: center;
       text-decoration: none;
-      transition: background 0.2s, transform 0.2s;
+      transition: background .2s, transform .2s;
     }
 
     .btn:hover {
@@ -231,8 +161,7 @@
       background: #8fe0b3;
     }
 
-    /* ================= HEADER ================= */
-
+    /* Header */
     .site-header {
       position: relative;
       z-index: 30;
@@ -311,9 +240,7 @@
       color: var(--dark);
     }
 
-    .nav-list > li > .header-cta:hover {
-      color: var(--dark);
-    }
+    .nav-list > li > .header-cta:hover { color: var(--dark); }
 
     .nav-toggle {
       display: none;
@@ -326,13 +253,55 @@
       color: #fff;
     }
 
-    /* ================= PAGE BANNER ================= */
-
+    /* Hero slideshow */
     .banner {
-      padding: 40px 0 64px;
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      min-height: 560px;
+      align-items: center;
+      overflow: hidden;
+      padding: 54px 0 72px;
       border-bottom: 3px solid var(--accent);
       background: var(--dark);
       color: #fff;
+    }
+
+    .banner-slides {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+    }
+
+    .banner-slide {
+      position: absolute;
+      inset: 0;
+      background-position: center;
+      background-size: cover;
+      opacity: 0;
+      transform: scale(1.04);
+      transition: opacity 1.2s ease, transform 7s ease;
+    }
+
+    .banner-slide.active {
+      opacity: 1;
+      transform: scale(1.12);
+    }
+
+    .banner::before {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(90deg, rgba(5, 28, 17, .91) 0%, rgba(5, 28, 17, .73) 55%, rgba(5, 28, 17, .38) 100%),
+        linear-gradient(0deg, rgba(5, 28, 17, .35), transparent 65%);
+      content: "";
+    }
+
+    .banner .wrap {
+      position: relative;
+      z-index: 1;
     }
 
     .crumbs {
@@ -348,8 +317,8 @@
 
     .crumbs a {
       display: inline-flex;
-      align-items: center;
       min-height: 44px;
+      align-items: center;
       color: var(--accent);
       text-decoration: none;
     }
@@ -378,9 +347,7 @@
       background: var(--accent);
     }
 
-    .banner .eyebrow {
-      color: var(--accent);
-    }
+    .banner .eyebrow { color: var(--accent); }
 
     .banner h1 {
       margin-bottom: 24px;
@@ -390,9 +357,7 @@
       line-height: 1.12;
     }
 
-    .banner h1 span {
-      color: var(--accent);
-    }
+    .banner h1 span { color: var(--accent); }
 
     .banner p {
       max-width: 710px;
@@ -403,24 +368,18 @@
 
     .banner-link {
       display: inline-flex;
+      min-height: 44px;
       align-items: center;
       gap: 28px;
-      min-height: 44px;
       color: #fff;
       font-size: 14px;
       text-decoration-color: var(--accent);
       text-underline-offset: 8px;
     }
 
-    /* ================= SECTIONS ================= */
-
-    .section {
-      padding: 88px 0;
-    }
-
-    .alt {
-      background: var(--soft);
-    }
+    /* Sections */
+    .section { padding: 88px 0; }
+    .alt { background: var(--soft); }
 
     .title {
       margin-bottom: 18px;
@@ -437,9 +396,7 @@
       margin-bottom: 40px;
     }
 
-    .section-head .title {
-      margin-bottom: 0;
-    }
+    .section-head .title { margin-bottom: 0; }
 
     .section-head p,
     .sub {
@@ -449,8 +406,7 @@
       font-size: 17px;
     }
 
-    /* ================= SERVICE CARDS ================= */
-
+    /* Service cards */
     .service-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -467,7 +423,7 @@
       border-top: 3px solid var(--accent);
       border-radius: 5px;
       background: #fff;
-      transition: box-shadow 0.2s, transform 0.2s;
+      transition: box-shadow .2s, transform .2s;
     }
 
     .card:hover {
@@ -512,27 +468,17 @@
       margin-bottom: 16px;
       font-size: 23px;
       font-weight: 600;
-      letter-spacing: -0.3px;
+      letter-spacing: -.3px;
     }
 
-    .card p,
-    .card li {
+    .card p, .card li {
       color: var(--muted);
       font-size: 16px;
     }
 
-    .card p {
-      margin-bottom: 16px;
-    }
-
-    .card ul {
-      margin: 0 0 16px;
-      padding-left: 20px;
-    }
-
-    .card li + li {
-      margin-top: 10px;
-    }
+    .card p { margin-bottom: 16px; }
+    .card ul { margin: 0 0 16px; padding-left: 20px; }
+    .card li + li { margin-top: 10px; }
 
     .card strong {
       color: var(--text);
@@ -554,13 +500,8 @@
       text-decoration: none;
     }
 
-    .more span {
-      font-size: 20px;
-    }
-
-    .more:hover {
-      color: #17724a;
-    }
+    .more span { font-size: 20px; }
+    .more:hover { color: #17724a; }
 
     .enquiry-note {
       margin: 24px 0 0;
@@ -568,8 +509,7 @@
       font-size: 14px;
     }
 
-    /* ================= VALUE AND PROCESS ================= */
-
+    /* Value and process */
     .value-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -610,14 +550,8 @@
       border-radius: 5px;
     }
 
-    .steps .num {
-      margin-bottom: 22px;
-    }
-
-    .steps h3 {
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
+    .steps .num { margin-bottom: 22px; }
+    .steps h3 { margin-bottom: 10px; font-size: 20px; }
 
     .steps p {
       margin: 0;
@@ -625,8 +559,7 @@
       font-size: 15px;
     }
 
-    /* ================= CONTACT BAND ================= */
-
+    /* Contact band */
     .cta {
       padding: 64px 0;
       background: var(--accent);
@@ -642,13 +575,10 @@
     .cta h2 {
       margin-bottom: 14px;
       font-size: 34px;
-      letter-spacing: -0.8px;
+      letter-spacing: -.8px;
     }
 
-    .cta p {
-      max-width: 640px;
-      margin: 0;
-    }
+    .cta p { max-width: 640px; margin: 0; }
 
     .cta-actions {
       display: flex;
@@ -663,9 +593,7 @@
       color: #fff;
     }
 
-    .cta .btn:hover {
-      background: #164d33;
-    }
+    .cta .btn:hover { background: #164d33; }
 
     .cta .btn-outline {
       background: transparent;
@@ -677,8 +605,7 @@
       color: #fff;
     }
 
-    /* ================= FOOTER ================= */
-
+    /* Footer */
     .site-footer {
       padding-top: 66px;
       background: var(--dark);
@@ -687,13 +614,11 @@
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.5fr 0.8fr 1fr;
+      grid-template-columns: 1.5fr .8fr 1fr;
       gap: 70px;
     }
 
-    .footer-grid > div {
-      min-width: 0;
-    }
+    .footer-grid > div { min-width: 0; }
 
     .footer-brand {
       display: inline-block;
@@ -743,9 +668,7 @@
     }
 
     .footer-links a:hover,
-    .contact-link:hover {
-      color: var(--accent);
-    }
+    .contact-link:hover { color: var(--accent); }
 
     .footer-contact p {
       margin-bottom: 9px;
@@ -770,9 +693,7 @@
       font-size: 14px;
     }
 
-    .footer-bottom p {
-      margin: 0;
-    }
+    .footer-bottom p { margin: 0; }
 
     .footer-bottom a {
       display: inline-flex;
@@ -781,8 +702,7 @@
       text-underline-offset: 4px;
     }
 
-    /* ================= WHATSAPP ================= */
-
+    /* WhatsApp */
     .wa-btn {
       position: fixed;
       right: 22px;
@@ -802,38 +722,20 @@
       text-decoration: none;
     }
 
-    .wa-btn:hover {
-      background: #10552a;
-    }
+    .wa-btn:hover { background: #10552a; }
 
-    /* ================= RESPONSIVE ================= */
-
+    /* Responsive */
     @media (min-width: 1280px) {
-      .service-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
+      .service-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
 
     @media (max-width: 1023px) {
-      .header-inner {
-        flex-wrap: wrap;
-      }
+      .header-inner { flex-wrap: wrap; }
+      .main-nav { width: 100%; }
+      .nav-list { flex-wrap: wrap; }
 
-      .main-nav {
-        width: 100%;
-      }
-
-      .nav-list {
-        flex-wrap: wrap;
-      }
-
-      .js .header-inner {
-        flex-wrap: nowrap;
-      }
-
-      .js .nav-toggle {
-        display: grid;
-      }
+      .js .header-inner { flex-wrap: nowrap; }
+      .js .nav-toggle { display: grid; }
 
       .js .main-nav {
         position: absolute;
@@ -847,30 +749,14 @@
         background: var(--dark);
       }
 
-      .js .main-nav:not(.open) {
-        display: none;
-      }
+      .js .main-nav:not(.open) { display: none; }
+      .js .nav-list { flex-direction: column; align-items: stretch; }
 
-      .js .nav-list {
-        flex-direction: column;
-        align-items: stretch;
-      }
+      .js .nav-list > li > a { width: 100%; }
+      .nav-list > li > .header-cta { margin-left: 0; }
 
-      .js .nav-list > li > a {
-        width: 100%;
-      }
-
-      .nav-list > li > .header-cta {
-        margin-left: 0;
-      }
-
-      .footer-grid {
-        gap: 36px;
-      }
-
-      .steps {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      .footer-grid { gap: 36px; }
+      .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
       .cta-inner {
         flex-direction: column;
@@ -880,51 +766,28 @@
     }
 
     @media (max-width: 799px) {
-      .wrap {
-        width: calc(100% - 40px);
-      }
+      .wrap { width: calc(100% - 40px); }
 
       .banner {
-        padding-block: 24px 48px;
+        min-height: 500px;
+        padding-block: 30px 54px;
       }
 
-      .banner h1 {
-        letter-spacing: -1px;
-      }
+      .banner h1 { letter-spacing: -1px; }
+      .crumbs { margin-bottom: 28px; }
+      .section { padding: 60px 0; }
 
-      .crumbs {
-        margin-bottom: 28px;
-      }
-
-      .section {
-        padding: 60px 0;
-      }
-
-      .section-head,
-      .value-grid {
+      .section-head, .value-grid {
         grid-template-columns: 1fr;
         gap: 24px;
       }
 
-      .service-grid {
-        grid-template-columns: 1fr;
-      }
+      .service-grid { grid-template-columns: 1fr; }
+      .card { padding: 26px; }
+      .card h3 { font-size: 22px; }
 
-      .card {
-        padding: 26px;
-      }
-
-      .card h3 {
-        font-size: 22px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .footer-grid > :first-child {
-        grid-column: 1 / -1;
-      }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > :first-child { grid-column: 1 / -1; }
 
       .wa-btn {
         right: 16px;
@@ -932,31 +795,17 @@
         padding: 13px;
       }
 
-      .wa-btn span {
-        display: none;
-      }
+      .wa-btn span { display: none; }
     }
 
     @media (max-width: 520px) {
-      .footer-grid,
-      .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid > :first-child {
-        grid-column: auto;
-      }
-
-      .cta-actions,
-      .cta .btn {
-        width: 100%;
-      }
+      .footer-grid, .steps { grid-template-columns: 1fr; }
+      .footer-grid > :first-child { grid-column: auto; }
+      .cta-actions, .cta .btn { width: 100%; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
+      html { scroll-behavior: auto; }
 
       *,
       *::before,
@@ -964,6 +813,9 @@
         animation: none !important;
         transition: none !important;
       }
+
+      .banner-slide,
+      .banner-slide.active { transform: none; }
     }
   </style>
 </head>
@@ -971,29 +823,20 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Shared SVG icons -->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="0"
-    height="0"
-    aria-hidden="true"
-    style="position:absolute;overflow:hidden"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0"
+       aria-hidden="true" style="position:absolute;overflow:hidden">
     <defs>
       <symbol id="icon-phone" viewBox="0 0 24 24">
         <path d="m5 3 4 1 1 5-2 2a14 14 0 0 0 5 5l2-2 5 1 1 4c-1 5-8 2-12-2S1 4 5 3Z"/>
       </symbol>
-
       <symbol id="icon-chat" viewBox="0 0 24 24">
         <path d="M21 11.5a9 9 0 0 1-13.5 7.8L3 21l1.7-4.5A9 9 0 1 1 21 11.5Z"/>
         <path d="M8 7c-2 3 3 8 6 8l2-2-3-1-1 1-2-2 1-1-1-3Z"/>
       </symbol>
-
       <symbol id="icon-mail" viewBox="0 0 24 24">
         <rect x="3" y="5" width="18" height="14" rx="2"/>
         <path d="m3 7 9 6 9-6"/>
       </symbol>
-
       <symbol id="icon-pin" viewBox="0 0 24 24">
         <path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/>
         <circle cx="12" cy="10" r="2.5"/>
@@ -1001,23 +844,11 @@
     </defs>
   </svg>
 
-  <!-- ================= HEADER ================= -->
   <header class="site-header">
     <div class="wrap header-inner">
-      <a
-        class="logo"
-        href="index.html"
-        aria-label="Verteciments Consulting home"
-      >
-        <img
-          id="siteLogo"
-          src="logo-3.jpg"
-          width="90"
-          height="64"
-          alt="Verteciments Consulting"
-          decoding="async"
-        >
-
+      <a class="logo" href="index.html" aria-label="Verteciments Consulting home">
+        <img id="siteLogo" src="logo-3.jpg" width="90" height="64"
+             alt="Verteciments Consulting" decoding="async">
         <span class="logo-fallback" id="logoFallback" hidden>
           <svg width="26" height="28" viewBox="0 0 28 28" aria-hidden="true">
             <path d="m2 4 12 22L26 4h-6l-6 12L8 4Z" fill="#4cc98a"/>
@@ -1026,14 +857,8 @@
         </span>
       </a>
 
-      <button
-        class="nav-toggle"
-        id="navToggle"
-        type="button"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="mainNav"
-      >
+      <button class="nav-toggle" id="navToggle" type="button"
+              aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
           <path id="menuIcon" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -1045,19 +870,23 @@
           <li><a href="service.html" aria-current="page">Services</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li>
-            <a class="btn header-cta" href="contact.html">
-              Request a Consultation
-            </a>
-          </li>
+          <li><a class="btn header-cta" href="contact.html">Request a Consultation</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
-    <!-- ================= PAGE BANNER ================= -->
     <section class="banner" aria-labelledby="page-title">
+      <div class="banner-slides" aria-hidden="true">
+        <div class="banner-slide active"
+             style="background-image:url('https://vertecimentsconsulting.com/wp-content/uploads/2025/04/verticement-slide-1.jpg')"></div>
+        <div class="banner-slide"
+             style="background-image:url('https://vertecimentsconsulting.com/wp-content/uploads/2025/04/verticement-slide-2.jpg')"></div>
+        <div class="banner-slide"
+             style="background-image:url('https://vertecimentsconsulting.com/wp-content/uploads/2025/04/verticement-slide-3.jpg')"></div>
+      </div>
+
       <div class="wrap">
         <nav aria-label="Breadcrumb">
           <ol class="crumbs">
@@ -1067,40 +896,24 @@
         </nav>
 
         <div class="eyebrow">From insight to impact</div>
-
-        <h1 id="page-title">
-          Expertise for better cement.<br>
-          <span>Solutions for your plant.</span>
-        </h1>
-
+        <h1 id="page-title">Expertise for better cement.<br><span>Solutions for your plant.</span></h1>
         <p>
           We help cement manufacturers improve efficiency, quality and
-          sustainability with practical solutions built on real plant
-          experience.
+          sustainability with practical solutions built on real plant experience.
         </p>
-
         <a class="banner-link" href="#services">
-          Explore our services
-          <span aria-hidden="true">↓</span>
+          Explore our services <span aria-hidden="true">↓</span>
         </a>
       </div>
     </section>
 
-    <!-- ================= SERVICES ================= -->
-    <section
-      class="section"
-      id="services"
-      aria-labelledby="services-title"
-    >
+    <section class="section" id="services" aria-labelledby="services-title">
       <div class="wrap">
         <div class="section-head">
           <div>
             <div class="eyebrow">Our Services</div>
-            <h2 class="title" id="services-title">
-              Support at every stage.
-            </h2>
+            <h2 class="title" id="services-title">Support at every stage.</h2>
           </div>
-
           <p>
             Six areas of expertise covering the cement production chain,
             from the laboratory to approvals and product development.
@@ -1109,323 +922,108 @@
 
         <div class="service-grid">
           <article class="card" id="training">
-            <div class="card-top">
-              <span class="num" aria-hidden="true">01</span>
-              <span class="category">People &amp; quality</span>
-            </div>
-
+            <div class="card-top"><span class="num" aria-hidden="true">01</span><span class="category">People &amp; quality</span></div>
             <h3>Training &amp; Quality Assurance</h3>
-
-            <p>
-              We train quality control staff in advanced cement testing
-              methods, including simplified, technically proven alternative
-              methods for determining compressive strength at all curing ages.
-            </p>
-
-            <p>
-              We also cover pozzolanic activity determination for novel
-              alternative supplementary cementitious materials (SCMs).
-            </p>
-
-            <a
-              class="more"
-              href="https://wa.me/254721788079?text=I%20would%20like%20to%20enquire%20about%20training%20and%20quality%20assurance."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Enquire about training
-              <span aria-hidden="true">↗</span>
-            </a>
+            <p>We train quality control staff in advanced cement testing methods, including simplified, technically proven alternative methods for determining compressive strength at all curing ages.</p>
+            <p>We also cover pozzolanic activity determination for novel alternative supplementary cementitious materials (SCMs).</p>
+            <a class="more" href="https://wa.me/254721788079?text=I%20would%20like%20to%20enquire%20about%20training%20and%20quality%20assurance." target="_blank" rel="noopener noreferrer">Enquire about training <span aria-hidden="true">↗</span></a>
           </article>
 
           <article class="card" id="process-optimization">
-            <div class="card-top">
-              <span class="num" aria-hidden="true">02</span>
-              <span class="category">Efficiency &amp; performance</span>
-            </div>
-
+            <div class="card-top"><span class="num" aria-hidden="true">02</span><span class="category">Efficiency &amp; performance</span></div>
             <h3>Process Optimization</h3>
-
-            <p>
-              We help manufacturers significantly reduce the clinker factor
-              while maintaining high product performance.
-            </p>
-
-            <p>
-              This delivers cost savings and lower carbon emissions,
-              in line with SDG 13.
-            </p>
-
-            <a
-              class="more"
-              href="https://wa.me/254721788079?text=I%20would%20like%20to%20enquire%20about%20process%20optimization."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Enquire about optimization
-              <span aria-hidden="true">↗</span>
-            </a>
+            <p>We help manufacturers significantly reduce the clinker factor while maintaining high product performance.</p>
+            <p>This delivers cost savings and lower carbon emissions, in line with SDG 13.</p>
+            <a class="more" href="https://wa.me/254721788079?text=I%20would%20like%20to%20enquire%20about%20process%20optimization." target="_blank" rel="noopener noreferrer">Enquire about optimization <span aria-hidden="true">↗</span></a>
           </article>
 
           <article class="card" id="product-development">
-            <div class="card-top">
-              <span class="num" aria-hidden="true">03</span>
-              <span class="category">Research &amp; innovation</span>
-            </div>
-
+            <div class="card-top"><span class="num" aria-hidden="true">03</span><span class="category">Research &amp; innovation</span></div>
             <h3>Product Development &amp; Innovation</h3>
-
-            <p>
-              We guide our clients in developing new cement products that
-              meet evolving customer needs, with a focus on:
-            </p>
-
-            <ul>
-              <li>Low-carbon cement formulations.</li>
-              <li>Performance enhancement through alternative materials.</li>
-            </ul>
-
-            <a
-              class="more"
-              href="https://wa.me/254721788079?text=I%20would%20like%20to%20enquire%20about%20product%20development."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Enquire about product development
-              <span aria-hidden="true">↗</span>
-            </a>
+            <p>We guide our clients in developing new cement products that meet evolving customer needs, with a focus on:</p>
+            <ul><li>Low-carbon cement formulations.</li><li>Performance enhancement through alternative materials.</li></ul>
+            <a class="more" href="https://wa.me/254721788079?text=I%20would%20like%20to%20enquire%20about%20product%20development." target="_blank" rel="noopener noreferrer">Enquire about product development <span aria-hidden="true">↗</span></a>
           </article>
 
           <article class="card" id="regulatory">
-            <div class="card-top">
-              <span class="num" aria-hidden="true">04</span>
-              <span class="category">Standards &amp; compliance</span>
-            </div>
-
+            <div class="card-top"><span class="num" aria-hidden="true">04</span><span class="category">Standards &amp; compliance</span></div>
             <h3>Regulatory Compliance &amp; Approvals</h3>
-
-            <p>
-              We guide new entrants in obtaining the necessary approvals
-              from local authorities and ensuring compliance with industry
-              standards.
-            </p>
-
-            <a
-              class="more"
-              href="https://wa.me/254721788079?text=I%20would%20like%20to%20enquire%20about%20regulatory%20compliance%20and%20approvals."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Enquire about approvals
-              <span aria-hidden="true">↗</span>
-            </a>
+            <p>We guide new entrants in obtaining the necessary approvals from local authorities and ensuring compliance with industry standards.</p>
+            <a class="more" href="https://wa.me/254721788079?text=I%20would%20like%20to%20enquire%20about%20regulatory%20compliance%20and%20approvals." target="_blank" rel="noopener noreferrer">Enquire about approvals <span aria-hidden="true">↗</span></a>
           </article>
 
           <article class="card" id="additives">
-            <div class="card-top">
-              <span class="num" aria-hidden="true">05</span>
-              <span class="category">Materials &amp; mix design</span>
-            </div>
-
+            <div class="card-top"><span class="num" aria-hidden="true">05</span><span class="category">Materials &amp; mix design</span></div>
             <h3>Cement Additives &amp; Grinding Aids</h3>
-
             <ul>
-              <li>
-                <strong>Grinding aids:</strong>
-                With in-depth knowledge of cement additives, we help
-                manufacturers select the most effective grinding aids and
-                performance enhancers for their production processes.
-              </li>
-              <li>
-                <strong>Concrete admixtures and precast:</strong>
-                We guide ready-mix and precast customers in designing suitable
-                concrete mixes using the right admixtures.
-              </li>
+              <li><strong>Grinding aids:</strong> With in-depth knowledge of cement additives, we help manufacturers select the most effective grinding aids and performance enhancers for their production processes.</li>
+              <li><strong>Concrete admixtures and precast:</strong> We guide ready-mix and precast customers in designing suitable concrete mixes using the right admixtures.</li>
             </ul>
-
-            <a
-              class="more"
-              href="https://wa.me/254721788079?text=I%20would%20like%20to%20enquire%20about%20cement%20additives%20and%20grinding%20aids."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Enquire about additives
-              <span aria-hidden="true">↗</span>
-            </a>
+            <a class="more" href="https://wa.me/254721788079?text=I%20would%20like%20to%20enquire%20about%20cement%20additives%20and%20grinding%20aids." target="_blank" rel="noopener noreferrer">Enquire about additives <span aria-hidden="true">↗</span></a>
           </article>
 
           <article class="card" id="laboratory">
-            <div class="card-top">
-              <span class="num" aria-hidden="true">06</span>
-              <span class="category">Testing &amp; reliability</span>
-            </div>
-
+            <div class="card-top"><span class="num" aria-hidden="true">06</span><span class="category">Testing &amp; reliability</span></div>
             <h3>Laboratory Standardization</h3>
-
-            <p>
-              We develop and implement standard operating procedures (SOPs)
-              for cement and concrete laboratories, ensuring consistency
-              and reliability in testing.
-            </p>
-
-            <a
-              class="more"
-              href="https://wa.me/254721788079?text=I%20would%20like%20to%20enquire%20about%20laboratory%20standardization."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Enquire about lab standardization
-              <span aria-hidden="true">↗</span>
-            </a>
+            <p>We develop and implement standard operating procedures (SOPs) for cement and concrete laboratories, ensuring consistency and reliability in testing.</p>
+            <a class="more" href="https://wa.me/254721788079?text=I%20would%20like%20to%20enquire%20about%20laboratory%20standardization." target="_blank" rel="noopener noreferrer">Enquire about lab standardization <span aria-hidden="true">↗</span></a>
           </article>
         </div>
 
-        <p class="enquiry-note">
-          Enquiry links open WhatsApp in a new tab with your service of
-          interest already filled in.
-        </p>
+        <p class="enquiry-note">Enquiry links open WhatsApp in a new tab with your service of interest already filled in.</p>
       </div>
     </section>
 
-    <!-- ================= VALUE PROPOSITION ================= -->
-    <section
-      class="section alt"
-      aria-labelledby="value-title"
-    >
+    <section class="section alt" aria-labelledby="value-title">
       <div class="wrap">
         <div class="eyebrow">The Verteciments difference</div>
-
-        <h2 class="title" id="value-title">
-          Practical expertise. Lasting value.
-        </h2>
-
-        <p class="sub">
-          Hands-on industry experience. Solutions tailored to real-world
-          production challenges.
-        </p>
+        <h2 class="title" id="value-title">Practical expertise. Lasting value.</h2>
+        <p class="sub">Hands-on industry experience. Solutions tailored to real-world production challenges.</p>
 
         <div class="value-grid">
-          <article>
-            <h3>Quality with a lower carbon footprint</h3>
-            <p>
-              Sustainable solutions that prioritize both product performance
-              and environmental responsibility.
-            </p>
-          </article>
-
-          <article>
-            <h3>Cost-effective decarbonization</h3>
-            <p>
-              Strategies that help businesses reduce emissions without
-              compromising efficiency or profitability.
-            </p>
-          </article>
-
-          <article>
-            <h3>Practical, not theoretical</h3>
-            <p>
-              Real-world process optimization and results-driven solutions,
-              not just theoretical advice.
-            </p>
-          </article>
+          <article><h3>Quality with a lower carbon footprint</h3><p>Sustainable solutions that prioritize both product performance and environmental responsibility.</p></article>
+          <article><h3>Cost-effective decarbonization</h3><p>Strategies that help businesses reduce emissions without compromising efficiency or profitability.</p></article>
+          <article><h3>Practical, not theoretical</h3><p>Real-world process optimization and results-driven solutions, not just theoretical advice.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- ================= HOW WE WORK ================= -->
     <section class="section" aria-labelledby="process-title">
       <div class="wrap">
         <div class="section-head">
-          <div>
-            <div class="eyebrow">A collaborative approach</div>
-            <h2 class="title" id="process-title">How we work</h2>
-          </div>
-
-          <p>
-            A typical engagement, tailored to your plant, materials and goals.
-            Scope and testing needs are agreed together.
-          </p>
+          <div><div class="eyebrow">A collaborative approach</div><h2 class="title" id="process-title">How we work</h2></div>
+          <p>A typical engagement, tailored to your plant, materials and goals. Scope and testing needs are agreed together.</p>
         </div>
 
         <ol class="steps">
-          <li>
-            <span class="num" aria-hidden="true">01</span>
-            <h3>Assess</h3>
-            <p>Review your plant, materials and production goals.</p>
-          </li>
-
-          <li>
-            <span class="num" aria-hidden="true">02</span>
-            <h3>Test</h3>
-            <p>
-              Characterize materials and identify opportunities through
-              laboratory work.
-            </p>
-          </li>
-
-          <li>
-            <span class="num" aria-hidden="true">03</span>
-            <h3>Trial</h3>
-            <p>
-              Validate recommendations in practice before full roll-out.
-            </p>
-          </li>
-
-          <li>
-            <span class="num" aria-hidden="true">04</span>
-            <h3>Implement</h3>
-            <p>
-              Support your team through implementation and training.
-            </p>
-          </li>
+          <li><span class="num" aria-hidden="true">01</span><h3>Assess</h3><p>Review your plant, materials and production goals.</p></li>
+          <li><span class="num" aria-hidden="true">02</span><h3>Test</h3><p>Characterize materials and identify opportunities through laboratory work.</p></li>
+          <li><span class="num" aria-hidden="true">03</span><h3>Trial</h3><p>Validate recommendations in practice before full roll-out.</p></li>
+          <li><span class="num" aria-hidden="true">04</span><h3>Implement</h3><p>Support your team through implementation and training.</p></li>
         </ol>
       </div>
     </section>
 
-    <!-- ================= CONTACT BAND ================= -->
     <section class="cta" aria-labelledby="cta-title">
       <div class="wrap cta-inner">
         <div>
           <h2 id="cta-title">Talk to a cement specialist</h2>
-          <p>
-            Reduce clinker use, improve product quality and cut costs.
-            Tell us about your plant and we will advise on the next step.
-          </p>
+          <p>Reduce clinker use, improve product quality and cut costs. Tell us about your plant and we will advise on the next step.</p>
         </div>
-
         <div class="cta-actions">
-          <a class="btn" href="tel:+254721788079">
-            <svg class="icon" aria-hidden="true">
-              <use href="#icon-phone"/>
-            </svg>
-            Call +254 721 788 079
-          </a>
-
-          <a class="btn btn-outline" href="contact.html">
-            <svg class="icon" aria-hidden="true">
-              <use href="#icon-mail"/>
-            </svg>
-            Email or Contact Form
-          </a>
+          <a class="btn" href="tel:+254721788079"><svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>Call +254 721 788 079</a>
+          <a class="btn btn-outline" href="contact.html"><svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg>Email or Contact Form</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-grid">
         <div>
-          <a class="footer-brand" href="index.html">
-            Verteciments
-            <span>Consulting</span>
-          </a>
-
-          <p class="footer-about">
-            Kenya-based cement consultancy for efficient production,
-            consistent quality and a lower-carbon future.
-          </p>
+          <a class="footer-brand" href="index.html">Verteciments<span>Consulting</span></a>
+          <p class="footer-about">Kenya-based cement consultancy for efficient production, consistent quality and a lower-carbon future.</p>
         </div>
 
         <div>
@@ -1440,81 +1038,26 @@
 
         <div class="footer-contact">
           <h2>Let's Talk</h2>
-
-          <p>
-            <a class="contact-link" href="tel:+254721788079">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-phone"/>
-              </svg>
-              +254 721 788 079
-            </a>
-          </p>
-
-          <p>
-            <a
-              class="contact-link"
-              href="mailto:info@vertecimentsconsulting.com"
-            >
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-mail"/>
-              </svg>
-              info@vertecimentsconsulting.com
-            </a>
-          </p>
-
-          <p>
-            <a
-              class="contact-link"
-              href="https://wa.me/254721788079"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-chat"/>
-              </svg>
-              Chat on WhatsApp ↗
-            </a>
-          </p>
-
-          <p>
-            <span class="contact-link">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-pin"/>
-              </svg>
-              Kenya
-            </span>
-          </p>
+          <p><a class="contact-link" href="tel:+254721788079"><svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>+254 721 788 079</a></p>
+          <p><a class="contact-link" href="mailto:info@vertecimentsconsulting.com"><svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg>info@vertecimentsconsulting.com</a></p>
+          <p><a class="contact-link" href="https://wa.me/254721788079" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-chat"/></svg>Chat on WhatsApp ↗</a></p>
+          <p><span class="contact-link"><svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg>Kenya</span></p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>
-          © <span id="year">2026</span> Verteciments Consulting.
-          All rights reserved.
-        </p>
-
-        <a href="privacy-policy.html">
-          Privacy Policy
-        </a>
+        <p>© <span id="year">2026</span> Verteciments Consulting. All rights reserved.</p>
+        <a href="privacy-policy.html">Privacy Policy</a>
       </div>
     </div>
   </footer>
 
-  <!-- ================= WHATSAPP ================= -->
-  <a
-    class="wa-btn"
-    href="https://wa.me/254721788079"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Chat with us on WhatsApp (opens a new tab)"
-  >
-    <svg class="icon" aria-hidden="true">
-      <use href="#icon-chat"/>
-    </svg>
+  <a class="wa-btn" href="https://wa.me/254721788079" target="_blank"
+     rel="noopener noreferrer" aria-label="Chat with us on WhatsApp (opens a new tab)">
+    <svg class="icon" aria-hidden="true"><use href="#icon-chat"/></svg>
     <span>Chat with us</span>
   </a>
 
-  <!-- ================= JAVASCRIPT ================= -->
   <script>
     (() => {
       "use strict";
@@ -1527,73 +1070,50 @@
 
       function setMenu(open, restoreFocus = false) {
         nav.classList.toggle("open", open);
-
         toggle.setAttribute("aria-expanded", String(open));
-        toggle.setAttribute(
-          "aria-label",
-          open ? "Close menu" : "Open menu"
-        );
+        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
 
         menuIcon.setAttribute(
           "d",
-          open
-            ? "M6 6l12 12M18 6 6 18"
-            : "M4 6h16M4 12h16M4 18h16"
+          open ? "M6 6l12 12M18 6 6 18" : "M4 6h16M4 12h16M4 18h16"
         );
 
-        if (restoreFocus) {
-          toggle.focus();
-        }
+        if (restoreFocus) toggle.focus();
       }
 
       toggle.addEventListener("click", () => {
-        const open =
-          toggle.getAttribute("aria-expanded") !== "true";
-
-        setMenu(open);
+        setMenu(toggle.getAttribute("aria-expanded") !== "true");
       });
 
-      nav.addEventListener("click", (event) => {
-        if (event.target.closest("a")) {
-          setMenu(false);
-        }
+      nav.addEventListener("click", event => {
+        if (event.target.closest("a")) setMenu(false);
       });
 
-      document.addEventListener("click", (event) => {
-        if (!header.contains(event.target)) {
-          setMenu(false);
-        }
+      document.addEventListener("click", event => {
+        if (!header.contains(event.target)) setMenu(false);
       });
 
-      document.addEventListener("keydown", (event) => {
-        if (
-          event.key === "Escape" &&
-          nav.classList.contains("open")
-        ) {
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && nav.classList.contains("open")) {
           setMenu(false, true);
         }
       });
 
       header.addEventListener("focusout", () => {
         requestAnimationFrame(() => {
-          if (!header.contains(document.activeElement)) {
-            setMenu(false);
-          }
+          if (!header.contains(document.activeElement)) setMenu(false);
         });
       });
 
-      desktop.addEventListener("change", () => {
-        setMenu(false);
-      });
+      desktop.addEventListener("change", () => setMenu(false));
 
-      // Enable the collapsible mobile menu only after it is wired.
+      // Enable the collapsible mobile menu after its behavior is initialized.
       document.documentElement.classList.add("js");
 
-      // Current year.
       document.getElementById("year").textContent =
         String(new Date().getFullYear());
 
-      // Show a visible fallback if the logo fails to load.
+      // Logo fallback if the logo file is missing.
       const logo = document.getElementById("siteLogo");
       const logoFallback = document.getElementById("logoFallback");
 
@@ -1603,9 +1123,22 @@
       }
 
       logo.addEventListener("error", showLogoFallback);
+      if (logo.complete && logo.naturalWidth === 0) showLogoFallback();
 
-      if (logo.complete && logo.naturalWidth === 0) {
-        showLogoFallback();
+      // Hero slideshow: pauses while the tab is hidden and respects reduced motion.
+      const slides = Array.from(document.querySelectorAll(".banner-slide"));
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+      if (slides.length > 1 && !reduceMotion.matches) {
+        let current = 0;
+
+        window.setInterval(() => {
+          if (document.hidden || reduceMotion.matches) return;
+
+          slides[current].classList.remove("active");
+          current = (current + 1) % slides.length;
+          slides[current].classList.add("active");
+        }, 5500);
       }
     })();
   </script>
