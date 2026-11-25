@@ -53,7 +53,6 @@
   </script>
 
   <style>
-    /* ---------- Reset and design tokens ---------- */
     *,
     *::before,
     *::after {
@@ -148,7 +147,7 @@
       border: 0;
     }
 
-    /* ---------- Accessibility ---------- */
+    /* Accessibility */
     a:focus-visible,
     button:focus-visible,
     input:focus-visible,
@@ -187,7 +186,7 @@
       }
     }
 
-    /* ---------- Header ---------- */
+    /* Header */
     .site-header {
       position: fixed;
       z-index: 1000;
@@ -464,7 +463,7 @@
       }
     }
 
-    /* ---------- Hero ---------- */
+    /* Hero */
     .hero {
       position: relative;
       display: flex;
@@ -486,12 +485,13 @@
       background-size: cover;
       opacity: 0;
       transform: scale(1);
-      transition: opacity .9s ease, transform 7s ease;
+      transition: opacity 1s ease, transform 7s ease;
+      will-change: opacity, transform;
     }
 
     .slide.active {
       opacity: 1;
-      transform: scale(1.055);
+      transform: scale(1.07);
     }
 
     .hero::after {
@@ -511,6 +511,31 @@
       width: min(var(--max), calc(100% - 40px));
       margin-inline: auto;
       padding: 160px 0 100px;
+    }
+
+    .hero-inner > * {
+      opacity: 0;
+      transform: translateY(22px);
+      animation: heroTextIn .75s ease forwards;
+    }
+
+    .hero-inner > *:nth-child(1) {
+      animation-delay: .15s;
+    }
+
+    .hero-inner > *:nth-child(2) {
+      animation-delay: .35s;
+    }
+
+    .hero-inner > *:nth-child(3) {
+      animation-delay: .55s;
+    }
+
+    @keyframes heroTextIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .hero h1 {
@@ -599,7 +624,7 @@
       background: var(--accent);
     }
 
-    /* ---------- Highlights ---------- */
+    /* Highlights */
     .strip {
       padding: 42px 20px;
       background: var(--dark);
@@ -630,7 +655,7 @@
       font-size: 15px;
     }
 
-    /* ---------- General sections ---------- */
+    /* General sections */
     .section {
       padding: 86px 20px;
       background: var(--white);
@@ -663,7 +688,7 @@
       margin-inline: auto;
     }
 
-    /* ---------- Welcome ---------- */
+    /* Welcome and video */
     .welcome {
       display: grid;
       grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
@@ -672,6 +697,8 @@
     }
 
     .video-box {
+      width: 100%;
+      max-width: 100%;
       overflow: hidden;
       border-radius: 12px;
       background: #000;
@@ -679,7 +706,9 @@
     }
 
     .video-box video {
+      display: block;
       width: 100%;
+      height: auto;
       aspect-ratio: 16 / 10;
       background: #000;
       object-fit: cover;
@@ -728,7 +757,7 @@
       line-height: 1;
     }
 
-    /* ---------- Tabs ---------- */
+    /* Tabs */
     .tabs {
       max-width: 980px;
       margin-inline: auto;
@@ -783,7 +812,62 @@
       color: var(--text);
     }
 
-    /* ---------- Benefits ---------- */
+    #why-title {
+      margin-bottom: 12px;
+    }
+
+    #why-title + .sub {
+      margin-bottom: 34px;
+    }
+
+    #expertiseTabs {
+      max-width: 1040px;
+    }
+
+    #expertiseTabs .tab-list {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      align-items: stretch;
+      margin-bottom: 20px;
+    }
+
+    #expertiseTabs .tab-btn {
+      min-height: 76px;
+      padding: 13px 12px;
+      border-radius: 9px;
+      background: #fff;
+      color: var(--dark);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    #expertiseTabs .tab-btn[aria-selected="true"] {
+      border-color: var(--dark);
+      background: var(--dark);
+      color: #fff;
+      box-shadow: 0 5px 14px rgba(11, 51, 32, .16);
+    }
+
+    #expertiseTabs .tab-panel {
+      min-height: 120px;
+      display: grid;
+      place-items: center;
+      padding: 28px 34px;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--accent);
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(11, 51, 32, .06);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    #expertiseTabs .tab-panel[hidden] {
+      display: none;
+    }
+
+    /* Benefits */
     .benefits-head {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -839,7 +923,7 @@
       font-size: 15px;
     }
 
-    /* ---------- Service cards ---------- */
+    /* Service cards */
     .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -908,7 +992,7 @@
       text-align: center;
     }
 
-    /* ---------- CTA ---------- */
+    /* CTA */
     .cta {
       padding: 68px 20px;
       background: var(--dark);
@@ -932,144 +1016,8 @@
       color: rgba(255, 255, 255, .82);
       font-size: 16px;
     }
-    /* Hero background transition */
-.slide {
-  opacity: 0;
-  transform: scale(1);
-  transition: opacity 1s ease, transform 7s ease;
-  will-change: opacity, transform;
-}
 
-.slide.active {
-  opacity: 1;
-  transform: scale(1.07);
-}
-
-/* Hero text entrance animation */
-.hero-inner > * {
-  opacity: 0;
-  transform: translateY(22px);
-  animation: heroTextIn .75s ease forwards;
-}
-
-.hero-inner > *:nth-child(1) {
-  animation-delay: .15s;
-}
-
-.hero-inner > *:nth-child(2) {
-  animation-delay: .35s;
-}
-
-.hero-inner > *:nth-child(3) {
-  animation-delay: .55s;
-}
-
-@keyframes heroTextIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .slide.active {
-    transform: none;
-  }
-
-  .hero-inner > * {
-    opacity: 1;
-    transform: none;
-    animation: none;
-  }
-}
-    /* Better "Why Choose" layout */
-#why-title {
-  margin-bottom: 12px;
-}
-
-#why-title + .sub {
-  margin-bottom: 34px;
-}
-
-#expertiseTabs {
-  max-width: 1040px;
-}
-
-#expertiseTabs .tab-list {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 10px;
-  align-items: stretch;
-  margin-bottom: 20px;
-}
-
-#expertiseTabs .tab-btn {
-  min-height: 76px;
-  padding: 13px 12px;
-  border-radius: 9px;
-  background: #fff;
-  color: var(--dark);
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.35;
-}
-
-#expertiseTabs .tab-btn[aria-selected="true"] {
-  border-color: var(--dark);
-  background: var(--dark);
-  color: #fff;
-  box-shadow: 0 5px 14px rgba(11, 51, 32, .16);
-}
-
-#expertiseTabs .tab-panel {
-  min-height: 120px;
-  display: grid;
-  place-items: center;
-  padding: 28px 34px;
-  border: 1px solid var(--line);
-  border-top: 4px solid var(--accent);
-  border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(11, 51, 32, .06);
-  font-size: 17px;
-  line-height: 1.7;
-}
-
-#expertiseTabs .tab-panel[hidden] {
-  display: none;
-}
-
-@media (max-width: 900px) {
-  #expertiseTabs .tab-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  #expertiseTabs .tab-btn:last-child {
-    grid-column: 1 / -1;
-  }
-}
-
-@media (max-width: 560px) {
-  #expertiseTabs .tab-list {
-    grid-template-columns: 1fr;
-  }
-
-  #expertiseTabs .tab-btn:last-child {
-    grid-column: auto;
-  }
-
-  #expertiseTabs .tab-btn {
-    min-height: 52px;
-    text-align: left;
-  }
-
-  #expertiseTabs .tab-panel {
-    min-height: 0;
-    padding: 22px;
-    text-align: left;
-  }
-}
-
-    /* ---------- Footer ---------- */
+    /* Footer */
     .site-footer {
       padding: 68px 20px 0;
       background: #082818;
@@ -1116,15 +1064,15 @@
     }
 
     .footer-logo {
-  display: block;
-  width: min(185px, 100%);
-  height: auto;
-  aspect-ratio: 500 / 355;
-  object-fit: contain;
-  object-position: left center;
-  margin-bottom: 17px;
-  border-radius: 10px;
-}
+      display: block;
+      width: min(185px, 100%);
+      height: auto;
+      aspect-ratio: 500 / 355;
+      object-fit: contain;
+      object-position: left center;
+      margin-bottom: 17px;
+      border-radius: 10px;
+    }
 
     .footer-text {
       max-width: 300px;
@@ -1216,7 +1164,7 @@
       text-decoration: underline;
     }
 
-    /* ---------- WhatsApp ---------- */
+    /* WhatsApp */
     .wa-btn {
       position: fixed;
       z-index: 900;
@@ -1248,7 +1196,7 @@
       fill: currentColor;
     }
 
-    /* ---------- Cookie notice ---------- */
+    /* Cookie notice */
     #cookie {
       position: fixed;
       z-index: 9999;
@@ -1297,7 +1245,7 @@
       color: var(--white);
     }
 
-    /* ---------- Reveal animation ---------- */
+    /* Reveal animation */
     .reveal {
       opacity: 1;
       transform: none;
@@ -1315,13 +1263,23 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+      .slide.active {
+        transform: none;
+      }
+
+      .hero-inner > * {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+
       .js .reveal {
         opacity: 1;
         transform: none;
       }
     }
 
-    /* ---------- Responsive adjustments ---------- */
+    /* Responsive */
     @media (max-width: 900px) {
       .welcome {
         grid-template-columns: 1fr;
@@ -1330,6 +1288,14 @@
 
       .welcome .video-box {
         max-width: 680px;
+      }
+
+      #expertiseTabs .tab-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      #expertiseTabs .tab-btn:last-child {
+        grid-column: 1 / -1;
       }
 
       .strip-grid {
@@ -1398,6 +1364,25 @@
       .grid,
       .benefits {
         grid-template-columns: 1fr;
+      }
+
+      #expertiseTabs .tab-list {
+        grid-template-columns: 1fr;
+      }
+
+      #expertiseTabs .tab-btn:last-child {
+        grid-column: auto;
+      }
+
+      #expertiseTabs .tab-btn {
+        min-height: 52px;
+        text-align: left;
+      }
+
+      #expertiseTabs .tab-panel {
+        min-height: 0;
+        padding: 22px;
+        text-align: left;
       }
 
       .tab-list {
@@ -1478,19 +1463,7 @@
         <ul>
           <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="services.html">Services</a></li>
-
-          <li class="has-sub" id="aboutMenu">
-            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="aboutSubmenu">
-              About
-            </button>
-            <ul class="sub-menu" id="aboutSubmenu">
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="ourstory.html">Our Story</a></li>
-              <li><a href="ourteam.html">Our Team</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-            </ul>
-          </li>
-
+          <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a class="header-cta" href="contact.html">Request a Consultation</a></li>
         </ul>
@@ -1958,28 +1931,6 @@
         }
       });
 
-      /* About dropdown */
-      $$(".has-sub").forEach(function (item) {
-        var button = $(".sub-toggle", item);
-
-        if (!button) return;
-
-        button.addEventListener("click", function () {
-          var open = item.classList.toggle("open");
-          button.setAttribute("aria-expanded", String(open));
-        });
-      });
-
-      document.addEventListener("click", function (event) {
-        $$(".has-sub.open").forEach(function (item) {
-          if (!item.contains(event.target)) {
-            item.classList.remove("open");
-            var button = $(".sub-toggle", item);
-            if (button) button.setAttribute("aria-expanded", "false");
-          }
-        });
-      });
-
       /* Hero slideshow */
       var slides = $$(".slide");
       var dotsBox = $("#slideDots");
@@ -2052,7 +2003,6 @@
         }
       });
 
-      /* Pause automatic slides when users focus or hover over the hero */
       var hero = $(".hero");
 
       if (hero) {
@@ -2131,10 +2081,7 @@
         });
       }
 
-      /* Newsletter
-         Add your provider endpoint below, such as a Formspree or custom API URL.
-         The endpoint must accept a POST request containing JSON with an email field.
-      */
+      /* Newsletter */
       var NEWSLETTER_ENDPOINT = "";
       var form = $("#newsForm");
       var emailInput = $("#newsEmail");
@@ -2197,9 +2144,7 @@
         });
       }
 
-      /* Cookie choice
-         This only stores the visitor's choice. It does not block cookies or tracking scripts.
-      */
+      /* Cookie choice */
       var cookieBox = $("#cookie");
       var cookieKey = "vc_cookie_choice";
       var cookieChoice = null;
