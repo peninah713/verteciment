@@ -25,7 +25,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://vertecimentsconsulting.com">
-
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
@@ -69,7 +68,7 @@
       --muted: #5b665f;
       --line: #dfe8e2;
       --soft: #f2f7f3;
-      --white: #ffffff;
+      --white: #fff;
       --max: 1180px;
       --font: "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
       --shadow: 0 14px 40px rgba(0, 0, 0, .12);
@@ -147,7 +146,6 @@
       border: 0;
     }
 
-    /* Accessibility */
     a:focus-visible,
     button:focus-visible,
     input:focus-visible,
@@ -186,7 +184,8 @@
       }
     }
 
-    /* Header */
+    /* Header and navigation */
+
     .site-header {
       position: fixed;
       z-index: 1000;
@@ -280,9 +279,12 @@
 
     .main-nav a,
     .main-nav .sub-toggle {
-      display: inline-block;
-      padding: 11px 14px;
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      padding: 10px 14px;
       border: 0;
+      border-radius: 5px;
       background: transparent;
       color: var(--white);
       font-size: 15px;
@@ -303,10 +305,9 @@
     }
 
     .sub-toggle::after {
-      display: inline-block;
       width: 7px;
       height: 7px;
-      margin: 0 0 3px 8px;
+      margin: -4px 0 0 9px;
       border-right: 2px solid currentColor;
       border-bottom: 2px solid currentColor;
       content: "";
@@ -315,7 +316,7 @@
 
     .sub-menu {
       position: absolute;
-      top: calc(100% + 8px);
+      top: calc(100% + 6px);
       left: 0;
       display: none;
       min-width: 205px;
@@ -328,15 +329,15 @@
       list-style: none;
     }
 
-    .has-sub.open > .sub-menu,
-    .has-sub:focus-within > .sub-menu {
+    .has-sub.open > .sub-menu {
       display: block;
     }
 
     .sub-menu a {
-      display: block;
-      padding: 10px 12px;
-      border-radius: 5px;
+      display: flex;
+      width: 100%;
+      min-height: 42px;
+      padding: 9px 12px;
       color: var(--text);
     }
 
@@ -346,8 +347,9 @@
     }
 
     .main-nav .header-cta {
-      padding: 11px 17px;
-      border-radius: 6px;
+      min-height: 44px;
+      margin-left: 5px;
+      padding-inline: 17px;
       background: var(--accent);
       color: var(--dark);
       font-weight: 700;
@@ -359,68 +361,30 @@
       color: var(--dark);
     }
 
-    .nav-close,
-    .nav-overlay {
-      display: none;
-    }
-
     @media (max-width: 1024px) {
       .nav-toggle {
         display: inline-grid;
         place-items: center;
       }
 
-      .nav-overlay {
-        position: fixed;
-        z-index: 1040;
-        inset: 0;
-        display: block;
-        visibility: hidden;
-        background: rgba(0, 0, 0, .52);
-        opacity: 0;
-        transition: opacity .25s ease, visibility .25s ease;
-      }
-
-      .nav-overlay.show {
-        visibility: visible;
-        opacity: 1;
-      }
-
       .main-nav {
-        position: fixed;
-        z-index: 1050;
-        inset: 0 auto 0 0;
-        width: min(350px, 88vw);
-        padding: 78px 16px 28px;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: none;
+        max-height: calc(100svh - 76px);
+        padding: 10px 20px 20px;
         overflow-y: auto;
-        background: #f7f9f7;
-        box-shadow: 12px 0 32px rgba(0, 0, 0, .14);
-        transform: translateX(-105%);
-        transition: transform .3s ease;
+        background: var(--dark);
+        box-shadow: 0 16px 24px rgba(0, 0, 0, .2);
       }
 
       .main-nav.open {
-        transform: translateX(0);
-      }
-
-      .nav-close {
-        position: absolute;
-        top: 15px;
-        right: 16px;
-        display: grid;
-        width: 42px;
-        height: 42px;
-        place-items: center;
-        border: 0;
-        border-radius: 6px;
-        background: transparent;
-        color: var(--dark);
-        font-size: 32px;
-        cursor: pointer;
+        display: block;
       }
 
       .main-nav > ul {
-        display: flex;
         align-items: stretch;
         flex-direction: column;
         gap: 2px;
@@ -428,42 +392,40 @@
 
       .main-nav a,
       .main-nav .sub-toggle {
-        display: block;
+        display: flex;
         width: 100%;
-        padding: 13px 14px;
-        border-radius: 5px;
-        color: var(--dark);
-      }
-
-      .main-nav a:hover,
-      .main-nav .sub-toggle:hover,
-      .main-nav a[aria-current="page"] {
-        background: #eaf3ed;
-        color: #12643e;
+        min-height: 48px;
+        justify-content: space-between;
+        padding: 11px 12px;
       }
 
       .sub-menu {
         position: static;
         min-width: 0;
-        padding: 0 0 5px 12px;
-        border: 0;
-        border-radius: 0;
-        background: transparent;
+        margin: 0 0 6px;
+        padding: 5px 8px;
+        border-color: rgba(255, 255, 255, .12);
+        background: var(--dark-light);
         box-shadow: none;
       }
 
       .sub-menu a {
-        padding-block: 10px;
+        color: var(--white);
+      }
+
+      .sub-menu a:hover {
+        background: rgba(255, 255, 255, .08);
+        color: var(--accent);
       }
 
       .main-nav .header-cta {
-        margin-top: 8px;
-        background: var(--accent);
-        text-align: center;
+        justify-content: center;
+        margin: 8px 0 0;
       }
     }
 
     /* Hero */
+
     .hero {
       position: relative;
       display: flex;
@@ -625,6 +587,7 @@
     }
 
     /* Highlights */
+
     .strip {
       padding: 42px 20px;
       background: var(--dark);
@@ -656,6 +619,7 @@
     }
 
     /* General sections */
+
     .section {
       padding: 86px 20px;
       background: var(--white);
@@ -689,6 +653,7 @@
     }
 
     /* Welcome and video */
+
     .welcome {
       display: grid;
       grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
@@ -758,6 +723,7 @@
     }
 
     /* Tabs */
+
     .tabs {
       max-width: 980px;
       margin-inline: auto;
@@ -868,6 +834,7 @@
     }
 
     /* Benefits */
+
     .benefits-head {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -924,6 +891,7 @@
     }
 
     /* Service cards */
+
     .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -993,6 +961,7 @@
     }
 
     /* CTA */
+
     .cta {
       padding: 68px 20px;
       background: var(--dark);
@@ -1018,6 +987,7 @@
     }
 
     /* Footer */
+
     .site-footer {
       padding: 68px 20px 0;
       background: #082818;
@@ -1165,6 +1135,7 @@
     }
 
     /* WhatsApp */
+
     .wa-btn {
       position: fixed;
       z-index: 900;
@@ -1197,6 +1168,7 @@
     }
 
     /* Cookie notice */
+
     #cookie {
       position: fixed;
       z-index: 9999;
@@ -1246,6 +1218,7 @@
     }
 
     /* Reveal animation */
+
     .reveal {
       opacity: 1;
       transform: none;
@@ -1280,6 +1253,7 @@
     }
 
     /* Responsive */
+
     @media (max-width: 900px) {
       .welcome {
         grid-template-columns: 1fr;
@@ -1444,34 +1418,51 @@
           width="500"
           height="355"
           alt="Verteciments Consulting"
-          fetchpriority="high">
+          fetchpriority="high"
+        >
       </a>
 
       <button
         class="nav-toggle"
         id="navToggle"
         type="button"
-        aria-label="Open menu"
+        aria-label="Open navigation"
         aria-expanded="false"
-        aria-controls="mainNav">
+        aria-controls="mainNav"
+      >
         <span class="nav-toggle-icon" aria-hidden="true"></span>
       </button>
 
-      <nav class="main-nav" id="mainNav" aria-label="Main menu" inert>
-        <button class="nav-close" id="navClose" type="button" aria-label="Close menu">&times;</button>
-
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
         <ul>
           <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About</a></li>
+
+          <li class="has-sub" id="aboutMenu">
+            <button
+              class="sub-toggle"
+              id="aboutToggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="aboutSubmenu"
+            >
+              About
+            </button>
+
+            <ul class="sub-menu" id="aboutSubmenu">
+              <li><a href="about.html">About us</a></li>
+              <li><a href="ourstory.html">Our story</a></li>
+              <li><a href="ourteam.html">Our team</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+          </li>
+
           <li><a href="contact.html">Contact</a></li>
           <li><a class="header-cta" href="contact.html">Request a Consultation</a></li>
         </ul>
       </nav>
     </div>
   </header>
-
-  <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
 
   <main id="main">
     <!-- Hero -->
@@ -1547,7 +1538,7 @@
         <div class="reveal">
           <h2 class="title" id="welcome-title">Welcome to Verteciments Consulting</h2>
           <p>
-            Verteciments Consulting is a leading cement consultancy firm based in Kenya,
+            Verteciments Consulting is a cement consultancy firm based in Kenya,
             specializing in optimizing cement production, quality enhancement, and sustainable
             product development. Our team provides tailored solutions to help manufacturers
             improve efficiency, reduce costs, and transition towards low-carbon cement manufacturing.
@@ -1689,19 +1680,19 @@
         </div>
       </div>
     </section>
-  </main>
 
-  <!-- Consultation CTA -->
-  <section class="cta" aria-labelledby="cta-title">
-    <div class="cta-inner">
-      <h2 id="cta-title">Talk to a cement specialist</h2>
-      <p>
-        Reduce clinker use, improve product quality, and control costs.
-        Tell us about your plant and we’ll discuss a practical next step.
-      </p>
-      <a class="btn" href="contact.html">Request a consultation</a>
-    </div>
-  </section>
+    <!-- Consultation CTA -->
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="cta-inner">
+        <h2 id="cta-title">Talk to a cement specialist</h2>
+        <p>
+          Reduce clinker use, improve product quality, and control costs.
+          Tell us about your plant and we’ll discuss a practical next step.
+        </p>
+        <a class="btn" href="contact.html">Request a consultation</a>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -1713,7 +1704,8 @@
           width="500"
           height="355"
           alt="Verteciments Consulting"
-          loading="lazy">
+          loading="lazy"
+        >
         <p class="footer-text">
           Verteciments Consulting is a Kenya-based cement consultancy specializing
           in production optimization, quality improvement, and sustainable product development.
@@ -1723,8 +1715,9 @@
       <div>
         <h2>Quick Links</h2>
         <ul>
-          <li><a href="about.html">About Us</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -1749,7 +1742,8 @@
             placeholder="Your email address"
             autocomplete="email"
             inputmode="email"
-            required>
+            required
+          >
           <button type="submit" id="newsSubmit">Subscribe</button>
         </form>
 
@@ -1773,7 +1767,8 @@
     href="https://wa.me/254721788079"
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Chat with Verteciments Consulting on WhatsApp">
+    aria-label="Chat with Verteciments Consulting on WhatsApp"
+  >
     <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false">
       <path d="M256 0C114.8 0 0 114.8 0 256c0 45.9 12.4 90 35.3 128L0 512l128-35.3C166 499.6 210.1 512 256 512c141.2 0 256-114.8 256-256S397.2 0 256 0zm0 468c-39.7 0-77.7-12.4-110.3-32.7l-7.9-4.4-74.2 20.3 20.3-74.2-5.3-7.9C57.4 336.3 46 296.6 46 256 46 139.4 139.4 46 256 46s210 93.4 210 210-93.4 212-210 212zm115.6-157.3L316 285.1c-3.5-1.8-7.9-.9-10.6 2.6l-22.1 28.2c-1.8 1.8-4.4 2.6-7.1 1.8-15-5.3-65.3-26.5-92.7-79.4-.9-2.6-.9-5.3.9-7.1l21.2-23.8c1.8-2.6 2.6-6.2 1.8-8.8l-25.6-57.4c-2.6-6.2-5.3-8.8-8.8-8.8l-16.8-.9c-5.3 0-10.6 1.8-14.1 5.3-7.9 7.1-21.2 20.3-24.7 38-6.2 26.5 3.5 58.3 26.5 90s67.1 83 144.8 105c24.7 7.1 44.1 2.6 60-7.1 12.4-7.9 20.3-20.3 23-33.5l2.6-12.4c.9-3.5-.9-7.9-4.4-9.7z"/>
     </svg>
@@ -1830,32 +1825,37 @@
       /* Mobile navigation */
       var nav = $("#mainNav");
       var menuToggle = $("#navToggle");
-      var menuClose = $("#navClose");
-      var overlay = $("#navOverlay");
+      var aboutMenu = $("#aboutMenu");
+      var aboutToggle = $("#aboutToggle");
       var mobileBreakpoint = 1024;
 
       function isMobileMenu() {
         return window.matchMedia("(max-width: " + mobileBreakpoint + "px)").matches;
       }
 
+      function setAboutOpen(open) {
+        if (!aboutMenu || !aboutToggle) return;
+
+        aboutMenu.classList.toggle("open", open);
+        aboutToggle.setAttribute("aria-expanded", String(open));
+      }
+
       function setMenuOpen(open, returnFocus) {
-        if (!nav || !menuToggle || !overlay) return;
+        if (!nav || !menuToggle) return;
 
         nav.classList.toggle("open", open);
-        overlay.classList.toggle("show", open);
         menuToggle.setAttribute("aria-expanded", String(open));
-        menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        menuToggle.setAttribute(
+          "aria-label",
+          open ? "Close navigation" : "Open navigation"
+        );
         document.body.classList.toggle("menu-open", open);
 
-        if (isMobileMenu()) {
-          nav.inert = !open;
-        } else {
-          nav.inert = false;
+        if (!open) {
+          setAboutOpen(false);
         }
 
-        if (open && isMobileMenu() && menuClose) {
-          menuClose.focus();
-        } else if (returnFocus && menuToggle) {
+        if (returnFocus) {
           menuToggle.focus();
         }
       }
@@ -1866,15 +1866,10 @@
         });
       }
 
-      if (menuClose) {
-        menuClose.addEventListener("click", function () {
-          setMenuOpen(false, true);
-        });
-      }
-
-      if (overlay) {
-        overlay.addEventListener("click", function () {
-          setMenuOpen(false, true);
+      if (aboutToggle) {
+        aboutToggle.addEventListener("click", function () {
+          var open = aboutToggle.getAttribute("aria-expanded") !== "true";
+          setAboutOpen(open);
         });
       }
 
@@ -1886,48 +1881,39 @@
         });
       }
 
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-          if (nav && nav.classList.contains("open")) {
-            setMenuOpen(false, true);
-          }
-
-          $$(".has-sub.open").forEach(function (item) {
-            item.classList.remove("open");
-            var button = $(".sub-toggle", item);
-            if (button) button.setAttribute("aria-expanded", "false");
-          });
+      document.addEventListener("click", function (event) {
+        if (aboutMenu && !aboutMenu.contains(event.target)) {
+          setAboutOpen(false);
         }
 
-        if (event.key === "Tab" && nav && nav.classList.contains("open") && isMobileMenu()) {
-          var focusable = $$(
-            'a[href], button:not([disabled]), input:not([disabled]), [tabindex="0"]',
-            nav
-          ).filter(function (element) {
-            return !element.closest("[hidden]");
-          });
+        if (
+          nav &&
+          menuToggle &&
+          !nav.contains(event.target) &&
+          !menuToggle.contains(event.target) &&
+          isMobileMenu()
+        ) {
+          setMenuOpen(false, false);
+        }
+      });
 
-          if (!focusable.length) return;
+      document.addEventListener("keydown", function (event) {
+        if (event.key !== "Escape") return;
 
-          var first = focusable[0];
-          var last = focusable[focusable.length - 1];
+        if (aboutMenu && aboutMenu.classList.contains("open")) {
+          setAboutOpen(false);
+          aboutToggle.focus();
+          return;
+        }
 
-          if (event.shiftKey && document.activeElement === first) {
-            event.preventDefault();
-            last.focus();
-          } else if (!event.shiftKey && document.activeElement === last) {
-            event.preventDefault();
-            first.focus();
-          }
+        if (nav && nav.classList.contains("open")) {
+          setMenuOpen(false, true);
         }
       });
 
       window.addEventListener("resize", function () {
         if (!isMobileMenu()) {
           setMenuOpen(false, false);
-          nav.inert = false;
-        } else if (!nav.classList.contains("open")) {
-          nav.inert = true;
         }
       });
 
@@ -2103,8 +2089,6 @@
             return;
           }
 
-          var email = emailInput.value.trim();
-
           if (!NEWSLETTER_ENDPOINT) {
             setNewsletterMessage(
               "Newsletter signup is not connected yet. Please contact us directly.",
@@ -2122,7 +2106,7 @@
               "Content-Type": "application/json",
               "Accept": "application/json"
             },
-            body: JSON.stringify({ email: email })
+            body: JSON.stringify({ email: emailInput.value.trim() })
           })
             .then(function (response) {
               if (!response.ok) {
@@ -2163,7 +2147,7 @@
         try {
           window.localStorage.setItem(cookieKey, choice);
         } catch (error) {
-          /* Continue if storage is unavailable. */
+          // Continue if storage is unavailable.
         }
 
         if (cookieBox) {
